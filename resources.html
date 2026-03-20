@@ -506,15 +506,19 @@
           <h3>Stay in the Loop</h3>
           <p>Be the first to know when new resources, guides, and practices drop — plus occasional insights from Chris directly to your inbox.</p>
         </div>
-        <form class="newsletter-strip__form" onsubmit="return false;">
+        <form class="newsletter-strip__form" id="newsletterForm" action="https://formspree.io/f/meerdjgb" method="POST">
           <input
             type="email"
+            name="email"
             class="newsletter-strip__input"
             placeholder="Your email address"
             aria-label="Email address"
+            required
           >
+          <input type="hidden" name="_subject" value="Newsletter signup from Grove Circle Healing">
           <button type="submit" class="newsletter-strip__btn">Get Updates</button>
         </form>
+        <div id="newsletterSuccess" style="display:none; margin-top:12px; color:#2a9d8f; font-weight:500;">You're on the list!</div>
       </div>
     </div>
   </section>
@@ -599,7 +603,7 @@
         <h2>Let's Get Started</h2>
         <p class="modal__subtitle">Contact for a complimentary discovery call or further details regarding my services.</p>
 
-        <form class="modal__form" id="modalContactForm" name="contact-modal" netlify>
+        <form class="modal__form" id="modalContactForm" action="https://formspree.io/f/meerdjgb" method="POST">
           <div class="form-row">
             <div class="form-field">
               <label for="modal-first">First Name</label>
@@ -708,16 +712,30 @@
 
     modalForm && modalForm.addEventListener("submit", e => {
       e.preventDefault();
-      modalForm.style.display = "none";
-      modalSuccess.classList.add("visible");
-      setTimeout(() => {
-        closeModal();
-        setTimeout(() => {
-          modalForm.reset();
-          modalForm.style.display = "";
-          modalSuccess.classList.remove("visible");
-        }, 400);
-      }, 2800);
+      fetch(modalForm.action, {
+        method: 'POST',
+        body: new FormData(modalForm),
+        headers: { 'Accept': 'application/json' }
+      }).then(res => {
+        if (res.ok) {
+          modalForm.style.display = "none";
+          modalSuccess.classList.add("visible");
+          setTimeout(() => {
+            closeModal();
+            setTimeout(() => {
+              modalForm.reset();
+              modalForm.style.display = "";
+              modalSuccess.classList.remove("visible");
+            }, 400);
+          }, 2800);
+        }
+      });
+    });
+    const nf = document.getElementById('newsletterForm');
+    nf && nf.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(nf.action, { method: 'POST', body: new FormData(nf), headers: { 'Accept': 'application/json' } })
+        .then(res => { if (res.ok) { nf.style.display = 'none'; document.getElementById('newsletterSuccess').style.display = 'block'; } });
     });
   </script>
 </body>

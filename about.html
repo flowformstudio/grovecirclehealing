@@ -386,7 +386,7 @@
         <h2>Let's Get Started</h2>
         <p class="modal__subtitle">Contact for a complimentary discovery call or further details regarding my services.</p>
 
-        <form class="modal__form" id="modalContactForm" name="contact-modal" netlify>
+        <form class="modal__form" id="modalContactForm" action="https://formspree.io/f/meerdjgb" method="POST">
           <div class="form-row">
             <div class="form-field">
               <label for="modal-first">First Name</label>
@@ -483,16 +483,24 @@
 
     modalForm && modalForm.addEventListener("submit", e => {
       e.preventDefault();
-      modalForm.style.display = "none";
-      modalSuccess.classList.add("visible");
-      setTimeout(() => {
-        closeModal();
-        setTimeout(() => {
-          modalForm.reset();
-          modalForm.style.display = "";
-          modalSuccess.classList.remove("visible");
-        }, 400);
-      }, 2800);
+      fetch(modalForm.action, {
+        method: 'POST',
+        body: new FormData(modalForm),
+        headers: { 'Accept': 'application/json' }
+      }).then(res => {
+        if (res.ok) {
+          modalForm.style.display = "none";
+          modalSuccess.classList.add("visible");
+          setTimeout(() => {
+            closeModal();
+            setTimeout(() => {
+              modalForm.reset();
+              modalForm.style.display = "";
+              modalSuccess.classList.remove("visible");
+            }, 400);
+          }, 2800);
+        }
+      });
     });
   </script>
 </body>

@@ -49,7 +49,7 @@ body {
 
 h1, h2, h3, h4, h5, blockquote {
   font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.12;
   color: var(--charcoal);
 }
@@ -547,10 +547,10 @@ img { display: block; max-width: 100%; }
   transform-origin: center;
   animation: rippleOut 3.6s ease-out infinite;
 }
-.circle-motif__ring:nth-child(1) { animation-delay: 0s;    border: 1.5px solid rgba(42, 157, 143, 0.75); }
-.circle-motif__ring:nth-child(2) { animation-delay: 0.9s;  border: 1.5px solid rgba(196, 153, 74, 0.65); }
-.circle-motif__ring:nth-child(3) { animation-delay: 1.8s;  border: 1.5px solid rgba(42, 157, 143, 0.75); }
-.circle-motif__ring:nth-child(4) { animation-delay: 2.7s;  border: 1.5px solid rgba(196, 153, 74, 0.65); }
+.circle-motif__ring:nth-child(1) { animation-delay: 0s;    border: 3px solid rgba(0, 210, 190, 0.9); }
+.circle-motif__ring:nth-child(2) { animation-delay: 0.9s;  border: 3px solid rgba(220, 130, 40, 0.85); }
+.circle-motif__ring:nth-child(3) { animation-delay: 1.8s;  border: 3px solid rgba(160, 80, 200, 0.8); }
+.circle-motif__ring:nth-child(4) { animation-delay: 2.7s;  border: 3px solid rgba(0, 180, 230, 0.85); }
 
 @keyframes rippleOut {
   0%   { transform: scale(0.1);  opacity: 0.9; }
