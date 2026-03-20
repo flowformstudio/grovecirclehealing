@@ -573,7 +573,7 @@ img { display: block; max-width: 100%; }
 .circle-motif__center img {
   width: 120px;
   opacity: 0.88;
-  filter: invert(54%) sepia(80%) saturate(900%) hue-rotate(133deg) brightness(1.05) contrast(1.1);
+  filter: invert(49%) sepia(45%) saturate(580%) hue-rotate(138deg) brightness(88%) contrast(92%);
   animation: spinLogo 22s linear infinite;
 }
 
