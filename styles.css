@@ -421,6 +421,30 @@ img { display: block; max-width: 100%; }
   pointer-events: none;
 }
 
+/* Sparkle stars */
+.page-hero__stars {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.page-hero__stars .star {
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0;
+  animation: gchStarTwinkle var(--dur, 3s) ease-in-out var(--delay, 0s) infinite;
+}
+
+@keyframes gchStarTwinkle {
+  0%   { opacity: 0;                  transform: scale(0.4) translateY(0); }
+  30%  { opacity: var(--peak, 0.7);   transform: scale(1)   translateY(-4px); }
+  65%  { opacity: var(--peak, 0.7);   transform: scale(0.8) translateY(-2px); }
+  100% { opacity: 0;                  transform: scale(0.3) translateY(-8px); }
+}
+
 /* Content sits above overlay */
 .page-hero .container--narrow {
   position: relative;

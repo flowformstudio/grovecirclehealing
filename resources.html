@@ -308,6 +308,7 @@
   <div class="page-hero" style="background-image: url('https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/691e445c20d0e0a2fa3b3ce5_Sound%20Bowl%201.JPG'); background-position: center 40%;">
     <div class="page-hero__tile-bg"></div>
     <span class="page-hero__ring"></span>
+    <div class="page-hero__stars" aria-hidden="true"></div>
     <div class="container--narrow">
       <p class="eyebrow eyebrow--light animate">Resources</p>
       <h1 class="animate animate-delay-1">Deepen Your<br><em style="font-style:italic; color:var(--gold-light);">Practice</em></h1>
@@ -732,6 +733,32 @@
       fetch(nf.action, { method: 'POST', body: new FormData(nf), headers: { 'Accept': 'application/json' } })
         .then(res => { if (res.ok) { nf.style.display = 'none'; document.getElementById('newsletterSuccess').style.display = 'block'; } });
     });
+  </script>
+
+  <script>
+  (function spawnHeroStars() {
+    var container = document.querySelector('.page-hero__stars');
+    if (!container) return;
+    var COUNT = 36;
+    for (var i = 0; i < COUNT; i++) {
+      var star = document.createElement('span');
+      star.className = 'star';
+      var size  = 2 + Math.random() * 3;
+      var x     = Math.random() * 100;
+      var y     = Math.random() * 100;
+      var dur   = 2.5 + Math.random() * 3.5;
+      var delay = Math.random() * 6;
+      var peak  = 0.4 + Math.random() * 0.45;
+      star.style.cssText =
+        'width:' + size + 'px;height:' + size + 'px;' +
+        'left:' + x + '%;top:' + y + '%;' +
+        '--dur:' + dur.toFixed(2) + 's;' +
+        '--delay:' + delay.toFixed(2) + 's;' +
+        '--peak:' + peak.toFixed(2) + ';' +
+        'box-shadow:0 0 ' + (size*2) + 'px rgba(196,153,74,0.55);';
+      container.appendChild(star);
+    }
+  })();
   </script>
 </body>
 </html>
