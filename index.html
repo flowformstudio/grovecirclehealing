@@ -448,14 +448,19 @@
                   body: data,
                   headers: { 'Accept': 'application/json' }
                 }).then(function(res) {
-                  if (res.ok) {
-                    form.reset();
-                    document.getElementById('form-success').style.display = 'block';
-                    document.getElementById('form-error').style.display = 'none';
-                  } else {
-                    document.getElementById('form-error').style.display = 'block';
-                  }
-                }).catch(function() {
+                  return res.json().then(function(json) {
+                    if (res.ok) {
+                      form.reset();
+                      document.getElementById('form-success').style.display = 'block';
+                      document.getElementById('form-error').style.display = 'none';
+                    } else {
+                      var msg = (json && json.error) ? json.error : JSON.stringify(json);
+                      document.getElementById('form-error').innerText = 'Error: ' + msg;
+                      document.getElementById('form-error').style.display = 'block';
+                    }
+                  });
+                }).catch(function(err) {
+                  document.getElementById('form-error').innerText = 'Network error: ' + err;
                   document.getElementById('form-error').style.display = 'block';
                 });
               });
