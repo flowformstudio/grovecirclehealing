@@ -654,7 +654,7 @@ img { display: block; max-width: 100%; }
 }
 .offering-card--wide .offering-card__body {
   border-top: none;
-  border-left: 2px solid var(--teal);
+  border-left: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
