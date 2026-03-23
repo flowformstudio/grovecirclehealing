@@ -528,13 +528,13 @@ img { display: block; max-width: 100%; }
 }
 
 .trust__logo {
-  opacity: 0.4;
-  filter: grayscale(1);
+  opacity: 0.75;
+  filter: grayscale(1) brightness(0.4);
   transition: opacity 0.3s ease;
-  max-height: 30px;
+  max-height: 44px;
   width: auto;
 }
-.trust__logo:hover { opacity: 0.65; }
+.trust__logo:hover { opacity: 0.9; }
 
 /* ================================================================
    ABOUT TEASER
