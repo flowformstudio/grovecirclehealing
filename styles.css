@@ -228,7 +228,7 @@ img { display: block; max-width: 100%; }
 .nav__brand-name {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.05rem;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--charcoal);
   letter-spacing: 0.03em;
   white-space: nowrap;
