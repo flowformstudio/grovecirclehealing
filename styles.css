@@ -531,7 +531,7 @@ img { display: block; max-width: 100%; }
   opacity: 0.75;
   filter: grayscale(1) brightness(0.4);
   transition: opacity 0.3s ease;
-  max-height: 44px;
+  max-height: 57px;
   width: auto;
 }
 .trust__logo:hover { opacity: 0.9; }
