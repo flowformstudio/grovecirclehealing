@@ -3,9 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Chris | Grove Circle Healing</title>
+  <title>About Chris Young-Ginzburg | Grove Circle Healing</title>
   <meta name="description" content="Meet Chris Young-Ginzburg — sound healer, voice activator, and intuitive guide. Learn about her approach and philosophy.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.grovecirclehealing.com/about">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://www.grovecirclehealing.com/about">
+  <meta property="og:title" content="About Chris Young-Ginzburg | Grove Circle Healing">
+  <meta property="og:description" content="Meet Chris Young-Ginzburg — sound healer, voice activator, and intuitive guide. Learn about her approach and philosophy.">
+  <meta property="og:image" content="https://www.grovecirclehealing.com/img/chris-sound-bowl-ceremony.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
+  <meta property="og:site_name" content="Grove Circle Healing">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Chris Young-Ginzburg | Grove Circle Healing">
+  <meta name="twitter:description" content="Sound healer, voice activator, and intuitive guide helping people reconnect with their body, voice, and inner wisdom.">
+  <meta name="twitter:image" content="https://www.grovecirclehealing.com/img/chris-sound-bowl-ceremony.png">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","@id":"https://www.grovecirclehealing.com/#chris","name":"Chris Young-Ginzburg","jobTitle":"Sound Healer & Voice Activator","description":"Sound healer, voice activator, and intuitive guide helping people reconnect with their body, voice, and inner wisdom.","url":"https://www.grovecirclehealing.com/about","image":"https://www.grovecirclehealing.com/img/chris-sound-bowl-ceremony.png","worksFor":{"@id":"https://www.grovecirclehealing.com/#business"},"knowsAbout":["Sound Healing","Voice Activation","Intuitive Coaching","Sound Baths","Somatic Healing","Corporate Wellness"]}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -170,7 +187,7 @@
   <div class="page-hero" style="background-image: url('https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65f873ee06acb24094347750_IMG_3439.JPG'); background-position: center 20%;">
     <div class="page-hero__tile-bg"></div>
     <span class="page-hero__ring"></span>
-    <div class="page-hero__stars" aria-hidden="true"></div>
+
     <div class="container--narrow">
       <p class="eyebrow eyebrow--light animate">About Chris</p>
       <h1 class="animate animate-delay-1">The Heart<br><em style="font-style:italic; color:var(--gold-light);">Behind the Work</em></h1>
@@ -240,7 +257,6 @@
       </div>
       <div class="philosophy__inner">
         <div class="philosophy__item animate animate-delay-1">
-          <div class="philosophy__num">01</div>
           <h3 class="philosophy__title">You Are the Expert</h3>
           <p class="philosophy__text">
             My sessions are never prescriptive. Your body knows what it needs — I simply create
@@ -248,7 +264,6 @@
           </p>
         </div>
         <div class="philosophy__item animate animate-delay-2">
-          <div class="philosophy__num">02</div>
           <h3 class="philosophy__title">Sound as Medicine</h3>
           <p class="philosophy__text">
             Vibration moves through us at a cellular level. Crystal bowls, voice, breath, and silence
@@ -256,7 +271,6 @@
           </p>
         </div>
         <div class="philosophy__item animate animate-delay-3">
-          <div class="philosophy__num">03</div>
           <h3 class="philosophy__title">Voice as Truth</h3>
           <p class="philosophy__text">
             Your voice is one of the most powerful healing instruments available to you. Reclaiming it —
@@ -504,32 +518,6 @@
         }
       });
     });
-  </script>
-
-  <script>
-  (function spawnHeroStars() {
-    var container = document.querySelector('.page-hero__stars');
-    if (!container) return;
-    var COUNT = 36;
-    for (var i = 0; i < COUNT; i++) {
-      var star = document.createElement('span');
-      star.className = 'star';
-      var size  = 2 + Math.random() * 3;
-      var x     = Math.random() * 100;
-      var y     = Math.random() * 100;
-      var dur   = 2.5 + Math.random() * 3.5;
-      var delay = Math.random() * 6;
-      var peak  = 0.4 + Math.random() * 0.45;
-      star.style.cssText =
-        'width:' + size + 'px;height:' + size + 'px;' +
-        'left:' + x + '%;top:' + y + '%;' +
-        '--dur:' + dur.toFixed(2) + 's;' +
-        '--delay:' + delay.toFixed(2) + 's;' +
-        '--peak:' + peak.toFixed(2) + ';' +
-        'box-shadow:0 0 ' + (size*2) + 'px rgba(196,153,74,0.55);';
-      container.appendChild(star);
-    }
-  })();
   </script>
 </body>
 </html>
