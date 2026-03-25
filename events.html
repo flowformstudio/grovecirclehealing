@@ -67,7 +67,7 @@
 
     .event-item {
       display: grid;
-      grid-template-columns: 120px 1fr auto;
+      grid-template-columns: 120px 180px 1fr auto;
       gap: 3rem;
       align-items: center;
       background: var(--cream);
@@ -103,6 +103,14 @@
       text-transform: uppercase;
       color: var(--muted);
       margin-top: 0.25rem;
+    }
+
+    .event-item__image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 1.25rem;
+      box-shadow: 0 10px 24px rgba(26, 25, 22, 0.1);
     }
 
     .event-item__tag {
@@ -266,9 +274,12 @@
       justify-content: center;
     }
     .corporate__logo img {
-      max-height: 30px;
+      max-height: 39px;
       filter: brightness(0) invert(1);
       opacity: 0.35;
+    }
+    .corporate__logo img.corporate__logo--dhy {
+      max-height: 55px;
     }
 
     .corporate__img {
@@ -280,7 +291,7 @@
     }
 
     @media (max-width: 900px) {
-      .event-item { grid-template-columns: 80px 1fr; }
+      .event-item { grid-template-columns: 80px 130px 1fr; }
       .event-item__action { display: none; }
       .event-item__date { padding-right: 2rem; }
       .featured-event__inner { grid-template-columns: 1fr; }
@@ -292,6 +303,7 @@
       .event-item { grid-template-columns: 1fr; gap: 1rem; }
       .event-item__date { border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 1rem; text-align: left; display: flex; gap: 0.5rem; align-items: baseline; }
       .event-item__day { font-size: 2rem; }
+      .event-item__image { max-width: 220px; }
     }
   </style>
 </head>
@@ -307,7 +319,15 @@
           <span class="nav__brand-name">Grove Circle Healing</span>
         </a>
         <ul class="nav__links">
-          <li><a href="offerings.html" class="nav__link">Offerings</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <a href="offerings.html" class="nav__link">Offerings</a>
+            <ul class="nav__dropdown">
+              <li><a href="soundhealing.html" class="nav__dropdown-link">Sound Healing</a></li>
+              <li><a href="sound-and-voice.html" class="nav__dropdown-link">Voice Activation</a></li>
+              <li><a href="events-retreats-and-corporate.html" class="nav__dropdown-link">Retreats &amp; Corporate</a></li>
+              <li><a href="online-courses.html" class="nav__dropdown-link">Online Courses</a></li>
+            </ul>
+          </li>
           <li><a href="events.html"    class="nav__link" style="color:var(--teal);">Events</a></li>
           <li><a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="nav__link">Membership</a></li>
           <li><a href="about.html"     class="nav__link">About</a></li>
@@ -325,6 +345,12 @@
   <div class="nav__mobile" id="navMobile">
     <button class="nav__mobile-close" id="navClose" aria-label="Close menu">✕</button>
     <a href="offerings.html"   class="nav__mobile-link">Offerings</a>
+    <div class="nav__mobile-submenu">
+      <a href="soundhealing.html" class="nav__mobile-sublink">Sound Healing</a>
+      <a href="sound-and-voice.html" class="nav__mobile-sublink">Voice Activation</a>
+      <a href="events-retreats-and-corporate.html" class="nav__mobile-sublink">Retreats &amp; Corporate</a>
+      <a href="online-courses.html" class="nav__mobile-sublink">Online Courses</a>
+    </div>
     <a href="events.html"      class="nav__mobile-link">Events</a>
     <a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="nav__mobile-link">Membership</a>
     <a href="about.html"       class="nav__mobile-link">About</a>
@@ -344,30 +370,6 @@
       <p class="animate animate-delay-2">Sound baths, voice workshops, retreats — find an experience that calls to you.</p>
     </div>
   </div>
-
-
-  <!-- ═══ FEATURED EVENT ════════════════════════════════════════ -->
-  <section class="featured-event">
-    <div class="container">
-      <div class="featured-event__inner">
-        <img
-          src="699c8978d9496a8566b65009_IMG_4590.jpg"
-          alt="Navigating the Emotional Scale — Understanding the Language of Your Emotional Body"
-          class="featured-event__img animate"
-        >
-        <div class="featured-event__text">
-          <p class="eyebrow animate">Online Membership Class</p>
-          <p class="animate" style="color:var(--muted); font-size:0.95rem; margin-bottom:0.5rem;">Friday, March 13th, 10AM Pacific</p>
-          <h2 class="animate animate-delay-1">March 2026 Grove Circle<br>Membership Class</h2>
-          <p class="animate animate-delay-2">
-            In this heart-centered online class, you'll learn to understand your emotional body as a guiding map of consciousness, transforming overwhelm into clarity, alignment, and deeper self-trust.
-          </p>
-          <a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" target="_blank" rel="noopener noreferrer" class="btn btn-primary animate animate-delay-3">More Info &amp; Tickets</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
 
   <!-- ═══ COMMUNITY ════════════════════════════════════════════ -->
   <section class="community-section">
@@ -403,25 +405,42 @@
       </div>
 
       <div class="events-list">
-
-
-        <a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="event-item animate animate-delay-1" target="_blank" rel="noopener">
+        <a href="https://www.eventbrite.com/e/sound-voice-activation-online-the-somatic-voice-tickets-1984145797492?aff=oddtdtcreator" class="event-item animate animate-delay-1" target="_blank" rel="noopener">
           <div class="event-item__date">
-            <div class="event-item__day">13</div>
-            <div class="event-item__month">Mar</div>
+            <div class="event-item__day">30</div>
+            <div class="event-item__month">Apr</div>
           </div>
+          <img src="219 S&amp;V IG Cards.jpg" alt="Sound and Voice Activation online event flyer" class="event-item__image">
           <div>
-            <h3 class="event-item__title">March 2026 Grove Circle Membership Class</h3>
+            <h3 class="event-item__title">Sound &amp; Voice Activation Online: The Somatic Voice</h3>
             <div class="event-item__meta">
-              <span>10:00 AM Pacific</span>
-              <span>Online</span>
+              <span>Thursday, Apr 30</span>
+              <span>1:00 PM - 2:30 PM PDT</span>
+              <span>A guided online session for reconnecting with your embodied voice through breath, sound, and somatic practice.</span>
             </div>
           </div>
           <div class="event-item__action">
-            <span class="btn btn-outline">More Info & Tickets</span>
+            <span class="btn btn-outline">More Info &amp; Tickets</span>
           </div>
         </a>
-
+        <a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="event-item animate animate-delay-2" target="_blank" rel="noopener">
+          <div class="event-item__date">
+            <div class="event-item__day">17</div>
+            <div class="event-item__month">Apr</div>
+          </div>
+          <img src="Nervous system.jpg" alt="Restoring the Nervous System class artwork" class="event-item__image">
+          <div>
+            <h3 class="event-item__title">Grove Circle Membership Class</h3>
+            <div class="event-item__meta">
+              <span>Friday, April 17</span>
+              <span>10:00 AM Pacific</span>
+              <span>A guided membership session designed to deepen self-awareness, emotional insight, and connection through Grove Circle Healing practices.</span>
+            </div>
+          </div>
+          <div class="event-item__action">
+            <span class="btn btn-outline">More Info &amp; Tickets</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -450,7 +469,7 @@
               <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/69b86482f75f901e754096eb_Sephora-Logo%201.png" alt="Sephora">
             </div>
             <div class="corporate__logo">
-              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/69b86396c28f22bfbdf3e3cb_DHY%20logo%201.png" alt="DHY">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/69b86396c28f22bfbdf3e3cb_DHY%20logo%201.png" alt="DHY" class="corporate__logo--dhy">
             </div>
             <div class="corporate__logo">
               <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/69b86396c28f22bfbdf3e3cf_Waking%20Hr%20logo%201.png" alt="Waking Hour">
@@ -458,10 +477,10 @@
           </div>
         </div>
         <img
-          src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/687fe99b54595dc6765f2f2c_Drum%20smile.JPG"
+          src="s heal dark view.jpeg"
           alt="Chris leading a corporate event"
           class="corporate__img animate animate-delay-2"
-          style="object-position: center top;"
+          style="object-position: center 78%;"
         >
       </div>
     </div>

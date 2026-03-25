@@ -297,22 +297,34 @@
       margin-bottom: 2rem;
       max-width: 560px;
     }
-    .retreats-events__tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 2.5rem;
+    .retreats-events__list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 0 0 2.5rem;
+      padding: 0;
+      max-width: 720px;
     }
-    .retreats-events__tag {
-      display: inline-block;
-      padding: 0.45rem 1.1rem;
-      border-radius: 100px;
-      border: 1.5px solid var(--teal);
+    .retreats-events__list li {
+      position: relative;
+      padding: 1.2rem 1.4rem 1.2rem 4.4rem;
+      border-radius: var(--radius-sm);
+      background: rgba(219, 229, 223, 0.98);
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+    .retreats-events__list li::before {
+      content: '–';
+      position: absolute;
+      left: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
       color: var(--teal);
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      background: transparent;
+      font-size: 2rem;
+      font-weight: 300;
+      line-height: 1;
     }
     .retreats-events__investment {
       background: var(--cream);
@@ -340,6 +352,7 @@
         gap: 3rem;
       }
       .retreats-events__img { height: 260px; }
+      .retreats-events__list { grid-template-columns: 1fr; }
       .retreats-events__investment { position: static; }
     }
 
@@ -381,7 +394,15 @@
           <span class="nav__brand-name">Grove Circle Healing</span>
         </a>
         <ul class="nav__links">
-          <li><a href="offerings.html" class="nav__link" style="color:var(--teal);">Offerings</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <a href="offerings.html" class="nav__link" style="color:var(--teal);">Offerings</a>
+            <ul class="nav__dropdown">
+              <li><a href="soundhealing.html" class="nav__dropdown-link">Sound Healing</a></li>
+              <li><a href="sound-and-voice.html" class="nav__dropdown-link">Voice Activation</a></li>
+              <li><a href="events-retreats-and-corporate.html" class="nav__dropdown-link">Retreats &amp; Corporate</a></li>
+              <li><a href="online-courses.html" class="nav__dropdown-link">Online Courses</a></li>
+            </ul>
+          </li>
           <li><a href="events.html"    class="nav__link">Events</a></li>
           <li><a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="nav__link">Membership</a></li>
           <li><a href="about.html"     class="nav__link">About</a></li>
@@ -397,6 +418,12 @@
   <div class="nav__mobile" id="navMobile">
     <button class="nav__mobile-close" id="navClose" aria-label="Close menu">✕</button>
     <a href="offerings.html"   class="nav__mobile-link">Offerings</a>
+    <div class="nav__mobile-submenu">
+      <a href="soundhealing.html" class="nav__mobile-sublink">Sound Healing</a>
+      <a href="sound-and-voice.html" class="nav__mobile-sublink">Voice Activation</a>
+      <a href="events-retreats-and-corporate.html" class="nav__mobile-sublink">Retreats &amp; Corporate</a>
+      <a href="online-courses.html" class="nav__mobile-sublink">Online Courses</a>
+    </div>
     <a href="events.html"      class="nav__mobile-link">Events</a>
     <a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="nav__mobile-link">Membership</a>
     <a href="about.html"       class="nav__mobile-link">About</a>
@@ -406,7 +433,7 @@
 
 
   <!-- ═══ PAGE HERO ═════════════════════════════════════════════ -->
-  <div class="page-hero" style="background-image: url('https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/68a37496c4dc5a111c62666d_Sound%20Bowl%20Light.JPG'); background-position: center 30%;">
+  <div class="page-hero" style="background-image: url('DHY Stage Chris.JPG'); background-position: center 35%;">
     <div class="page-hero__tile-bg"></div>
     <span class="page-hero__ring"></span>
     <div class="page-hero__stars" aria-hidden="true"></div>
@@ -423,9 +450,10 @@
     <div class="container">
       <div class="two-col__inner">
         <img
-          src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/68a37496c4dc5a111c62666d_Sound%20Bowl%20Light.JPG"
-          alt="Sound bowl in soft light"
+          src="Chris bowls forest.jpg"
+          alt="Chris with singing bowls"
           class="two-col__img animate"
+          style="object-position: 50% 42%;"
         >
         <div class="two-col__text">
           <p class="eyebrow animate">The Practice</p>
@@ -591,8 +619,9 @@
 
         <div class="why-it-works__img-card animate">
           <img
-            src="img/chris-sound-bowl-ceremony.png"
-            alt="Chris holding a singing bowl outdoors"
+            src="DHY Stage Chris.JPG"
+            alt="Chris leading a sound healing session on stage"
+            style="object-position: center 38%;"
           >
         </div>
 
@@ -641,17 +670,17 @@
           <h2 class="animate animate-delay-1">Retreats &amp; Events</h2>
           <p class="animate animate-delay-2">From intimate ceremonies to grand festivals, from corporate boardrooms to yoga studios — these modalities promote relaxation, connection, growth and more. Tailored services for any setting and scale.</p>
 
-          <div class="retreats-events__tags animate animate-delay-3">
-            <span class="retreats-events__tag">Retreats</span>
-            <span class="retreats-events__tag">Schools</span>
-            <span class="retreats-events__tag">Corporate Events</span>
-            <span class="retreats-events__tag">Birthday Parties &amp; Weddings</span>
-            <span class="retreats-events__tag">Music Festivals</span>
-            <span class="retreats-events__tag">Ceremonies</span>
-            <span class="retreats-events__tag">Baby &amp; Mother Blessings</span>
-            <span class="retreats-events__tag">Spiritual Events</span>
-            <span class="retreats-events__tag">Yoga Events</span>
-          </div>
+          <ul class="retreats-events__list animate animate-delay-3">
+            <li>Retreats</li>
+            <li>Schools</li>
+            <li>Corporate Events</li>
+            <li>Birthday Parties &amp; Weddings</li>
+            <li>Music Festivals</li>
+            <li>Ceremonies</li>
+            <li>Baby &amp; Mother Blessings</li>
+            <li>Spiritual Events</li>
+            <li>Yoga Events</li>
+          </ul>
         </div>
 
         <div class="retreats-events__investment animate animate-delay-2">

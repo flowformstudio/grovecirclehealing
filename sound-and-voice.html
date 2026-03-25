@@ -76,16 +76,16 @@
     /* ── UPCOMING CLASS ───────────────────────────────────────── */
     .upcoming {
       padding: 7rem 0;
-      background: var(--teal);
+      background: #000;
     }
     .upcoming .eyebrow { color: rgba(255,255,255,0.6); margin-bottom: 1rem; }
     .upcoming h2 { color: #fff; margin-bottom: 3rem; text-align: center; }
     .upcoming-box {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      gap: 0;
       align-items: center;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.08);
       border-radius: var(--radius-lg);
       overflow: hidden;
     }
@@ -95,8 +95,12 @@
       min-height: 300px;
       object-fit: cover;
     }
+    .upcoming-box > :last-child {
+      background: #2a2a2a;
+      height: 100%;
+    }
     .upcoming-box__content {
-      padding: 3rem 3rem 3rem 0;
+      padding: 3rem;
     }
     .upcoming-box__content h3 {
       color: #fff;
@@ -304,7 +308,15 @@
           <span class="nav__brand-name">Grove Circle Healing</span>
         </a>
         <ul class="nav__links">
-          <li><a href="offerings.html" class="nav__link" style="color:var(--teal);">Offerings</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <a href="offerings.html" class="nav__link" style="color:var(--teal);">Offerings</a>
+            <ul class="nav__dropdown">
+              <li><a href="soundhealing.html" class="nav__dropdown-link">Sound Healing</a></li>
+              <li><a href="sound-and-voice.html" class="nav__dropdown-link">Voice Activation</a></li>
+              <li><a href="events-retreats-and-corporate.html" class="nav__dropdown-link">Retreats &amp; Corporate</a></li>
+              <li><a href="online-courses.html" class="nav__dropdown-link">Online Courses</a></li>
+            </ul>
+          </li>
           <li><a href="events.html"    class="nav__link">Events</a></li>
           <li><a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="nav__link">Membership</a></li>
           <li><a href="about.html"     class="nav__link">About</a></li>
@@ -320,6 +332,12 @@
   <div class="nav__mobile" id="navMobile">
     <button class="nav__mobile-close" id="navClose" aria-label="Close menu">✕</button>
     <a href="offerings.html"   class="nav__mobile-link">Offerings</a>
+    <div class="nav__mobile-submenu">
+      <a href="soundhealing.html" class="nav__mobile-sublink">Sound Healing</a>
+      <a href="sound-and-voice.html" class="nav__mobile-sublink">Voice Activation</a>
+      <a href="events-retreats-and-corporate.html" class="nav__mobile-sublink">Retreats &amp; Corporate</a>
+      <a href="online-courses.html" class="nav__mobile-sublink">Online Courses</a>
+    </div>
     <a href="events.html"      class="nav__mobile-link">Events</a>
     <a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="nav__mobile-link">Membership</a>
     <a href="about.html"       class="nav__mobile-link">About</a>
@@ -354,9 +372,10 @@
           <a href="events.html" class="btn btn-primary animate animate-delay-3">Join a Class</a>
         </div>
         <img
-          src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/68a37496c4dc5a111c62666d_Sound%20Bowl%20Light.JPG"
+          src="Chris S&amp;V Drum June 2024.jpg"
           alt="Voice activation practice"
           class="two-col__img animate animate-delay-1"
+          style="object-position: 52% 26%;"
         >
       </div>
     </div>
@@ -392,74 +411,6 @@
   </section>
 
 
-  <!-- ═══ VIDEO ════════════════════════════════════════════════ -->
-  <section class="video-section">
-    <div class="container">
-      <p class="eyebrow animate">See It In Action</p>
-      <h2 class="animate animate-delay-1">Experience the Practice</h2>
-      <p class="animate animate-delay-2">Watch a Sound & Voice Activation session and feel what becomes possible when sound moves without fear.</p>
-      <div class="video-embed animate animate-delay-3">
-        <iframe
-          src="https://www.youtube.com/embed/F92kioPQgQ4"
-          title="Sound & Voice Activation with Chris Young-Ginzburg"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══ GALLERY ══════════════════════════════════════════════ -->
-  <section class="gallery-section">
-    <div class="container">
-      <div class="section-header">
-        <p class="eyebrow animate">The Class</p>
-        <h2 class="animate animate-delay-1">Moments from the Circle</h2>
-        <p class="animate animate-delay-2">A glimpse into the warmth, play, and presence that fills every session.</p>
-      </div>
-      <div class="gallery-bento">
-
-        <div class="gallery-item animate animate-delay-1">
-          <img
-            src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/680964f373b1ac7a37380f20_Chris%20S%26V%20Drum%20June%202024.jpg"
-            alt="Chris leading a Sound & Voice Activation class"
-          >
-        </div>
-
-        <div class="gallery-item animate animate-delay-2">
-          <img
-            src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/687fe99b54595dc6765f2f2c_Drum%20smile.JPG"
-            alt="Chris smiling with a drum during a session"
-          >
-        </div>
-
-        <div class="gallery-item animate animate-delay-3">
-          <img
-            src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/673cb75697a1f1671cec017e_Heather%20Jinn%20Liz%20celebrate.JPG"
-            alt="Participants celebrating after a Voice Activation class"
-          >
-        </div>
-
-        <div class="gallery-item animate animate-delay-2">
-          <img
-            src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/6778399cdc1ef39828ddae5e_IMG_9031%20Large.jpeg"
-            alt="Group gathering during a sound healing class"
-          >
-        </div>
-
-        <div class="gallery-item animate animate-delay-3">
-          <img
-            src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/67783a05694b8f2262f0b428_IMG_8390.JPG"
-            alt="Participants in a relaxed sound healing session"
-          >
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
   <!-- ═══ UPCOMING CLASS ══════════════════════════════════════ -->
   <section class="upcoming">
     <div class="container">
@@ -469,13 +420,13 @@
       </div>
       <div class="upcoming-box animate animate-delay-2">
         <img
-          src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/699c8b7e6918488a78dd897f_New%20location%20card%20holder%20INSTAGRAM.jpg"
-          alt="New class location coming soon"
+          src="219 S&amp;V IG Cards.jpg"
+          alt="Sound and Voice Activation online class flyer"
           class="upcoming-box__img"
         >
         <div class="upcoming-box__content">
           <h3>Sound & Voice Activation</h3>
-          <p>A new location for my class is in the works! Stay tuned as the in-person class will resume in April 2026.</p>
+          <p>Join the online version of Sound &amp; Voice Activation, “The Somatic Voice,” for an embodied class in movement, breath, and sound as medicine.</p>
           <blockquote style="
             margin: 1.75rem 0 2rem;
             padding: 1.25rem 1.5rem;
@@ -498,8 +449,76 @@
               color: var(--gold-light);
             ">— H. Hanson</footer>
           </blockquote>
-          <a href="events.html" class="btn btn-white">Get Tickets</a>
+          <a href="https://www.eventbrite.com/e/sound-voice-activation-online-the-somatic-voice-tickets-1984145797492?aff=oddtdtcreator" class="btn btn-white" target="_blank" rel="noopener">Get Tickets</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ GALLERY ══════════════════════════════════════════════ -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow animate">The Class</p>
+        <h2 class="animate animate-delay-1">Moments from the Circle</h2>
+        <p class="animate animate-delay-2">A glimpse into the warmth, play, and presence that fills every session.</p>
+      </div>
+      <div class="gallery-bento">
+
+        <div class="gallery-item animate animate-delay-1">
+          <img
+            src="S&amp;V june 2025.JPG"
+            alt="Chris leading a Sound & Voice Activation class"
+          >
+        </div>
+
+        <div class="gallery-item animate animate-delay-2">
+          <img
+            src="Class pic 1.jpeg"
+            alt="Chris smiling with a drum during a session"
+          >
+        </div>
+
+        <div class="gallery-item animate animate-delay-3">
+          <img
+            src="smile jan 2025.jpg"
+            alt="Participants celebrating after a Voice Activation class"
+          >
+        </div>
+
+        <div class="gallery-item animate animate-delay-2">
+          <img
+            src="group july 2024.jpeg"
+            alt="Group gathering during a sound healing class"
+          >
+        </div>
+
+        <div class="gallery-item animate animate-delay-3">
+          <img
+            src="Movement arms up.JPG"
+            alt="Participants in a relaxed sound healing session"
+          >
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ VIDEO ════════════════════════════════════════════════ -->
+  <section class="video-section">
+    <div class="container">
+      <p class="eyebrow animate">See It In Action</p>
+      <h2 class="animate animate-delay-1">Experience the Practice</h2>
+      <p class="animate animate-delay-2">Watch a Sound & Voice Activation session and feel what becomes possible when sound moves without fear.</p>
+      <div class="video-embed animate animate-delay-3">
+        <iframe
+          src="https://www.youtube.com/embed/F92kioPQgQ4"
+          title="Sound & Voice Activation with Chris Young-Ginzburg"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
   </section>

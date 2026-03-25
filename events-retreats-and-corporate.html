@@ -123,56 +123,103 @@
       padding: 7rem 0;
       background: var(--cream-dark);
     }
-    .settings-section .section-header { text-align: left; margin-bottom: 1.5rem; }
-    .settings-section .section-header h2 { margin-bottom: 0; }
-    .settings-intro {
+    .settings-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
+      gap: 4rem;
+      align-items: start;
+    }
+    .settings-copy .eyebrow {
+      margin-bottom: 1rem;
+    }
+    .settings-copy h2 {
+      margin-bottom: 1.5rem;
+      max-width: 16ch;
+      line-height: 1.02;
+    }
+    .settings-intro,
+    .settings-outro {
       color: var(--muted);
       font-size: 1.05rem;
-      max-width: 640px;
-      margin-bottom: 2.5rem;
       line-height: 1.85;
     }
-    .settings-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 3rem;
+    .settings-intro {
+      margin-bottom: 2.5rem;
+      max-width: 650px;
     }
-    .settings-tag {
-      display: inline-flex;
-      padding: 0.5rem 1.2rem;
-      background: var(--teal-pale);
-      border: 1px solid rgba(42,157,143,0.2);
-      border-radius: var(--radius-pill);
-      font-size: 0.875rem;
+    .settings-panel {
+      margin-bottom: 2rem;
+    }
+    .settings-panel h4,
+    .investment-card h4 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--charcoal);
+    }
+    .settings-list {
+      list-style: none;
+      display: grid;
+      gap: 0.85rem;
+      margin: 0;
+      padding: 0;
+    }
+    .settings-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .settings-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      top: 0;
       color: var(--teal);
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
+      font-size: 1.2rem;
+      line-height: 1.2;
     }
     .investment-card {
-      background: var(--cream);
+      background: rgba(255,255,255,0.75);
       border-radius: var(--radius-md);
-      padding: 2.5rem;
+      padding: 2rem 2.1rem;
       border-left: 3px solid var(--gold-light);
-      max-width: 640px;
-      margin-bottom: 2.5rem;
-    }
-    .investment-card h4 {
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
-      color: var(--charcoal);
+      margin-bottom: 2rem;
+      box-shadow: 0 16px 40px rgba(26, 25, 22, 0.06);
     }
     .investment-card p {
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 1rem;
       line-height: 1.75;
       margin: 0;
+    }
+    .settings-outro {
+      max-width: 640px;
+      margin-bottom: 2rem;
+    }
+    .settings-gallery {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .settings-photo {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      object-fit: cover;
+      box-shadow: 0 18px 42px rgba(26, 25, 22, 0.12);
+      background: #ddd;
+    }
+    .settings-photo--tall {
+      aspect-ratio: 4 / 3;
+    }
+    .settings-photo--wide {
+      aspect-ratio: 4 / 3;
     }
 
     /* ── RESPONSIVE ───────────────────────────────────────────── */
     @media (max-width: 900px) {
       .two-col__inner { grid-template-columns: 1fr; }
       .cards-grid { grid-template-columns: 1fr; }
+      .settings-layout { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -188,7 +235,15 @@
           <span class="nav__brand-name">Grove Circle Healing</span>
         </a>
         <ul class="nav__links">
-          <li><a href="offerings.html" class="nav__link" style="color:var(--teal);">Offerings</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <a href="offerings.html" class="nav__link" style="color:var(--teal);">Offerings</a>
+            <ul class="nav__dropdown">
+              <li><a href="soundhealing.html" class="nav__dropdown-link">Sound Healing</a></li>
+              <li><a href="sound-and-voice.html" class="nav__dropdown-link">Voice Activation</a></li>
+              <li><a href="events-retreats-and-corporate.html" class="nav__dropdown-link">Retreats &amp; Corporate</a></li>
+              <li><a href="online-courses.html" class="nav__dropdown-link">Online Courses</a></li>
+            </ul>
+          </li>
           <li><a href="events.html"    class="nav__link">Events</a></li>
           <li><a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="nav__link">Membership</a></li>
           <li><a href="about.html"     class="nav__link">About</a></li>
@@ -204,6 +259,12 @@
   <div class="nav__mobile" id="navMobile">
     <button class="nav__mobile-close" id="navClose" aria-label="Close menu">✕</button>
     <a href="offerings.html"   class="nav__mobile-link">Offerings</a>
+    <div class="nav__mobile-submenu">
+      <a href="soundhealing.html" class="nav__mobile-sublink">Sound Healing</a>
+      <a href="sound-and-voice.html" class="nav__mobile-sublink">Voice Activation</a>
+      <a href="events-retreats-and-corporate.html" class="nav__mobile-sublink">Retreats &amp; Corporate</a>
+      <a href="online-courses.html" class="nav__mobile-sublink">Online Courses</a>
+    </div>
     <a href="events.html"      class="nav__mobile-link">Events</a>
     <a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="nav__mobile-link">Membership</a>
     <a href="about.html"       class="nav__mobile-link">About</a>
@@ -233,7 +294,7 @@
           <p class="eyebrow animate">Corporate Wellness</p>
           <h2 class="animate animate-delay-1">Is Your Team Running on Empty?</h2>
           <p class="animate animate-delay-2">Wellbeing isn't a luxury — it's a long-term investment in performance, culture, and retention. These trauma-aware, neuroscience-informed sessions help shift teams out of survival mode and into sustainable vitality.</p>
-          <p class="animate animate-delay-2">Whether you're a corporation aiming to boost employee morale, a private event organizer seeking a one-of-a-kind experience, or a school interested in fostering mindfulness among students, my tailored services cater to diverse needs.</p>
+          <p class="animate animate-delay-2">Whether you're a corporation aiming to boost employee morale or a private event organizer seeking a one-of-a-kind experience, my tailored services cater to diverse needs.</p>
           <a href="index.html#contact" class="btn btn-primary animate animate-delay-3">Connect With Me</a>
         </div>
         <img
@@ -327,30 +388,42 @@
   <!-- ═══ RETREATS & EVENTS ═════════════════════════════════════ -->
   <section class="settings-section">
     <div class="container">
-      <div class="section-header animate">
-        <p class="eyebrow">Booking</p>
-        <h2 class="animate animate-delay-1">Retreats & Events</h2>
-      </div>
-      <p class="settings-intro animate animate-delay-2">From intimate ceremonies to grand festivals, from corporate boardrooms to yoga studios — these modalities promote relaxation, connection, growth and more.</p>
+      <div class="settings-layout">
+        <div class="settings-copy">
+          <p class="eyebrow animate">Booking</p>
+          <h2 class="animate animate-delay-1">Versatile Sound Healing Services for Any Setting</h2>
+          <p class="settings-intro animate animate-delay-2">Whether you're a corporation aiming to boost employee morale or a private event organizer seeking to craft a one-of-a-kind experience, my tailored services cater to diverse needs. From intimate ceremonies to grand festivals, my modalities promote relaxation, connection, growth and more.</p>
 
-      <div class="settings-tags animate animate-delay-2">
-        <span class="settings-tag">Retreats</span>
-        <span class="settings-tag">Schools</span>
-        <span class="settings-tag">Corporate Events</span>
-        <span class="settings-tag">Birthday Parties &amp; Weddings</span>
-        <span class="settings-tag">Music Festivals</span>
-        <span class="settings-tag">Ceremonies</span>
-        <span class="settings-tag">Baby &amp; Mother Blessings</span>
-        <span class="settings-tag">Spiritual Events</span>
-        <span class="settings-tag">Yoga Events</span>
-      </div>
+          <div class="settings-panel animate animate-delay-3">
+            <h4>I serve in the following environments and settings:</h4>
+            <ul class="settings-list">
+              <li>Retreats</li>
+              <li>Corporate Events</li>
+              <li>Birthday Parties &amp; Weddings</li>
+              <li>Music Festivals</li>
+              <li>Ceremonies of all kinds</li>
+              <li>Baby &amp; Mother Blessings</li>
+              <li>Spiritual Talks &amp; Events</li>
+              <li>Yoga Events</li>
+            </ul>
+          </div>
 
-      <div class="investment-card animate animate-delay-3">
-        <h4>Investment</h4>
-        <p>Prices vary based on event scale, travel and duration, ranging from $350 up to $5,000. Let's collaborate to create an unforgettable experience, leaving participants rejuvenated and inspired.</p>
-      </div>
+          <div class="investment-card animate animate-delay-4">
+            <h4>Investment</h4>
+            <p>Prices vary based on event scale, travel and duration, ranging from $350 up to $5,000.</p>
+          </div>
 
-      <a href="index.html#contact" class="btn btn-primary animate animate-delay-4">Connect With Me</a>
+          <p class="settings-outro animate animate-delay-4">Let's collaborate to create an unforgettable experience, leaving participants rejuvenated and inspired. Reach out today to explore how we can elevate your event with the power of sound, voice and meditation.</p>
+
+          <a href="index.html#contact" class="btn btn-primary animate animate-delay-4">Connect With Me</a>
+        </div>
+
+        <div class="settings-gallery">
+          <img src="img/events-setting-1.png" alt="Sound healing circle prepared for an event" class="settings-photo settings-photo--tall animate animate-delay-1">
+          <img src="img/events-setting-2.png" alt="Group sound healing session in a large indoor venue" class="settings-photo settings-photo--wide animate animate-delay-2">
+          <img src="img/events-setting-3.png" alt="Live immersive sound healing experience with participants resting nearby" class="settings-photo settings-photo--wide animate animate-delay-3">
+        </div>
+      </div>
     </div>
   </section>
 
