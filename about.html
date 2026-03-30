@@ -34,13 +34,20 @@
     }
     .about-intro__inner {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 7rem;
-      align-items: center;
+      grid-template-columns: minmax(320px, 0.85fr) minmax(0, 1.15fr);
+      gap: clamp(2.5rem, 4vw, 4.5rem);
+      align-items: start;
+    }
+    .about-intro__media {
+      position: sticky;
+      top: 7.5rem;
     }
     .about-intro__img {
+      display: block;
       width: 100%;
-      aspect-ratio: 3/4;
+      max-width: 30rem;
+      margin-left: auto;
+      aspect-ratio: 4/5;
       object-fit: cover;
       object-position: center top;
       border-radius: var(--radius-lg);
@@ -53,44 +60,13 @@
       margin-bottom: 1.4rem;
     }
 
-    /* ── PHILOSOPHY ───────────────────────────────────────────── */
-    .philosophy {
-      padding: 8rem 0;
-      background: var(--cream-dark);
+    .quote-section blockquote {
+      font-size: 3.2rem;
+      line-height: 1.2;
     }
-    .philosophy__inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 3rem;
-      margin-top: 4rem;
-    }
-    .philosophy__item {
-      padding: 2.5rem;
-      background: var(--cream);
-      border-top: 2px solid var(--teal);
-      border-radius: var(--radius-md);
-      box-shadow: 0 2px 12px rgba(26, 25, 22, 0.05);
-    }
-    .philosophy__num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.5rem;
-      font-weight: 300;
-      color: var(--teal);
-      opacity: 0.3;
-      line-height: 1;
-      margin-bottom: 1rem;
-    }
-    .philosophy__title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 500;
-      color: var(--charcoal);
-      margin-bottom: 0.75rem;
-    }
-    .philosophy__text {
-      font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.8;
+
+    .quote-section {
+      padding: 4rem 0;
     }
 
     /* ── TESTIMONIALS ─────────────────────────────────────────── */
@@ -139,8 +115,8 @@
 
     @media (max-width: 900px) {
       .about-intro__inner { grid-template-columns: 1fr; }
+      .about-intro__media { position: static; }
       .about-intro__img { aspect-ratio: 4/3; }
-      .philosophy__inner { grid-template-columns: 1fr; }
       .testimonials__grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -215,28 +191,48 @@
     <div class="container">
       <div class="about-intro__inner">
 
-        <img
-          src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65f873ee06acb24094347750_IMG_3439.JPG"
-          alt="Chris Young-Ginzburg"
-          class="about-intro__img animate"
-        >
+        <div class="about-intro__media">
+          <img
+            src="Chris sunset side.JPG"
+            alt="Chris Young-Ginzburg"
+            class="about-intro__img animate"
+            style="object-position: 52% 22%;"
+          >
+        </div>
 
         <div class="about-intro__text">
           <p class="eyebrow animate">My Story</p>
           <h2 class="animate animate-delay-1">Chris Young-Ginzburg</h2>
           <p class="animate animate-delay-2">
-            I'm a sound healer, voice activation guide, and intuitive coach deeply committed to helping you
-            remember what your body already knows. My work lives at the intersection of sound, breath, voice,
-            and the ancient intelligence held within each of us.
+            As an Intuitive Healer, Holistic Coach, and Sound Healer, my journey began in 2003 when I
+            stepped onto the path of clairvoyance, receiving formal training at the Berkeley Psychic
+            Institute in California. I later continued my holistic education at The World School of
+            Massage in San Francisco (2006-2009), where I studied energy work modalities and graduated
+            from their Holistic Health Program as a certified life coach.
           </p>
           <p class="animate animate-delay-2">
-            I've had the privilege of working with individuals, corporations, and healing communities — from
-            intimate private sessions to large group retreats. Every space I hold is guided by the same
-            intention: to help you feel safe enough to return to yourself.
+            From 2008 to 2011, I built a successful healing practice specializing in Vibrational Healing
+            Massage, supporting clients through deep trauma, illness, and emotional challenges while
+            guiding profound personal transformation. My work was later recognized in the book Radical
+            Remission and featured in the accompanying documentary series (Episode 3, Joe's Story) by
+            Hay House Publishing.
           </p>
           <p class="animate animate-delay-3">
-            Whether you're experiencing burnout, creative blocks, grief, or simply a longing for stillness,
-            sound and voice offer a doorway back. My role is simply to hold that doorway open for you.
+            Over the years, my work naturally evolved to include sound and voice as powerful tools for
+            healing and self expression. Through sound, movement and embodied awareness, I developed a
+            unique approach that helps people reconnect with their bodies, regulate their nervous systems
+            and access deeper levels of clarity and inner guidance.
+          </p>
+          <p class="animate animate-delay-3">
+            Today, I share this work through transformational classes, group experiences and my online
+            Grove Circle Membership, where individuals come together to explore sound healing, voice
+            activation and intuitive development in a supportive, like hearted community.
+          </p>
+          <p class="animate animate-delay-3">
+            In 2026, my focus is expanding into larger scale events, retreats and speaking engagements,
+            where I bring these teachings to wider audiences, offering practical and experiential tools
+            for personal transformation through energy awareness, sound healing, vocal expression and
+            embodied presence.
           </p>
           <div style="margin-top: 3rem;" class="animate animate-delay-3">
             <a href="index.html#contact" class="btn btn-primary">Work With Chris</a>
@@ -255,47 +251,11 @@
     </div>
     <div class="container--narrow">
       <blockquote class="animate">
-        "Sound is simply the doorway.<br>Your body is the healer."
+        "You don't need to become someone new — just express who you are. That's where I come in."
       </blockquote>
       <cite class="animate animate-delay-1">— Chris Young-Ginzburg</cite>
     </div>
   </section>
-
-
-  <!-- ═══ PHILOSOPHY ════════════════════════════════════════════ -->
-  <section class="philosophy">
-    <div class="container">
-      <div class="section-header animate">
-        <p class="eyebrow">Approach</p>
-        <h2>The Way I Work</h2>
-      </div>
-      <div class="philosophy__inner">
-        <div class="philosophy__item animate animate-delay-1">
-          <h3 class="philosophy__title">You Are the Expert</h3>
-          <p class="philosophy__text">
-            My sessions are never prescriptive. Your body knows what it needs — I simply create
-            the conditions for that knowing to surface. No two sessions are ever the same.
-          </p>
-        </div>
-        <div class="philosophy__item animate animate-delay-2">
-          <h3 class="philosophy__title">Sound as Medicine</h3>
-          <p class="philosophy__text">
-            Vibration moves through us at a cellular level. Crystal bowls, voice, breath, and silence
-            all carry frequency that can shift the nervous system into states of deep restoration.
-          </p>
-        </div>
-        <div class="philosophy__item animate animate-delay-3">
-          <h3 class="philosophy__title">Voice as Truth</h3>
-          <p class="philosophy__text">
-            Your voice is one of the most powerful healing instruments available to you. Reclaiming it —
-            in sound, in expression, in creative play — is an act of profound self-reclamation.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
   <!-- ═══ TESTIMONIALS ══════════════════════════════════════════ -->
   <section class="testimonials">
     <div class="container">
@@ -306,31 +266,27 @@
       <div class="testimonials__grid">
         <div class="testimonial-card animate animate-delay-1">
           <p class="testimonial-card__text">
-            Working with Chris was one of the most profoundly restful experiences of my life. I arrived
-            depleted and left feeling like I'd remembered something essential about myself.
+            I have had the privilege of working with my dear friend Chris at various stages of my spiritual journey, and I cannot express enough gratitude for the impact she has had on my life. I have had the honor of participating in several healings led by Chris and always feel a sense of warmth and safety in her presence. Each ceremony was a unique and powerful experience, but what stood out to me was Chris's ability to hold space and guide me through each process with the utmost care and sensitivity. Chris is a gifted healer, an amazing human being and I am grateful for the personal growth I have experienced through my work with her.
           </p>
-          <span class="testimonial-card__author">— Session Participant</span>
+          <span class="testimonial-card__author">— N. Hoffman</span>
         </div>
         <div class="testimonial-card animate animate-delay-2">
           <p class="testimonial-card__text">
-            The voice activation workshop cracked something open in me. I hadn't realized how much
-            I'd been holding back — not just in my voice, but in my whole life.
+            Working with Chris to develop my psychic tools has helped me evolve my soul. She's helped me gain consciousness around my truth and the true essence of who I am, who I want to be, and the direction of life I'm going in. She's helped me shatter my darkest fears and step into my lite. I am extremely grateful and so happy to be where I am now with her guidance and support.
           </p>
-          <span class="testimonial-card__author">— Workshop Attendee</span>
+          <span class="testimonial-card__author">— S. Hotaling</span>
         </div>
         <div class="testimonial-card animate animate-delay-1">
           <p class="testimonial-card__text">
-            Chris brought an extraordinary session to our team retreat. The room shifted in a way
-            that's hard to describe — everyone left more open, more present.
+            I've worked with Chris for over a decade and couldn't imagine my life without her incredible healing offerings. It's been amazing to be on this journey of self growth, change, and in turn healing with Chris and her gifts. Thank you Chris for being the most incredible guide towards being my most radiant authentic in power self.
           </p>
-          <span class="testimonial-card__author">— Corporate Event Client</span>
+          <span class="testimonial-card__author">— M. Kolnick</span>
         </div>
         <div class="testimonial-card animate animate-delay-2">
           <p class="testimonial-card__text">
-            I've been to many sound baths, but Chris's sessions carry a depth and intention that's
-            completely its own. The sound literally moves through you.
+            Wow- Not sure I can even put into words what this experience meant to me... Firstly, I want to say that Chris is truly one of the most genuine, kind, beautiful souls I've ever met. She has the ability to put you completely at ease from the moment you meet her. She made me feel so safe, understood & held. As far as her abilities- this woman is legit, the real deal!!!
           </p>
-          <span class="testimonial-card__author">— Sound Bath Participant</span>
+          <span class="testimonial-card__author">— S. Inclan</span>
         </div>
       </div>
     </div>

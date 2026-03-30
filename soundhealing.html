@@ -337,13 +337,59 @@
     }
     .retreats-events__investment h3 {
       font-size: 1.35rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .retreats-events__investment-label {
+      display: inline-block;
+      margin-bottom: 0.85rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .retreats-events__investment-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.35rem;
+      line-height: 1;
+      color: var(--charcoal);
+      margin-bottom: 0.35rem;
+    }
+    .retreats-events__investment-note {
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.6;
+      margin-bottom: 1.3rem;
     }
     .retreats-events__investment p {
       color: var(--muted);
       font-size: 0.95rem;
       line-height: 1.75;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .retreats-events__highlights {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin: 0 0 1.6rem;
+      padding: 0;
+    }
+    .retreats-events__highlights li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+    .retreats-events__highlights li::before {
+      content: '•';
+      color: var(--teal);
+      font-size: 1.1rem;
+      line-height: 1;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
     }
     .retreats-events__investment .btn { width: 100%; text-align: center; }
     @media (max-width: 900px) {
@@ -668,11 +714,10 @@
         <div class="retreats-events__left">
           <p class="eyebrow animate">Booking</p>
           <h2 class="animate animate-delay-1">Retreats &amp; Events</h2>
-          <p class="animate animate-delay-2">From intimate ceremonies to grand festivals, from corporate boardrooms to yoga studios — these modalities promote relaxation, connection, growth and more. Tailored services for any setting and scale.</p>
+          <p class="animate animate-delay-2">Bring sound healing into your retreat, gathering, workplace, or community event with an experience tailored to your group, space, and intention. Each session is designed to help people slow down, regulate their nervous systems, and leave feeling more grounded, connected, and renewed.</p>
 
           <ul class="retreats-events__list animate animate-delay-3">
             <li>Retreats</li>
-            <li>Schools</li>
             <li>Corporate Events</li>
             <li>Birthday Parties &amp; Weddings</li>
             <li>Music Festivals</li>
@@ -684,9 +729,15 @@
         </div>
 
         <div class="retreats-events__investment animate animate-delay-2">
-          <h3>Investment</h3>
-          <p>Prices vary based on event scale, travel and duration, ranging from $350 up to $5,000. Let's collaborate to create an unforgettable experience, leaving participants rejuvenated and inspired.</p>
-          <a href="index.html#contact" class="btn btn-primary">Connect with Me</a>
+          <span class="retreats-events__investment-label">Booking Details</span>
+          <div class="retreats-events__investment-price">Inquire for Pricing</div>
+          <p class="retreats-events__investment-note">Custom pricing is based on group size, travel, location, and duration.</p>
+          <ul class="retreats-events__highlights">
+            <li>Tailored to your audience, intention, and setting</li>
+            <li>Ideal for events that want a grounded, calming, meaningful experience</li>
+            <li>Available for intimate gatherings through large-scale activations</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn-primary">Inquire About Your Event</a>
         </div>
 
       </div>
