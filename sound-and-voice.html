@@ -229,6 +229,55 @@
       margin-left: 4px;
     }
 
+    /* ── VIDEO TESTIMONIALS ──────────────────────────────────── */
+    .video-testimonials {
+      padding: 6rem 0;
+      background: var(--cream-dark);
+    }
+    .video-testimonials .section-header {
+      margin-bottom: 3rem;
+    }
+    .video-testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 360px));
+      gap: 2rem;
+      justify-content: center;
+    }
+    .video-testimonial-card {
+      background: var(--cream);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem;
+      box-shadow: var(--shadow-soft);
+      width: 100%;
+    }
+    .video-testimonial-card video {
+      width: 100%;
+      display: block;
+      border-radius: calc(var(--radius-lg) - 8px);
+      background: #000;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+    }
+    .video-testimonial-card h3 {
+      font-size: 1.45rem;
+      margin: 1.2rem 0 0.35rem;
+    }
+    .video-testimonial-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+    .video-testimonial-card__link {
+      display: inline-flex;
+      margin-top: 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
     /* ── GALLERY BENTO ────────────────────────────────────────── */
     .gallery-section {
       padding: 7rem 0;
@@ -293,6 +342,7 @@
       }
       .upcoming-box__content { padding: 2rem; }
       .testimonials-grid { grid-template-columns: 1fr; }
+      .video-testimonials-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -366,7 +416,7 @@
         <div class="two-col__text">
           <p class="eyebrow animate">The Practice</p>
           <h2 class="animate animate-delay-1">What Is Voice Activation?</h2>
-          <p class="animate animate-delay-2">Voice Activation is an embodied practice that helps you reconnect with your natural voice — not for performance, but for expression, healing, and self-trust. Rather than focusing on 'singing correctly,' this work invites sound to emerge organically through breath, movement, and presence.</p>
+          <p class="animate animate-delay-2">Voice Activation is an embodied practice that helps you reconnect with your natural voice, not for performance, but for expression, healing, and self-trust. Rather than focusing on 'singing correctly,' this work invites sound to emerge organically through breath, movement, and presence.</p>
           <p class="animate animate-delay-2">Since offering sound healing in its many forms since 2009, I've discovered something essential: play creates liberation. Drawing from my background in theatre, movement, and clown training, I intentionally hold a space of curiosity, imagination, and playfulness.</p>
           <p class="animate animate-delay-2">Voice Activation is for anyone curious about opening their voice, reclaiming play, and discovering what becomes possible when sound moves without fear.</p>
           <a href="events.html" class="btn btn-primary animate animate-delay-3">Join a Class</a>
@@ -512,13 +562,55 @@
       <p class="eyebrow animate">See It In Action</p>
       <h2 class="animate animate-delay-1">Experience the Practice</h2>
       <p class="animate animate-delay-2">Watch a Sound & Voice Activation session and feel what becomes possible when sound moves without fear.</p>
-      <div class="video-embed animate animate-delay-3">
-        <iframe
-          src="https://www.youtube.com/embed/F92kioPQgQ4"
-          title="Sound & Voice Activation with Chris Young-Ginzburg"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+      <a
+        href="https://www.youtube.com/watch?v=F92kioPQgQ4"
+        class="video-embed animate animate-delay-3"
+        target="_blank"
+        rel="noopener"
+        aria-label="Watch Sound & Voice Activation with Chris Young-Ginzburg on YouTube"
+      >
+        <img
+          src="https://img.youtube.com/vi/F92kioPQgQ4/hqdefault.jpg"
+          alt="Preview of Sound & Voice Activation with Chris Young-Ginzburg"
+        >
+        <span class="video-embed__play" aria-hidden="true">
+          <span class="video-embed__play-btn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 5v14l11-7z"></path>
+            </svg>
+          </span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ═══ VIDEO TESTIMONIALS ══════════════════════════════════ -->
+  <section class="video-testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow animate">Testimonials</p>
+        <h2 class="animate animate-delay-1">Video Testimonials</h2>
+        <p class="animate animate-delay-2">Hear directly from students about what the work opened up for them.</p>
+      </div>
+      <div class="video-testimonials-grid">
+        <div class="video-testimonial-card animate animate-delay-1">
+          <video controls playsinline preload="metadata" src="Jaime's Testimonal.MOV">
+            Your browser does not support the video tag.
+          </video>
+          <h3>Jaime</h3>
+          <p>A student reflection on her experience with Sound &amp; Voice Activation.</p>
+          <a href="Jaime's Testimonal.MOV" class="video-testimonial-card__link" target="_blank" rel="noopener">Open Video</a>
+        </div>
+
+        <div class="video-testimonial-card animate animate-delay-2">
+          <video controls playsinline preload="metadata" src="Jinnifer Testimonial.MOV">
+            Your browser does not support the video tag.
+          </video>
+          <h3>Jinnifer</h3>
+          <p>A student reflection on what shifted for her through the practice.</p>
+          <a href="Jinnifer Testimonial.MOV" class="video-testimonial-card__link" target="_blank" rel="noopener">Open Video</a>
+        </div>
       </div>
     </div>
   </section>
