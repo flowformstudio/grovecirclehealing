@@ -198,6 +198,41 @@
       line-height: 1.72;
       margin: 0;
     }
+    .inquiry-form-card {
+      background: rgba(255,255,255,0.92);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      border: 1px solid rgba(42, 157, 143, 0.14);
+      margin-bottom: 2rem;
+      box-shadow: 0 16px 36px rgba(26, 25, 22, 0.07);
+    }
+    .inquiry-form-card h4 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+      color: var(--charcoal);
+    }
+    .inquiry-form-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .inquiry-form-card iframe {
+      width: 100%;
+      min-height: 720px;
+      border: 0;
+      border-radius: calc(var(--radius-md) - 6px);
+      background: #fff;
+    }
+    .inquiry-form-card__link {
+      display: inline-flex;
+      margin-top: 1rem;
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
     .settings-outro {
       max-width: 640px;
       margin-bottom: 2rem;
@@ -419,9 +454,17 @@
             <p>Contact me to inquire about pricing for your event, retreat, or custom experience.</p>
           </div>
 
-          <p class="settings-outro animate animate-delay-4">Let's collaborate to create an unforgettable experience, leaving participants rejuvenated and inspired. Reach out today to explore how we can elevate your event with the power of sound, voice and meditation.</p>
+          <div class="inquiry-form-card animate animate-delay-4">
+            <h4>Submit Your Inquiry</h4>
+            <p>If you're interested in hiring me for a retreat, event, ceremony, or corporate experience, use this form to share your details. This is the best place to submit your inquiry and begin the conversation.</p>
+            <iframe
+              src="https://form.jotform.com/260485852564163"
+              title="Retreats and Corporate Inquiry Form"
+              loading="lazy"
+            ></iframe>
+            <a href="https://form.jotform.com/260485852564163" class="inquiry-form-card__link" target="_blank" rel="noopener">Open Form in a New Window</a>
+          </div>
 
-          <a href="index.html#contact" class="btn btn-primary animate animate-delay-4">Connect With Me</a>
         </div>
 
         <div class="settings-gallery">
