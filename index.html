@@ -223,125 +223,6 @@
       100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
     }
 
-    /* ── NEWSLETTER POPUP ────────────────────────────────────── */
-    .newsletter-popup {
-      position: fixed;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      padding: 1.5rem;
-      background: rgba(11, 24, 20, 0.68);
-      backdrop-filter: blur(8px);
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 0.28s ease, visibility 0.28s ease;
-      z-index: 1200;
-    }
-
-    .newsletter-popup.is-open {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-
-    .newsletter-popup__dialog {
-      position: relative;
-      width: min(100%, 42rem);
-      background: #f6f0e5;
-      border-radius: 2rem;
-      box-shadow: 0 30px 80px rgba(10, 26, 22, 0.28);
-      overflow: hidden;
-      transform: translateY(20px);
-      transition: transform 0.28s ease;
-    }
-
-    .newsletter-popup.is-open .newsletter-popup__dialog {
-      transform: translateY(0);
-    }
-
-    .newsletter-popup__close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width: 2.5rem;
-      height: 2.5rem;
-      border: 0;
-      border-radius: 999px;
-      background: rgba(11, 24, 20, 0.08);
-      color: #13231d;
-      font-size: 1.4rem;
-      line-height: 1;
-      cursor: pointer;
-      z-index: 2;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-
-    .newsletter-popup__close:hover {
-      background: rgba(11, 24, 20, 0.14);
-      transform: scale(1.04);
-    }
-
-    .newsletter-popup__content {
-      padding: 3.5rem 2rem 2rem;
-    }
-
-    .newsletter-popup__eyebrow {
-      display: inline-block;
-      margin-bottom: 0.9rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--teal);
-    }
-
-    .newsletter-popup__title {
-      margin: 0 0 0.8rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 5vw, 3.6rem);
-      line-height: 0.95;
-      color: #13231d;
-    }
-
-    .newsletter-popup__text {
-      max-width: 32rem;
-      margin: 0 0 1.75rem;
-      color: rgba(19, 35, 29, 0.78);
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    .newsletter-popup__frame {
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.72);
-      border-radius: 1.4rem;
-      box-shadow: inset 0 0 0 1px rgba(19, 35, 29, 0.06);
-    }
-
-    .newsletter-popup__frame iframe {
-      display: block;
-      width: 100%;
-      min-height: 305px;
-      margin: 0 auto;
-      border: 0;
-      background: transparent;
-    }
-
-    @media (max-width: 640px) {
-      .newsletter-popup {
-        padding: 1rem;
-      }
-
-      .newsletter-popup__content {
-        padding: 3rem 1rem 1rem;
-      }
-
-      .newsletter-popup__frame {
-        padding: 0.6rem;
-        border-radius: 1rem;
-      }
-    }
-
     /* ── ABOUT TEASER ─────────────────────────────────────────── */
     .about-teaser { padding: 9rem 0; }
     .about-teaser__cta { margin-top: 3rem; }
@@ -357,27 +238,6 @@
   </style>
 </head>
 <body>
-
-  <div class="newsletter-popup" id="newsletterPopup" aria-hidden="true">
-    <div class="newsletter-popup__dialog" role="dialog" aria-modal="true" aria-labelledby="newsletterPopupTitle">
-      <button class="newsletter-popup__close" id="newsletterPopupClose" aria-label="Close newsletter sign-up">×</button>
-      <div class="newsletter-popup__content">
-        <span class="newsletter-popup__eyebrow">Newsletter</span>
-        <h2 class="newsletter-popup__title" id="newsletterPopupTitle">Stay Connected</h2>
-        <p class="newsletter-popup__text">Receive updates on upcoming classes, events, resources, and offerings. Sign up here to stay in the Grove Circle loop.</p>
-        <div class="newsletter-popup__frame">
-          <iframe
-            width="540"
-            height="305"
-            src="https://3b2373d1.sibforms.com/serve/MUIFAMFOcDk48wVne9XNanw5SJcRNxJ1xtSPoP7ZHte62R6hjoMBGM4O906DfCk6HIFFIQmIu_BDObwSCxTPGNvdFcJH46LfetVHodUhfsk4J0hx16cy8Iqt5HcPlsxEWfRm2wlU44_4BdJntw---P5v69-WqjRV8oOWQSZUDUCRMq4jNgTQDVn2uUF1ryE6XJHqMGd9TV---4u-"
-            scrolling="auto"
-            allowfullscreen
-            title="Newsletter sign-up form"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- ═══ NAVIGATION ════════════════════════════════════════════ -->
   <nav class="nav" id="nav">
@@ -787,44 +647,6 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.animate').forEach(el => io.observe(el));
-
-    // Newsletter popup
-    const popup = document.getElementById('newsletterPopup');
-    const popupClose = document.getElementById('newsletterPopupClose');
-    const popupDismissKey = 'gch-newsletter-popup-dismissed-at';
-    const popupDismissWindow = 7 * 24 * 60 * 60 * 1000;
-    let popupTimer;
-
-    const openPopup = () => {
-      popup.classList.add('is-open');
-      popup.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    };
-
-    const closePopup = () => {
-      popup.classList.remove('is-open');
-      popup.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      window.localStorage.setItem(popupDismissKey, String(Date.now()));
-    };
-
-    const dismissedAt = Number(window.localStorage.getItem(popupDismissKey) || 0);
-    const shouldShowPopup = !dismissedAt || (Date.now() - dismissedAt) > popupDismissWindow;
-
-    if (shouldShowPopup) {
-      popupTimer = window.setTimeout(openPopup, 1200);
-    }
-
-    popupClose.addEventListener('click', closePopup);
-    popup.addEventListener('click', (event) => {
-      if (event.target === popup) closePopup();
-    });
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && popup.classList.contains('is-open')) {
-        closePopup();
-      }
-    });
   </script>
 </body>
 </html>
