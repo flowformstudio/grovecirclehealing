@@ -122,6 +122,21 @@
       line-height: 1.75;
       flex: 1;
     }
+    .resource-card__sub-link {
+      margin-top: 0.85rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .resource-card__sub-link a {
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(42, 157, 143, 0.28);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .resource-card__sub-link a:hover {
+      color: var(--teal-dark);
+      border-color: rgba(30, 122, 111, 0.5);
+    }
     .resource-card__status {
       margin-top: 1.5rem;
       padding-top: 1.25rem;
@@ -131,6 +146,30 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--gold-light);
+    }
+    .resource-card__action {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--cream-deeper);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      width: fit-content;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .resource-card__action:hover {
+      color: var(--teal-dark);
+      transform: translateX(2px);
+    }
+    .resource-card__action::after {
+      content: '→';
+      font-size: 0.95rem;
+      line-height: 1;
     }
 
     /* ── VIDEO LIBRARY ──────────────────────────────────────────── */
@@ -391,7 +430,7 @@
             <span class="resource-card__badge">Guide</span>
             <h3 class="resource-card__title">Sound Healing Guide</h3>
             <p class="resource-card__desc">A beginner's introduction to sound healing — what it is, how it works, what to expect.</p>
-            <p class="resource-card__status">Coming Soon</p>
+            <a href="sound-healing-guide.html" class="resource-card__action">View Guide</a>
           </div>
         </div>
 
@@ -405,7 +444,10 @@
             <span class="resource-card__badge">Practice</span>
             <h3 class="resource-card__title">Journal Prompts</h3>
             <p class="resource-card__desc">Reflective questions to connect more deeply with your inner world and creative voice.</p>
-            <p class="resource-card__status">Coming Soon</p>
+            <p class="resource-card__sub-link">
+              <a href="self-inquiry.html">Self-Inquiry for Clarity &amp; Connection</a>
+            </p>
+            <a href="self-inquiry.html" class="resource-card__action">View Practice</a>
           </div>
         </div>
 

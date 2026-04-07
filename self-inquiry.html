@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-Inquiry for Clarity &amp; Connection | Grove Circle Healing</title>
+  <meta name="description" content="A guided self-inquiry practice from Grove Circle Healing with coaching questions for clarity, connection, and inner guidance.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
+  <script>
+    window.Brevo = window.Brevo || [];
+    Brevo.push([
+      "init",
+      {
+        client_key: "8jphyjsgedo0ffn02n3821zq"
+      }
+    ]);
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .inquiry-intro {
+      padding: 7rem 0 3rem;
+    }
+    .inquiry-intro__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+      gap: 3rem;
+      align-items: center;
+    }
+    .inquiry-intro__media {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+    .inquiry-intro__media img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+    .inquiry-intro__text .eyebrow {
+      margin-bottom: 1.2rem;
+    }
+    .inquiry-intro__text h2 {
+      margin-bottom: 1.4rem;
+      max-width: 12ch;
+    }
+    .inquiry-intro__text p {
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .inquiry-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    .worksheet-section {
+      padding: 0 0 7rem;
+    }
+    .worksheet-shell {
+      background: linear-gradient(180deg, rgba(255,255,255,0.58) 0%, rgba(255,255,255,0.86) 100%);
+      border: 1px solid rgba(42, 157, 143, 0.12);
+      border-radius: 28px;
+      box-shadow: 0 16px 60px rgba(26, 25, 22, 0.06);
+      overflow: hidden;
+    }
+    .worksheet-header {
+      padding: 2.75rem 3rem 2rem;
+      background:
+        radial-gradient(circle at top left, rgba(223, 185, 106, 0.18), transparent 28%),
+        linear-gradient(145deg, #0f2a25 0%, #183730 52%, #102825 100%);
+      color: #fff;
+    }
+    .worksheet-header p {
+      color: rgba(250, 248, 243, 0.7);
+      max-width: 680px;
+    }
+    .worksheet-header .eyebrow {
+      color: rgba(223, 185, 106, 0.95);
+      margin-bottom: 1rem;
+    }
+    .worksheet-header h2 {
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .worksheet-body {
+      padding: 2rem 2.25rem 2.75rem;
+      background: rgba(250, 248, 243, 0.86);
+    }
+    .prompt-group {
+      padding: 1.75rem;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(42, 157, 143, 0.1);
+      box-shadow: 0 8px 26px rgba(26, 25, 22, 0.04);
+    }
+    .prompt-group + .prompt-group {
+      margin-top: 1.5rem;
+    }
+    .prompt-group__meta {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .prompt-group__count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 0.9rem;
+      border-radius: var(--radius-pill);
+      background: rgba(42, 157, 143, 0.1);
+      color: var(--teal-dark);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .prompt-group h3 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    .prompt-list {
+      display: grid;
+      gap: 1rem;
+    }
+    .prompt-item {
+      padding: 1.15rem 1.15rem 1.2rem;
+      border-radius: 18px;
+      background: var(--cream);
+      border: 1px solid rgba(42, 157, 143, 0.1);
+    }
+    .prompt-item label {
+      display: block;
+      font-size: 1rem;
+      color: var(--charcoal-soft);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+    .worksheet-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      padding: 1.5rem 2.25rem 2rem;
+      background: rgba(239, 229, 214, 0.8);
+      border-top: 1px solid rgba(42, 157, 143, 0.08);
+      flex-wrap: wrap;
+    }
+    .worksheet-footer p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 980px) {
+      .inquiry-intro__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 700px) {
+      .inquiry-intro {
+        padding: 5.5rem 0 2.5rem;
+      }
+      .worksheet-header,
+      .worksheet-body,
+      .worksheet-footer {
+        padding-left: 1.35rem;
+        padding-right: 1.35rem;
+      }
+      .prompt-group {
+        padding: 1.15rem;
+      }
+      .prompt-group h3 {
+        font-size: 1.55rem;
+      }
+      .prompt-item {
+        padding: 1rem;
+      }
+    }
+    @media print {
+      .nav,
+      .nav__mobile,
+      .footer,
+      .cta-banner,
+      .newsletter-strip,
+      .modal-overlay,
+      .inquiry-actions {
+        display: none !important;
+      }
+      body {
+        background: #fff;
+      }
+      .inquiry-intro,
+      .worksheet-section {
+        padding: 1rem 0;
+      }
+      .worksheet-shell,
+      .prompt-group,
+      .prompt-item {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav scrolled" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__brand">
+          <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65ed51c9397bb038561480de_grove-circle-logo-black.svg"
+               alt="Grove Circle Healing logo" class="nav__logo">
+          <span class="nav__brand-name">Grove Circle Healing</span>
+        </a>
+        <ul class="nav__links">
+          <li class="nav__item nav__item--dropdown">
+            <a href="offerings.html" class="nav__link">Offerings</a>
+            <ul class="nav__dropdown">
+              <li><a href="soundhealing.html" class="nav__dropdown-link">Sound Healing</a></li>
+              <li><a href="sound-and-voice.html" class="nav__dropdown-link">Sound &amp; Voice Activation</a></li>
+              <li><a href="events-retreats-and-corporate.html" class="nav__dropdown-link">Retreats &amp; Corporate</a></li>
+              <li><a href="online-courses.html" class="nav__dropdown-link">Online Courses</a></li>
+            </ul>
+          </li>
+          <li><a href="events.html" class="nav__link">Events</a></li>
+          <li><a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="nav__link">Membership</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="resources.html" class="nav__link" style="color:var(--teal);">Resources</a></li>
+        </ul>
+        <a href="index.html#contact" class="nav__cta">Book a Session</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav__mobile" id="navMobile">
+    <button class="nav__mobile-close" id="navClose" aria-label="Close menu">✕</button>
+    <a href="offerings.html" class="nav__mobile-link">Offerings</a>
+    <div class="nav__mobile-submenu">
+      <a href="soundhealing.html" class="nav__mobile-sublink">Sound Healing</a>
+      <a href="sound-and-voice.html" class="nav__mobile-sublink">Sound &amp; Voice Activation</a>
+      <a href="events-retreats-and-corporate.html" class="nav__mobile-sublink">Retreats &amp; Corporate</a>
+      <a href="online-courses.html" class="nav__mobile-sublink">Online Courses</a>
+    </div>
+    <a href="events.html" class="nav__mobile-link">Events</a>
+    <a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="nav__mobile-link">Membership</a>
+    <a href="about.html" class="nav__mobile-link">About</a>
+    <a href="resources.html" class="nav__mobile-link">Resources</a>
+    <a href="index.html#contact" class="btn btn-primary" style="margin-top:1rem;">Book a Session</a>
+  </div>
+
+  <div class="page-hero" style="background-image: url('img/journal-prompts.png'); background-position: center center;">
+    <div class="page-hero__tile-bg"></div>
+    <span class="page-hero__ring"></span>
+
+    <div class="container--narrow">
+      <p class="eyebrow eyebrow--light animate">Practice</p>
+      <h1 class="animate animate-delay-1">Self-Inquiry for<br><em style="font-style:italic; color:var(--gold-light);">Clarity &amp; Connection</em></h1>
+      <p class="animate animate-delay-2">For clarity, connection, and inner guidance.</p>
+    </div>
+  </div>
+
+  <section class="inquiry-intro">
+    <div class="container">
+      <div class="inquiry-intro__grid">
+        <div class="inquiry-intro__media animate">
+          <img src="img/journal-prompts.png" alt="Self-inquiry journaling practice">
+        </div>
+        <div class="inquiry-intro__text">
+          <p class="eyebrow animate">A Gentle Practice</p>
+          <h2 class="animate animate-delay-1">A Space to Listen More Deeply</h2>
+          <p class="animate animate-delay-2">
+            This self-inquiry practice is here to support reflection, self-trust, and a deeper relationship
+            with your inner wisdom. Move slowly, answer what calls to you, and let the questions meet you
+            exactly where you are.
+          </p>
+          <p class="animate animate-delay-3">
+            There is no right way to do this. You can write a few words, a full page, or simply pause with
+            a question and notice what arises in your body, heart, and voice.
+          </p>
+          <div class="inquiry-actions animate animate-delay-3">
+            <button type="button" class="btn btn-primary" id="printPractice">Print Practice</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="worksheet-section">
+    <div class="container">
+      <div class="worksheet-shell animate">
+        <div class="worksheet-header">
+          <p class="eyebrow">Worksheet</p>
+          <h2>Self-Inquiry for Clarity &amp; Connection</h2>
+          <p>
+            Set aside a few quiet moments, take a breath, and respond to the questions that feel most alive
+            for you today. Return anytime you want to reconnect with clarity, connection, and inner guidance.
+          </p>
+        </div>
+
+        <div class="worksheet-body">
+          <section class="prompt-group">
+            <div class="prompt-group__meta">
+              <span class="prompt-group__count">1-5</span>
+              <h3>Grounding &amp; Awareness</h3>
+            </div>
+            <div class="prompt-list">
+              <div class="prompt-item">
+                <label>1. How am I feeling right now, honestly?</label>
+              </div>
+              <div class="prompt-item">
+                <label>2. What is most present in my body in this moment?</label>
+              </div>
+              <div class="prompt-item">
+                <label>3. Where in my life do I feel calm and supported?</label>
+              </div>
+              <div class="prompt-item">
+                <label>4. Where do I feel overwhelmed or disconnected?</label>
+              </div>
+              <div class="prompt-item">
+                <label>5. What do I need more of right now?</label>
+              </div>
+            </div>
+          </section>
+
+          <section class="prompt-group">
+            <div class="prompt-group__meta">
+              <span class="prompt-group__count">6-10</span>
+              <h3>Intuition &amp; Inner Guidance</h3>
+            </div>
+            <div class="prompt-list">
+              <div class="prompt-item">
+                <label>6. What is my inner voice trying to tell me lately?</label>
+              </div>
+              <div class="prompt-item">
+                <label>7. When do I feel most connected to my intuition?</label>
+              </div>
+              <div class="prompt-item">
+                <label>8. What does “trusting myself” look like in my life right now?</label>
+              </div>
+              <div class="prompt-item">
+                <label>9. Where am I overthinking instead of listening inward?</label>
+              </div>
+              <div class="prompt-item">
+                <label>10. If I already knew the answer, what would it be?</label>
+              </div>
+            </div>
+          </section>
+
+          <section class="prompt-group">
+            <div class="prompt-group__meta">
+              <span class="prompt-group__count">11-15</span>
+              <h3>Voice &amp; Expression</h3>
+            </div>
+            <div class="prompt-list">
+              <div class="prompt-item">
+                <label>11. Where am I holding back my truth?</label>
+              </div>
+              <div class="prompt-item">
+                <label>12. What feels hard to say right now?</label>
+              </div>
+              <div class="prompt-item">
+                <label>13. When do I feel most free to express myself?</label>
+              </div>
+              <div class="prompt-item">
+                <label>14. What part of me wants to be seen or heard?</label>
+              </div>
+              <div class="prompt-item">
+                <label>15. If I expressed myself fully, what might change?</label>
+              </div>
+            </div>
+          </section>
+
+          <section class="prompt-group">
+            <div class="prompt-group__meta">
+              <span class="prompt-group__count">16-20</span>
+              <h3>Emotional Awareness</h3>
+            </div>
+            <div class="prompt-list">
+              <div class="prompt-item">
+                <label>16. What emotions have I been avoiding or pushing down?</label>
+              </div>
+              <div class="prompt-item">
+                <label>17. What am I ready to release?</label>
+              </div>
+              <div class="prompt-item">
+                <label>18. What keeps repeating emotionally in my life?</label>
+              </div>
+              <div class="prompt-item">
+                <label>19. What would it look like to meet this feeling with compassion?</label>
+              </div>
+              <div class="prompt-item">
+                <label>20. What is this emotion trying to show me?</label>
+              </div>
+            </div>
+          </section>
+
+          <section class="prompt-group">
+            <div class="prompt-group__meta">
+              <span class="prompt-group__count">21-25</span>
+              <h3>Body Wisdom</h3>
+            </div>
+            <div class="prompt-list">
+              <div class="prompt-item">
+                <label>21. What signals is my body giving me right now?</label>
+              </div>
+              <div class="prompt-item">
+                <label>22. When do I feel most at ease in my body?</label>
+              </div>
+              <div class="prompt-item">
+                <label>23. Where do I feel tension or contraction, and why?</label>
+              </div>
+              <div class="prompt-item">
+                <label>24. What helps my body feel safe and relaxed?</label>
+              </div>
+              <div class="prompt-item">
+                <label>25. How can I better listen to my body this week?</label>
+              </div>
+            </div>
+          </section>
+
+          <section class="prompt-group">
+            <div class="prompt-group__meta">
+              <span class="prompt-group__count">26-30</span>
+              <h3>Alignment &amp; Next Steps</h3>
+            </div>
+            <div class="prompt-list">
+              <div class="prompt-item">
+                <label>26. What feels aligned for me right now?</label>
+              </div>
+              <div class="prompt-item">
+                <label>27. What feels out of alignment?</label>
+              </div>
+              <div class="prompt-item">
+                <label>28. What is one small step I can take toward what I want?</label>
+              </div>
+              <div class="prompt-item">
+                <label>29. What would support me in feeling more clear and grounded?</label>
+              </div>
+              <div class="prompt-item">
+                <label>30. What am I ready to say yes to? What am I ready to release?</label>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="worksheet-footer">
+          <p>Bring these prompts into your journal, notes app, or a quiet conversation with yourself.</p>
+          <p>Move through them slowly and return whenever you need a reset.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container--narrow">
+      <h2 class="animate">Want Support Going Deeper?</h2>
+      <p class="animate animate-delay-1">Explore private sessions, group classes, or the Grove Circle Membership for guided support.</p>
+      <a href="offerings.html" class="btn btn-white animate animate-delay-2">Explore Offerings</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand">
+            <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65ed51c937778e8314010e9a_GCH-logo-white.svg"
+                 alt="Grove Circle Healing" class="footer__logo">
+            <span class="footer__brand-name">Grove Circle Healing</span>
+          </div>
+          <p class="footer__tagline">Where sound, intuition and voice are remembered.</p>
+          <div class="footer__socials">
+            <a href="https://www.facebook.com/profile.php?id=61556078138810" class="footer__social" aria-label="Facebook">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/5ee015d213013e43e6b2ec8e_facebook%20(1).svg" alt="">
+            </a>
+            <a href="https://www.instagram.com/grovecirclehealing/" class="footer__social" aria-label="Instagram">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65e0c065942f44b4a50b7760_instagram.svg" alt="">
+            </a>
+            <a href="https://www.youtube.com/channel/UCwaJB66tytgtwmN_7BAYu6g" class="footer__social" aria-label="YouTube">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65e0c065942f44b4a50b7762_youtube.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__col-heading">Offerings</p>
+          <ul class="footer__links">
+            <li><a href="soundhealing.html" class="footer__link">Sound Healing</a></li>
+            <li><a href="sound-and-voice.html" class="footer__link">Sound &amp; Voice Activation</a></li>
+            <li><a href="events-retreats-and-corporate.html" class="footer__link">Events &amp; Corporate</a></li>
+            <li><a href="online-courses.html" class="footer__link">Online Courses</a></li>
+            <li><a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="footer__link">Membership</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-heading">Explore</p>
+          <ul class="footer__links">
+            <li><a href="about.html" class="footer__link">About</a></li>
+            <li><a href="events.html" class="footer__link">Events</a></li>
+            <li><a href="resources.html" class="footer__link" style="color:var(--teal);">Resources</a></li>
+            <li><a href="index.html#contact" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-heading">Connect</p>
+          <ul class="footer__links">
+            <li><a href="https://www.instagram.com/grovecirclehealing/" class="footer__link">Instagram</a></li>
+            <li><a href="https://www.youtube.com/channel/UCwaJB66tytgtwmN_7BAYu6g" class="footer__link">YouTube</a></li>
+            <li><a href="mailto:fluidgirlproductions@gmail.com" class="footer__link">Email Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__credit">© 2026 Grove Circle Healing. All rights reserved.</p>
+        <p class="footer__credit">Designed with love by <a href="https://www.flowformstudio.com/">Flowform</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-label="Contact form">
+    <div class="modal">
+      <button class="modal__close" id="modalClose" aria-label="Close">✕</button>
+      <div class="modal__form-side">
+        <p class="eyebrow">Get in Touch</p>
+        <h2>Let's Get Started</h2>
+        <p class="modal__subtitle">Contact for a complimentary discovery call or further details regarding my services.</p>
+
+        <form class="modal__form" id="modalContactForm" action="https://formspree.io/f/meerdjgb" method="POST">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="modal-first">First Name</label>
+              <input type="text" id="modal-first" name="first-name" autocomplete="given-name">
+            </div>
+            <div class="form-field">
+              <label for="modal-last">Last Name</label>
+              <input type="text" id="modal-last" name="last-name" autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="modal-email">Email</label>
+            <input type="email" id="modal-email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label for="modal-phone">Phone Number <span>(Optional)</span></label>
+            <input type="tel" id="modal-phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="form-field">
+            <label for="modal-message">How Can I Help You?</label>
+            <textarea id="modal-message" name="message"></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn-submit">Send a Message</button>
+          </div>
+        </form>
+
+        <div class="modal__success" id="modalSuccess">
+          <h3>Thank you!</h3>
+          <p>Your message has been received. I will get back to you as soon as possible.</p>
+        </div>
+      </div>
+
+      <div class="modal__photo-side">
+        <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65f873ee06acb24094347750_IMG_3439.JPG"
+             alt="Chris Young-Ginzburg">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+    if (window.scrollY <= 60) nav.classList.add('scrolled');
+
+    const toggle = document.getElementById('navToggle');
+    const mobile = document.getElementById('navMobile');
+    const closeBtn = document.getElementById('navClose');
+    const openMenu = () => { mobile.classList.add('open'); document.body.style.overflow = 'hidden'; };
+    const closeMenu = () => { mobile.classList.remove('open'); document.body.style.overflow = ''; };
+    toggle.addEventListener('click', () => mobile.classList.contains('open') ? closeMenu() : openMenu());
+    closeBtn.addEventListener('click', closeMenu);
+    mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    mobile.addEventListener('click', e => { if (e.target === mobile) closeMenu(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.animate').forEach(el => io.observe(el));
+
+    const modalOverlay = document.getElementById("contactModal");
+    const modalClose = document.getElementById("modalClose");
+    const modalForm = document.getElementById("modalContactForm");
+    const modalSuccess = document.getElementById("modalSuccess");
+
+    const openModal = () => {
+      modalOverlay.classList.add("open");
+      document.body.style.overflow = "hidden";
+    };
+    const closeModalAction = () => {
+      modalOverlay.classList.remove("open");
+      document.body.style.overflow = "";
+    };
+
+    document.querySelectorAll('a[href="index.html#contact"], a[href="#contact"]').forEach(el => {
+      el.addEventListener("click", e => { e.preventDefault(); openModal(); });
+    });
+    document.querySelectorAll(".nav__cta, .nav__mobile-link").forEach(el => {
+      if (el.textContent.trim() === "Book a Session") {
+        el.addEventListener("click", e => { e.preventDefault(); closeMenu(); openModal(); });
+      }
+    });
+
+    modalClose.addEventListener("click", closeModalAction);
+    modalOverlay.addEventListener("click", e => { if (e.target === modalOverlay) closeModalAction(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closeModalAction(); });
+
+    modalForm && modalForm.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(modalForm.action, {
+        method: 'POST',
+        body: new FormData(modalForm),
+        headers: { 'Accept': 'application/json' }
+      }).then(res => {
+        if (res.ok) {
+          modalForm.style.display = "none";
+          modalSuccess.classList.add("visible");
+          setTimeout(() => {
+            closeModalAction();
+            setTimeout(() => {
+              modalForm.reset();
+              modalForm.style.display = "";
+              modalSuccess.classList.remove("visible");
+            }, 400);
+          }, 2800);
+        }
+      });
+    });
+
+    const printButton = document.getElementById('printPractice');
+    printButton.addEventListener('click', () => {
+      window.print();
+    });
+  </script>
+</body>
+</html>
