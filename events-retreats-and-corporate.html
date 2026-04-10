@@ -164,8 +164,7 @@
     .settings-panel {
       margin-bottom: 2rem;
     }
-    .settings-panel h4,
-    .investment-card h4 {
+    .settings-panel h4 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
       color: var(--charcoal);
@@ -193,28 +192,14 @@
       font-size: 1.2rem;
       line-height: 1.2;
     }
-    .investment-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,243,233,0.98) 100%);
+    .inquiry-form-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(252,245,231,0.99) 100%);
       border-radius: var(--radius-md);
       padding: 2.2rem 2.3rem;
-      border: 1px solid rgba(201, 153, 74, 0.22);
+      border: 1px solid rgba(201, 153, 74, 0.3);
       border-left: 5px solid var(--gold-light);
       margin-bottom: 2rem;
       box-shadow: 0 22px 48px rgba(26, 25, 22, 0.1);
-    }
-    .investment-card p {
-      color: var(--charcoal-soft);
-      font-size: 1.08rem;
-      line-height: 1.72;
-      margin: 0;
-    }
-    .inquiry-form-card {
-      background: rgba(255,255,255,0.92);
-      border-radius: var(--radius-md);
-      padding: 2rem;
-      border: 1px solid rgba(42, 157, 143, 0.14);
-      margin-bottom: 2rem;
-      box-shadow: 0 16px 36px rgba(26, 25, 22, 0.07);
     }
     .inquiry-form-card h4 {
       font-size: 1.35rem;
@@ -222,26 +207,30 @@
       color: var(--charcoal);
     }
     .inquiry-form-card p {
-      color: var(--muted);
-      font-size: 0.98rem;
-      line-height: 1.7;
+      color: var(--charcoal-soft);
+      font-size: 1.08rem;
+      line-height: 1.72;
       margin-bottom: 1.25rem;
     }
-    .inquiry-form-card iframe {
-      width: 100%;
-      min-height: 720px;
-      border: 0;
-      border-radius: calc(var(--radius-md) - 6px);
-      background: #fff;
-    }
-    .inquiry-form-card__link {
+    .inquiry-form-card__button {
       display: inline-flex;
-      margin-top: 1rem;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.1rem;
+      padding: 0.9rem 1.6rem;
+      border-radius: var(--radius-pill);
+      background: var(--teal);
+      color: #fff;
       font-size: 0.76rem;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--teal);
+      box-shadow: 0 12px 28px rgba(42, 157, 143, 0.22);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .inquiry-form-card__button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(42, 157, 143, 0.28);
     }
     .settings-outro {
       max-width: 640px;
@@ -461,20 +450,10 @@
             </ul>
           </div>
 
-          <div class="investment-card animate animate-delay-4">
-            <h4>Investment</h4>
-            <p>Contact me to inquire about pricing for your event, retreat, or custom experience.</p>
-          </div>
-
           <div class="inquiry-form-card animate animate-delay-4">
             <h4>Submit Your Inquiry</h4>
             <p>If you're interested in hiring me for a retreat, event, ceremony, or corporate experience, use this form to share your details. This is the best place to submit your inquiry and begin the conversation.</p>
-            <iframe
-              src="https://form.jotform.com/260485852564163"
-              title="Retreats and Corporate Inquiry Form"
-              loading="lazy"
-            ></iframe>
-            <a href="https://form.jotform.com/260485852564163" class="inquiry-form-card__link" target="_blank" rel="noopener">Open Form in a New Window</a>
+            <a href="https://form.jotform.com/260485852564163" class="inquiry-form-card__button" target="_blank" rel="noopener">Submit Inquiry</a>
           </div>
 
         </div>
