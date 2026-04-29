@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple of Expression | Grove Circle Healing</title>
+  <meta name="description" content="Temple of Expression is a community talent showcase and ceremonial performance experience where creativity, voice, and expression come alive in a supportive space.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
+  <script>
+    window.Brevo = window.Brevo || [];
+    Brevo.push([
+      "init",
+      {
+        client_key: "8jphyjsgedo0ffn02n3821zq"
+      }
+    ]);
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --temple-plum: #321324;
+      --temple-wine: #6f2640;
+      --temple-gold: #c28a2c;
+      --temple-amber: #e0b85f;
+      --temple-teal: #1f8f87;
+      --temple-cream: #fbf5eb;
+    }
+
+    .temple-hero {
+      position: relative;
+      min-height: 86vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(0deg, rgba(10, 13, 15, 0.52), rgba(10, 13, 15, 0.52)),
+        linear-gradient(115deg, rgba(18, 24, 27, 0.58) 0%, rgba(44, 34, 22, 0.28) 46%, rgba(34, 23, 31, 0.24) 100%),
+        radial-gradient(circle at 18% 24%, rgba(255, 210, 132, 0.08), transparent 26%),
+        radial-gradient(circle at 86% 22%, rgba(51, 153, 206, 0.08), transparent 28%),
+        url('img/temple-lotus-rainbow.jpg') center 38% / cover no-repeat;
+      padding: 9rem 0 6rem;
+    }
+    .temple-hero::before,
+    .temple-hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+    }
+    .temple-hero::before {
+      width: 42vw;
+      height: 42vw;
+      right: -16vw;
+      top: -12vw;
+      border: 1px solid rgba(194, 138, 44, 0.22);
+    }
+    .temple-hero::after {
+      width: 26vw;
+      height: 26vw;
+      left: -10vw;
+      bottom: -9vw;
+      border: 1px solid rgba(31, 143, 135, 0.2);
+    }
+    .temple-hero__grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.96fr);
+      gap: 5rem;
+      align-items: center;
+    }
+    .temple-hero__copy .eyebrow {
+      color: var(--temple-teal);
+      margin-bottom: 1.2rem;
+    }
+    .temple-hero__copy h1 {
+      color: #fff8f1;
+      font-size: clamp(2.9rem, 6.3vw, 6rem);
+      line-height: 0.95;
+      margin-bottom: 1.4rem;
+      text-shadow: 0 6px 24px rgba(0,0,0,0.28);
+    }
+    .temple-hero__subtitle {
+      color: #f3dfaa;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(5rem, 9vw, 7.35rem);
+      line-height: 1.15;
+      max-width: 760px;
+      margin-bottom: 1.6rem;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.24);
+    }
+    .temple-hero__copy p {
+      color: rgba(255,255,255,0.86);
+      font-size: 1.08rem;
+      line-height: 1.8;
+      max-width: 640px;
+      margin-bottom: 1.4rem;
+    }
+    .temple-hero__plainline {
+      color: rgba(255,255,255,0.92);
+      font-size: 1.08rem;
+      line-height: 1.75;
+      max-width: 760px;
+      margin-bottom: 0.35rem;
+    }
+    .temple-hero__actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2.2rem;
+    }
+    .temple-hero__logo-card {
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(194, 138, 44, 0.24);
+      border-radius: 2.2rem;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      box-shadow: 0 28px 72px rgba(50, 19, 36, 0.14);
+    }
+    .temple-hero__logo {
+      width: 100%;
+      display: block;
+      border-radius: 1.45rem;
+    }
+
+    .temple-section {
+      padding: 7rem 0;
+    }
+    .temple-section--cream {
+      background: var(--cream-dark);
+    }
+    .temple-section--dark {
+      background:
+        radial-gradient(circle at 14% 22%, rgba(31, 143, 135, 0.22), transparent 26%),
+        radial-gradient(circle at 86% 82%, rgba(74, 23, 48, 0.3), transparent 30%),
+        linear-gradient(135deg, #0d1113 0%, #171717 52%, #22131d 100%);
+      color: #fff;
+    }
+    .temple-section--feature-cream {
+      background: var(--cream-dark);
+      color: var(--charcoal);
+    }
+    .temple-two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 5rem;
+      align-items: start;
+    }
+    .temple-copy .eyebrow { margin-bottom: 1rem; }
+    .temple-copy h2 {
+      margin-bottom: 1.5rem;
+      color: var(--charcoal);
+    }
+    .temple-section--dark .temple-copy h2,
+    .temple-section--dark .temple-copy p {
+      color: #fff;
+    }
+    .temple-section--feature-cream .temple-copy h2,
+    .temple-section--feature-cream .temple-copy p {
+      color: var(--charcoal);
+    }
+    .temple-copy p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .temple-card {
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(194, 138, 44, 0.2);
+      border-left: 5px solid var(--temple-gold);
+      border-radius: var(--radius-md);
+      padding: clamp(2rem, 4vw, 3rem);
+      box-shadow: 0 22px 48px rgba(26, 25, 22, 0.08);
+    }
+    .temple-card h3 {
+      color: var(--temple-plum);
+      font-size: clamp(1.7rem, 3vw, 2.35rem);
+      margin-bottom: 1rem;
+    }
+    .temple-card p {
+      color: var(--charcoal-soft);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .temple-card .temple-list li {
+      color: var(--charcoal-soft);
+    }
+    .temple-section--dark .temple-card .temple-list li {
+      color: var(--charcoal-soft);
+    }
+    .temple-list {
+      list-style: none;
+      margin: 1.5rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 0.8rem;
+    }
+    .temple-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .temple-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--temple-teal);
+    }
+    .temple-section--dark .temple-list li {
+      color: rgba(255,255,255,0.72);
+    }
+    .temple-section--dark .temple-list li::before {
+      background: var(--temple-amber);
+    }
+    .temple-section--feature-cream .temple-list li {
+      color: var(--charcoal-soft);
+    }
+    .temple-section--feature-cream .temple-list li::before {
+      background: var(--temple-teal);
+    }
+    .temple-contrast-card {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(224, 184, 95, 0.34);
+      border-left-color: var(--temple-amber);
+      box-shadow: none;
+      backdrop-filter: blur(10px);
+    }
+    .temple-section--dark .temple-contrast-card h3,
+    .temple-section--dark .temple-contrast-card p {
+      color: #fff;
+    }
+    .temple-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .temple-mini-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      border-top: 3px solid var(--temple-teal);
+      box-shadow: 0 12px 30px rgba(26, 25, 22, 0.06);
+    }
+    .temple-mini-card h3 {
+      color: var(--temple-plum);
+      font-size: 1.45rem;
+      margin-bottom: 0.8rem;
+    }
+    .temple-mini-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.72;
+      margin: 0;
+    }
+    .theme-band {
+      background:
+        linear-gradient(0deg, rgba(13, 17, 19, 0.6), rgba(13, 17, 19, 0.6)),
+        radial-gradient(circle at 18% 20%, rgba(31, 143, 135, 0.28), transparent 26%),
+        radial-gradient(circle at 84% 78%, rgba(74, 23, 48, 0.34), transparent 30%),
+        url('img/temple-lotus-rainbow.jpg') center center / cover no-repeat;
+      border-radius: var(--radius-lg);
+      padding: clamp(2.5rem, 5vw, 4.5rem);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(220px, 0.36fr);
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+    .theme-band::after {
+      content: '';
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -90px;
+      top: -110px;
+      border: 1px solid rgba(224, 184, 95, 0.28);
+      border-radius: 50%;
+    }
+    .theme-band h2 {
+      color: #fff;
+      margin-bottom: 0.8rem;
+    }
+    .theme-band p {
+      position: relative;
+      z-index: 1;
+      color: rgba(255,255,255,0.82);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      max-width: 720px;
+    }
+    .theme-band__actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.8rem;
+    }
+    .theme-flyer {
+      position: relative;
+      z-index: 1;
+      aspect-ratio: 1 / 1;
+      border-radius: 1.5rem;
+      border: 1px dashed rgba(255,255,255,0.42);
+      background:
+        radial-gradient(circle at center, rgba(224, 184, 95, 0.18), transparent 48%),
+        rgba(255,255,255,0.08);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 1.4rem;
+    }
+    .theme-flyer img {
+      width: min(82%, 260px);
+      display: block;
+      margin: 0 auto 1rem;
+      border-radius: 0.9rem;
+    }
+    .theme-flyer p {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .cta-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+      gap: 3rem;
+      align-items: center;
+      background:
+        linear-gradient(0deg, rgba(13, 17, 19, 0.78), rgba(13, 17, 19, 0.78)),
+        radial-gradient(circle at 14% 22%, rgba(31, 143, 135, 0.16), transparent 26%),
+        radial-gradient(circle at 86% 82%, rgba(74, 23, 48, 0.22), transparent 30%),
+        url('img/temple-lotus-rainbow.jpg') center center / cover no-repeat,
+        linear-gradient(135deg, #0d1113 0%, #171717 52%, #22131d 100%);
+      border: 1px solid rgba(224, 184, 95, 0.28);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 4vw, 3.5rem);
+      color: #fff;
+      overflow: hidden;
+    }
+    .temple-section-heading {
+      text-align: center;
+      margin-bottom: 2.2rem;
+    }
+    .temple-section-heading .eyebrow {
+      margin: 0;
+      color: var(--charcoal);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 3.6vw, 3.3rem);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-transform: none;
+      line-height: 1.05;
+    }
+    .temple-section-heading h2 {
+      margin: 0;
+      color: var(--charcoal);
+      font-size: clamp(2.4rem, 4.6vw, 4.3rem);
+      line-height: 1.05;
+    }
+    .cta-panel h2 {
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .cta-panel p {
+      color: rgba(255,255,255,0.78);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+    .cta-panel .eyebrow {
+      color: rgba(255,255,255,0.78);
+    }
+    .cta-panel__theme {
+      color: rgba(255,255,255,0.86);
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: -0.15rem 0 1rem;
+    }
+    .cta-panel .temple-note,
+    .cta-panel .temple-note a {
+      color: rgba(255,255,255,0.78);
+    }
+    #event-links {
+      background: #000;
+    }
+    #event-links .temple-section-heading .eyebrow {
+      color: #fff;
+    }
+    .event-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .flyer-placeholder {
+      aspect-ratio: 1 / 1;
+      border-radius: 1.75rem;
+      border: none;
+      background:
+        linear-gradient(180deg, rgba(252, 247, 239, 0.48), rgba(244, 235, 221, 0.42));
+      box-shadow: inset 0 0 0 1px rgba(214, 176, 112, 0.06);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 0.56rem;
+      overflow: hidden;
+    }
+    .flyer-placeholder > div {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .flyer-placeholder img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      margin: 0;
+      border-radius: 1.1rem;
+      object-fit: cover;
+    }
+    .flyer-placeholder p {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .host-card {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+    .host-card img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+    }
+    .temple-photo-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 24px 58px rgba(50, 19, 36, 0.12);
+      border: 1px solid rgba(194, 138, 44, 0.2);
+    }
+    .temple-photo-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+    }
+    .performer-visuals {
+      display: grid;
+      gap: 1.5rem;
+      align-self: start;
+    }
+    .performer-visuals .temple-photo-card img {
+      aspect-ratio: 16 / 10;
+      object-position: center 45%;
+    }
+    .temple-stage-gallery {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      margin-top: 4rem;
+      align-items: stretch;
+      max-width: 760px;
+    }
+    .temple-stage-gallery .temple-photo-card img {
+      aspect-ratio: 16 / 9;
+      object-position: center 52%;
+    }
+    .what-it-is-layout {
+      display: grid;
+    }
+    .what-it-is-heading {
+      max-width: 680px;
+    }
+    .what-it-is-heading h2 {
+      font-size: clamp(2.2rem, 3.3vw, 3.9rem);
+      line-height: 1.08;
+      max-width: 680px;
+      margin-bottom: 1.6rem;
+    }
+    .what-it-is-body {
+      display: grid;
+      grid-template-columns: minmax(420px, 0.98fr) minmax(0, 1.02fr);
+      gap: clamp(2.25rem, 4vw, 4rem);
+      align-items: start;
+    }
+    .what-it-is-body .temple-photo-card img {
+      aspect-ratio: 4 / 3;
+      object-position: center 48%;
+    }
+    .what-it-is-images {
+      display: grid;
+      gap: 1.4rem;
+    }
+    .what-it-is-note {
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.65;
+      margin: -0.15rem 0 0;
+    }
+    .what-it-is-images .temple-photo-card:nth-child(2) img {
+      aspect-ratio: 4 / 3;
+      object-position: center 55%;
+    }
+    .what-it-is-text {
+      min-width: 0;
+      align-self: start;
+    }
+    .temple-mic-photo img {
+      aspect-ratio: 4 / 3;
+      object-position: center 50%;
+    }
+    .temple-mic-photo {
+      width: min(100%, 760px);
+      justify-self: end;
+      align-self: start;
+      margin-left: auto;
+    }
+    .temple-lead {
+      font-size: 1.78rem;
+      line-height: 1.42;
+    }
+    .temple-note {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .temple-subline {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin: -0.5rem 0 1.2rem;
+    }
+    .nav:not(.scrolled) .nav__logo {
+      filter: invert(45%) sepia(60%) saturate(500%) hue-rotate(140deg) brightness(95%);
+    }
+    .nav:not(.scrolled) .nav__brand-name {
+      color: var(--charcoal);
+    }
+    .nav:not(.scrolled) .nav__link {
+      color: rgba(26, 25, 22, 0.72);
+    }
+    .nav:not(.scrolled) .nav__link:hover {
+      color: var(--teal);
+    }
+    .nav:not(.scrolled) .nav__link::after {
+      background: var(--teal);
+    }
+    .nav:not(.scrolled) .nav__cta {
+      background: rgba(42, 157, 143, 0.08);
+      border-color: rgba(42, 157, 143, 0.34);
+      color: var(--teal-dark);
+    }
+    .nav:not(.scrolled) .nav__toggle {
+      color: var(--charcoal);
+    }
+
+    @media (max-width: 900px) {
+      .temple-hero__grid,
+      .temple-two-col,
+      .cta-panel,
+      .host-card,
+      .theme-band {
+        grid-template-columns: 1fr;
+      }
+      .temple-grid {
+        grid-template-columns: 1fr;
+      }
+      .temple-stage-gallery {
+        grid-template-columns: 1fr;
+      }
+      .what-it-is-body {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ════════════════════════════════════════════ -->
+  <nav class="nav scrolled" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__brand">
+          <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65ed51c9397bb038561480de_grove-circle-logo-black.svg"
+               alt="Grove Circle Healing" class="nav__logo">
+          <span class="nav__brand-name">Grove Circle Healing</span>
+        </a>
+        <ul class="nav__links">
+          <li class="nav__item nav__item--dropdown">
+            <a href="offerings.html" class="nav__link" style="color:var(--teal);">Offerings</a>
+            <ul class="nav__dropdown">
+              <li><a href="soundhealing.html" class="nav__dropdown-link">Sound Healing</a></li>
+              <li><a href="sound-and-voice.html" class="nav__dropdown-link">Sound &amp; Voice Activation</a></li>
+              <li><a href="events-retreats-and-corporate.html" class="nav__dropdown-link">Retreats &amp; Corporate</a></li>
+              <li><a href="online-courses.html" class="nav__dropdown-link">Online Courses</a></li>
+              <li><a href="temple-of-expression.html" class="nav__dropdown-link">Temple of Expression</a></li>
+            </ul>
+          </li>
+          <li><a href="events.html"    class="nav__link">Events</a></li>
+          <li><a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="nav__link">Membership</a></li>
+          <li><a href="about.html"     class="nav__link">About</a></li>
+          <li><a href="media.html"     class="nav__link">Media</a></li>
+          <li><a href="resources.html" class="nav__link">Resources</a></li>
+        </ul>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav__mobile" id="navMobile">
+    <button class="nav__mobile-close" id="navClose" aria-label="Close menu">✕</button>
+    <a href="offerings.html" class="nav__mobile-link">Offerings</a>
+    <div class="nav__mobile-submenu">
+      <a href="soundhealing.html" class="nav__mobile-sublink">Sound Healing</a>
+      <a href="sound-and-voice.html" class="nav__mobile-sublink">Sound &amp; Voice Activation</a>
+      <a href="events-retreats-and-corporate.html" class="nav__mobile-sublink">Retreats &amp; Corporate</a>
+      <a href="online-courses.html" class="nav__mobile-sublink">Online Courses</a>
+      <a href="temple-of-expression.html" class="nav__mobile-sublink">Temple of Expression</a>
+    </div>
+    <a href="events.html"      class="nav__mobile-link">Events</a>
+    <a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="nav__mobile-link">Membership</a>
+    <a href="about.html"       class="nav__mobile-link">About</a>
+    <a href="media.html"       class="nav__mobile-link">Media</a>
+    <a href="resources.html" class="nav__mobile-link">Resources</a>
+    <a href="index.html#contact" class="btn btn-primary" style="margin-top:1rem;">Book a Session</a>
+  </div>
+
+  <section class="temple-hero">
+    <div class="container">
+      <div class="temple-hero__grid">
+        <div class="temple-hero__copy">
+          <h1 class="animate animate-delay-1">Temple of Expression</h1>
+          <p class="temple-hero__subtitle animate animate-delay-2">A Community Talent Showcase &amp; Ceremonial Performance Experience</p>
+          <p class="temple-hero__plainline animate animate-delay-3">A family-friendly community performance evening for dance, music, spoken word, theater, and creative expression.</p>
+          <div class="temple-hero__actions animate animate-delay-4">
+            <a href="#event-links" class="btn btn-primary">Get Tickets</a>
+            <a href="#perform" class="btn btn-outline">Apply to Perform</a>
+          </div>
+        </div>
+        <div class="temple-hero__logo-card animate animate-delay-2">
+          <img src="img/temple-logo.jpg" alt="Temple of Expression logo" class="temple-hero__logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="temple-section" id="event-links">
+    <div class="container">
+      <div class="temple-section-heading">
+        <p class="eyebrow">Upcoming Event</p>
+      </div>
+      <div class="cta-panel">
+        <div class="temple-copy">
+          <p class="cta-panel__theme">Next Event: Fri., June 26, 5pm</p>
+          <h2>A space to express, be seen, and belong.</h2>
+          <p>Join us for an unforgettable evening of creativity and connection. Doors open at 5pm (food available for purchase) and the show starts at 6pm.</p>
+          <div class="event-actions" style="max-width:420px; margin-top:2rem;">
+            <a href="https://www.eventbrite.com/e/temple-of-expression-talent-showcase-tickets-1988107775876" class="btn btn-primary" target="_blank" rel="noopener">Get Tickets</a>
+            <a href="https://form.jotform.com/261105176075149" class="btn btn-outline" target="_blank" rel="noopener">Apply to Perform</a>
+          </div>
+          <p class="temple-note">Limited performance spaces available. Questions?: <a href="mailto:templeofexpression888@gmail.com">templeofexpression888@gmail.com</a></p>
+        </div>
+        <div class="flyer-placeholder">
+          <div>
+            <img src="img/temple-june-2026-flyer.jpg" alt="Temple of Expression June 2026 event flyer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="temple-section">
+    <div class="container">
+      <div class="what-it-is-layout">
+        <div class="what-it-is-body">
+          <div class="what-it-is-images animate animate-delay-1">
+            <div class="temple-photo-card">
+              <img src="img/temple-chair-stage.jpg" alt="A wooden chair in a spotlight on stage">
+            </div>
+            <p class="what-it-is-note">Stage images shown on this page are visual references only. They are not the literal stages performers will be on.</p>
+          </div>
+          <div class="temple-copy what-it-is-text animate animate-delay-2">
+            <div class="what-it-is-heading">
+              <p class="eyebrow">What It Is</p>
+              <h2>A showcase with intention, connection, and creative expression.</h2>
+            </div>
+            <p>Temple of Expression is a family-friendly, community-centered performance evening that blends live art with intention, connection, and creative expression.</p>
+            <p>Performers of all experience levels share short acts such as dance, music, spoken word, theater, and more in a space designed to feel welcoming, uplifting, and fun for both kids and adults alike.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="temple-section temple-section--feature-cream">
+    <div class="container">
+      <div class="temple-two-col">
+        <div class="temple-copy animate">
+          <h2>This is not just a traditional talent showcase</h2>
+          <p>We are intending that it will be a place to express, be seen and witnessed within a supportive community that values authenticity, creativity and belonging.</p>
+          <p class="temple-lead">The space is held with care, encouraging:</p>
+          <ul class="temple-list">
+            <li>Authentic expression over perfection</li>
+            <li>Support and encouragement over judgment</li>
+            <li>A sense of presence, connection, and community</li>
+          </ul>
+        </div>
+        <div class="temple-photo-card temple-mic-photo animate animate-delay-1">
+          <img src="img/temple-stage-curtain.jpg" alt="Purple stage curtains and a lit stage floor">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="temple-section temple-section--dark" id="perform">
+    <div class="container">
+      <div class="temple-two-col">
+        <div class="temple-copy animate">
+          <p class="eyebrow eyebrow--light">For Performers</p>
+          <h2>Interested in performing?</h2>
+          <p class="temple-subline">Open to first-time and experienced performers.</p>
+          <p>Whether you have been on stage for years or are just beginning, you are welcome here.</p>
+          <p>Solo or collaborative acts are welcome, including parent and child performances. All performances must be appropriate for a family-friendly audience and must be 5 minutes in duration or less.</p>
+          <div class="temple-hero__actions">
+            <a href="https://form.jotform.com/261105176075149" class="btn btn-primary" target="_blank" rel="noopener">Performance Submissions</a>
+            <a href="mailto:templeofexpression888@gmail.com" class="btn btn-ghost-white">Questions?</a>
+          </div>
+          <p class="temple-note" style="color:rgba(255,255,255,0.72);">Limited spaces available.</p>
+        </div>
+        <div class="performer-visuals animate animate-delay-1">
+          <div class="temple-photo-card">
+            <img src="img/temple-expression-dance.jpg" alt="Expressive movement in a sunlit outdoor setting">
+          </div>
+          <div class="temple-card">
+            <h3>We are looking for (5 min. time slot at most):</h3>
+            <ul class="temple-list">
+              <li>A dance or movement piece</li>
+              <li>A song or musical performance</li>
+              <li>A poem, story, or spoken word</li>
+              <li>A short theatrical piece</li>
+              <li>Any creative expression that feels authentic to you</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="temple-section temple-section--cream">
+    <div class="container">
+      <div class="host-card">
+        <img src="img/temple-host-dance.jpg" alt="Chris Young-Ginzburg in expressive movement outdoors" class="animate">
+        <div class="temple-copy animate animate-delay-1">
+          <p class="eyebrow">About the Host</p>
+          <p>Chris Young-Ginzburg is an intuitive healer, sound healer, and performer with over 20 years of experience in dance, theater, and creative expression.</p>
+          <p>She creates spaces that blend performance and healing, inviting people to reconnect with their voice, body, and authentic self.</p>
+          <p>She is the creator of Sound &amp; Voice Activation, a class designed to help individuals unlock their voice and express themselves more freely.</p>
+          <p><a href="https://youtu.be/kenX8wphupk?si=1DLUB52SlGwalnRz" class="btn btn-outline" target="_blank" rel="noopener">An inside view of Chris's performance work</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand">
+            <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65ed51c937778e8314010e9a_GCH-logo-white.svg"
+                 alt="Grove Circle Healing" class="footer__logo">
+            <span class="footer__brand-name">Grove Circle Healing</span>
+          </div>
+          <p class="footer__tagline">Where sound, intuition and voice are remembered.</p>
+          <div class="footer__socials">
+            <a href="https://www.facebook.com/profile.php?id=61556078138810" class="footer__social" aria-label="Facebook">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/5ee015d213013e43e6b2ec8e_facebook%20(1).svg" alt="">
+            </a>
+            <a href="https://www.instagram.com/grovecirclehealing/" class="footer__social" aria-label="Instagram">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65e0c065942f44b4a50b7760_instagram.svg" alt="">
+            </a>
+            <a href="https://www.youtube.com/channel/UCwaJB66tytgtwmN_7BAYu6g" class="footer__social" aria-label="YouTube">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65e0c065942f44b4a50b7762_youtube.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__col-heading">Offerings</p>
+          <ul class="footer__links">
+            <li><a href="soundhealing.html" class="footer__link">Sound Healing</a></li>
+            <li><a href="sound-and-voice.html" class="footer__link">Sound &amp; Voice Activation</a></li>
+            <li><a href="events-retreats-and-corporate.html" class="footer__link">Events &amp; Corporate</a></li>
+            <li><a href="online-courses.html" class="footer__link">Online Courses</a></li>
+            <li><a href="temple-of-expression.html" class="footer__link" style="color:var(--teal);">Temple of Expression</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-heading">Explore</p>
+          <ul class="footer__links">
+            <li><a href="about.html" class="footer__link">About</a></li>
+            <li><a href="events.html" class="footer__link">Events</a></li>
+            <li><a href="media.html" class="footer__link">Media</a></li>
+            <li><a href="resources.html" class="footer__link">Resources</a></li>
+            <li><a href="index.html#contact" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-heading">Connect</p>
+          <ul class="footer__links">
+            <li><a href="https://www.instagram.com/grovecirclehealing/" class="footer__link">Instagram</a></li>
+            <li><a href="https://www.youtube.com/channel/UCwaJB66tytgtwmN_7BAYu6g" class="footer__link">YouTube</a></li>
+            <li><a href="mailto:templeofexpression888@gmail.com" class="footer__link">Temple Email</a></li>
+            <li><a href="mailto:fluidgirlproductions@gmail.com" class="footer__link">Grove Circle Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__credit">© 2026 Grove Circle Healing. All rights reserved.</p>
+        <p class="footer__credit">Designed with love by <a href="https://www.flowformstudio.com/">Flowform</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    const toggle = document.getElementById('navToggle');
+    const mobile = document.getElementById('navMobile');
+    const closeBtn = document.getElementById('navClose');
+    const openMenu = () => { mobile.classList.add('open'); document.body.style.overflow = 'hidden'; };
+    const closeMenu = () => { mobile.classList.remove('open'); document.body.style.overflow = ''; };
+    toggle.addEventListener('click', () => mobile.classList.contains('open') ? closeMenu() : openMenu());
+    closeBtn.addEventListener('click', closeMenu);
+    mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    mobile.addEventListener('click', e => { if (e.target === mobile) closeMenu(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
