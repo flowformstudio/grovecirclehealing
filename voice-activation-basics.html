@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Activation Basics | Grove Circle Healing</title>
+  <meta name="description" content="A simple voice activation guide from Grove Circle Healing with breath, sighing, humming, and toning practices to support nervous system regulation.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
+  <script>
+    window.Brevo = window.Brevo || [];
+    Brevo.push([
+      "init",
+      {
+        client_key: "8jphyjsgedo0ffn02n3821zq"
+      }
+    ]);
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-intro {
+      padding: 7rem 0 3rem;
+    }
+    .guide-intro__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+      gap: 3rem;
+      align-items: center;
+    }
+    .guide-intro__media {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+    .guide-intro__media img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+    .guide-intro__text .eyebrow {
+      margin-bottom: 1.2rem;
+    }
+    .guide-intro__text h2 {
+      margin-bottom: 1.4rem;
+      max-width: 13ch;
+    }
+    .guide-intro__text p {
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .guide-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    .guide-section {
+      padding: 0 0 7rem;
+    }
+    .guide-shell {
+      background: linear-gradient(180deg, rgba(255,255,255,0.58) 0%, rgba(255,255,255,0.86) 100%);
+      border: 1px solid rgba(42, 157, 143, 0.12);
+      border-radius: 28px;
+      box-shadow: 0 16px 60px rgba(26, 25, 22, 0.06);
+      overflow: hidden;
+    }
+    .guide-header {
+      padding: 2.75rem 3rem 2rem;
+      background:
+        radial-gradient(circle at top left, rgba(223, 185, 106, 0.18), transparent 28%),
+        linear-gradient(145deg, #0f2a25 0%, #183730 52%, #102825 100%);
+      color: #fff;
+    }
+    .guide-header p {
+      color: rgba(250, 248, 243, 0.72);
+      max-width: 700px;
+    }
+    .guide-header .eyebrow {
+      color: rgba(223, 185, 106, 0.95);
+      margin-bottom: 1rem;
+    }
+    .guide-header h2 {
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .guide-body {
+      padding: 2rem 2.25rem 2.75rem;
+      background: rgba(250, 248, 243, 0.86);
+    }
+    .guide-block {
+      padding: 1.75rem;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(42, 157, 143, 0.1);
+      box-shadow: 0 8px 26px rgba(26, 25, 22, 0.04);
+    }
+    .guide-block + .guide-block {
+      margin-top: 1.5rem;
+    }
+    .guide-block__meta {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .guide-block__count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 0.9rem;
+      border-radius: var(--radius-pill);
+      background: rgba(42, 157, 143, 0.1);
+      color: var(--teal-dark);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .guide-block h3 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    .guide-block p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.85;
+      margin: 0 0 1rem;
+    }
+    .guide-block p:last-child {
+      margin-bottom: 0;
+    }
+    .guide-reflections {
+      display: grid;
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .guide-reflections li {
+      padding: 1.15rem 1.15rem 1.2rem;
+      border-radius: 18px;
+      background: var(--cream);
+      border: 1px solid rgba(42, 157, 143, 0.1);
+      color: var(--charcoal-soft);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .guide-reflections strong {
+      color: var(--charcoal);
+      font-weight: 500;
+    }
+    .guide-link {
+      color: var(--teal);
+      border-bottom: 1px solid rgba(42, 157, 143, 0.28);
+      text-decoration: none;
+    }
+    .guide-link:hover {
+      color: var(--teal-dark);
+      border-color: rgba(30, 122, 111, 0.5);
+    }
+    .guide-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      padding: 1.5rem 2.25rem 2rem;
+      background: rgba(239, 229, 214, 0.8);
+      border-top: 1px solid rgba(42, 157, 143, 0.08);
+      flex-wrap: wrap;
+    }
+    .guide-footer p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 980px) {
+      .guide-intro__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 700px) {
+      .guide-intro {
+        padding: 5.5rem 0 2.5rem;
+      }
+      .guide-header,
+      .guide-body,
+      .guide-footer {
+        padding-left: 1.35rem;
+        padding-right: 1.35rem;
+      }
+      .guide-block {
+        padding: 1.15rem;
+      }
+      .guide-block h3 {
+        font-size: 1.55rem;
+      }
+    }
+    @media print {
+      .nav,
+      .nav__mobile,
+      .footer,
+      .cta-banner,
+      .newsletter-strip,
+      .modal-overlay,
+      .guide-actions {
+        display: none !important;
+      }
+      body {
+        background: #fff;
+      }
+      .guide-intro,
+      .guide-section {
+        padding: 1rem 0;
+      }
+      .guide-shell,
+      .guide-block {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav scrolled" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__brand">
+          <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65ed51c9397bb038561480de_grove-circle-logo-black.svg"
+               alt="Grove Circle Healing logo" class="nav__logo">
+          <span class="nav__brand-name">Grove Circle Healing</span>
+        </a>
+        <ul class="nav__links">
+          <li class="nav__item nav__item--dropdown">
+            <a href="offerings.html" class="nav__link">Offerings</a>
+            <ul class="nav__dropdown">
+              <li><a href="soundhealing.html" class="nav__dropdown-link">Sound Healing</a></li>
+              <li><a href="sound-and-voice.html" class="nav__dropdown-link">Sound &amp; Voice Activation</a></li>
+              <li><a href="events-retreats-and-corporate.html" class="nav__dropdown-link">Retreats &amp; Corporate</a></li>
+              <li><a href="online-courses.html" class="nav__dropdown-link">Online Courses</a></li>
+              <li><a href="temple-of-expression.html" class="nav__dropdown-link">Temple of Expression</a></li>
+            </ul>
+          </li>
+          <li><a href="events.html" class="nav__link">Events</a></li>
+          <li><a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="nav__link">Membership</a></li>
+          <li><a href="about.html"     class="nav__link">About</a></li>
+          <li><a href="media.html"     class="nav__link">Media</a></li>
+          <li><a href="resources.html" class="nav__link" style="color:var(--teal);">Resources</a></li>
+        </ul>
+        <a href="index.html#contact" class="nav__cta">Book a Session</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav__mobile" id="navMobile">
+    <button class="nav__mobile-close" id="navClose" aria-label="Close menu">✕</button>
+    <a href="offerings.html" class="nav__mobile-link">Offerings</a>
+    <div class="nav__mobile-submenu">
+      <a href="soundhealing.html" class="nav__mobile-sublink">Sound Healing</a>
+      <a href="sound-and-voice.html" class="nav__mobile-sublink">Sound &amp; Voice Activation</a>
+      <a href="events-retreats-and-corporate.html" class="nav__mobile-sublink">Retreats &amp; Corporate</a>
+      <a href="online-courses.html" class="nav__mobile-sublink">Online Courses</a>
+      <a href="temple-of-expression.html" class="nav__mobile-sublink">Temple of Expression</a>
+    </div>
+    <a href="events.html" class="nav__mobile-link">Events</a>
+    <a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="nav__mobile-link">Membership</a>
+    <a href="about.html"       class="nav__mobile-link">About</a>
+    <a href="media.html"       class="nav__mobile-link">Media</a>
+    <a href="resources.html" class="nav__mobile-link">Resources</a>
+    <a href="index.html#contact" class="btn btn-primary" style="margin-top:1rem;">Book a Session</a>
+  </div>
+
+  <div class="page-hero" style="background-image: url('img/voice-activation.png'); background-position: center center;">
+    <div class="page-hero__tile-bg"></div>
+    <span class="page-hero__ring"></span>
+
+    <div class="container--narrow">
+      <p class="eyebrow eyebrow--light animate">Guide</p>
+      <h1 class="animate animate-delay-1">Voice Activation<br><em style="font-style:italic; color:var(--gold-light);">Basics</em></h1>
+      <p class="animate animate-delay-2">A simple introduction to using breath, sound, and your natural voice to return to calm and connection.</p>
+    </div>
+  </div>
+
+  <section class="guide-intro">
+    <div class="container">
+      <div class="guide-intro__grid">
+        <div class="guide-intro__media animate">
+          <img src="img/voice-activation.png" alt="Voice activation guide artwork">
+        </div>
+        <div class="guide-intro__text">
+          <p class="eyebrow animate">A Gentle Introduction</p>
+          <h2 class="animate animate-delay-1">Your Voice as a Pathway Back to Yourself</h2>
+          <p class="animate animate-delay-2">
+            Your voice is more than a tool for speaking. It is an instrument that can help regulate your
+            nervous system, release tension, and reconnect you with your body in moments of stress,
+            overwhelm, or emotional buildup.
+          </p>
+          <p class="animate animate-delay-3">
+            Move through this short practice slowly. You do not need to be a singer to experience the benefits,
+            because your natural voice already carries its own medicine.
+          </p>
+          <div class="guide-actions animate animate-delay-3">
+            <button type="button" class="btn btn-primary" id="printGuide">Print Guide</button>
+            <a href="sound-and-voice.html" class="btn btn-outline">Explore Sound &amp; Voice</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="guide-section">
+    <div class="container">
+      <div class="guide-shell animate">
+        <div class="guide-header">
+          <p class="eyebrow">Voice Activation Basics</p>
+          <h2>A Simple At-Home Practice for Breath and Voice</h2>
+          <p>
+            Use this five-minute practice to soften tension, feel the vibration of your own sound, and return
+            to a steadier rhythm in your body.
+          </p>
+        </div>
+
+        <div class="guide-body">
+          <section class="guide-block">
+            <div class="guide-block__meta">
+              <span class="guide-block__count">01</span>
+              <h3>Why Your Voice Helps</h3>
+            </div>
+            <p>
+              Simple sounds like sighing, humming, toning, and conscious breathing can help calm the mind,
+              stimulate the vagus nerve, and bring the body into a more grounded and balanced state.
+            </p>
+            <p>
+              Your natural voice does not need to sound a certain way. The practice is about feeling vibration,
+              listening inward, and noticing how sound can help you come home to yourself.
+            </p>
+          </section>
+
+          <section class="guide-block">
+            <div class="guide-block__meta">
+              <span class="guide-block__count">02</span>
+              <h3>A Simple At-Home Practice</h3>
+            </div>
+            <ul class="guide-reflections">
+              <li><strong>1.</strong> Pause and breathe. Place one hand on your heart and one on your belly, then take three slow breaths and let each exhale soften your body.</li>
+              <li><strong>2.</strong> Release with a sigh. Open your mouth and let out an audible sigh two or three times to release built-up tension.</li>
+              <li><strong>3.</strong> Hum gently. With lips closed, softly hum on the exhale and feel the vibration in your chest, throat, and face.</li>
+              <li><strong>4.</strong> Tone a sound. Choose a simple tone like Ahhh, Ooo, or Mmm and hold the sound comfortably without forcing.</li>
+              <li><strong>5.</strong> Notice the shift. Pause for a moment and ask yourself, what feels different in my body now?</li>
+            </ul>
+          </section>
+
+          <section class="guide-block">
+            <div class="guide-block__meta">
+              <span class="guide-block__count">03</span>
+              <h3>Practice Notes</h3>
+            </div>
+            <p>
+              Keep the practice gentle and easy. Your sound does not need to be loud, polished, or beautiful;
+              it only needs to be honest enough for your body to feel it.
+            </p>
+            <p>
+              Even a few minutes of conscious breath and sound can help create more calm, clarity, and connection
+              throughout your day.
+            </p>
+          </section>
+
+          <section class="guide-block">
+            <div class="guide-block__meta">
+              <span class="guide-block__count">04</span>
+              <h3>Closing</h3>
+            </div>
+            <p>
+              Your voice can become a simple anchor you return to anytime you feel scattered, tense, or far
+              away from yourself.
+            </p>
+            <p>
+              Let the sound be a doorway back into your breath, your body, and the grounded hum of home within.
+            </p>
+          </section>
+        </div>
+
+        <div class="guide-footer">
+          <p>Use this practice whenever you want a short reset for your body and nervous system.</p>
+          <p>Return to your natural voice as a steady place of calm, clarity, and connection.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container--narrow">
+      <h2 class="animate">Ready to Experience It Directly?</h2>
+      <p class="animate animate-delay-1">Explore sound and voice activation classes, group experiences, or get in touch to find the right offering for you.</p>
+      <a href="sound-and-voice.html" class="btn btn-white animate animate-delay-2">Explore Sound &amp; Voice</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand">
+            <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65ed51c937778e8314010e9a_GCH-logo-white.svg"
+                 alt="Grove Circle Healing" class="footer__logo">
+            <span class="footer__brand-name">Grove Circle Healing</span>
+          </div>
+          <p class="footer__tagline">Where sound, intuition and voice are remembered.</p>
+          <div class="footer__socials">
+            <a href="https://www.facebook.com/profile.php?id=61556078138810" class="footer__social" aria-label="Facebook">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/5ee015d213013e43e6b2ec8e_facebook%20(1).svg" alt="">
+            </a>
+            <a href="https://www.instagram.com/grovecirclehealing/" class="footer__social" aria-label="Instagram">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65e0c065942f44b4a50b7760_instagram.svg" alt="">
+            </a>
+            <a href="https://www.youtube.com/channel/UCwaJB66tytgtwmN_7BAYu6g" class="footer__social" aria-label="YouTube">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65e0c065942f44b4a50b7762_youtube.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__col-heading">Offerings</p>
+          <ul class="footer__links">
+            <li><a href="soundhealing.html" class="footer__link">Sound Healing</a></li>
+            <li><a href="sound-and-voice.html" class="footer__link">Sound &amp; Voice Activation</a></li>
+            <li><a href="events-retreats-and-corporate.html" class="footer__link">Events &amp; Corporate</a></li>
+            <li><a href="online-courses.html" class="footer__link">Online Courses</a></li>
+            <li><a href="temple-of-expression.html" class="footer__link">Temple of Expression</a></li>
+            <li><a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="footer__link">Membership</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-heading">Explore</p>
+          <ul class="footer__links">
+            <li><a href="about.html"         class="footer__link">About</a></li>
+            <li><a href="events.html"        class="footer__link">Events</a></li>
+            <li><a href="media.html"         class="footer__link">Media</a></li>
+            <li><a href="resources.html"     class="footer__link" style="color:var(--teal);">Resources</a></li>
+            <li><a href="index.html#contact" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-heading">Connect</p>
+          <ul class="footer__links">
+            <li><a href="https://www.instagram.com/grovecirclehealing/" class="footer__link">Instagram</a></li>
+            <li><a href="https://www.youtube.com/channel/UCwaJB66tytgtwmN_7BAYu6g" class="footer__link">YouTube</a></li>
+            <li><a href="mailto:fluidgirlproductions@gmail.com" class="footer__link">Email Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__credit">© 2026 Grove Circle Healing. All rights reserved.</p>
+        <p class="footer__credit">Designed with love by <a href="https://www.flowformstudio.com/">Flowform</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-label="Contact form">
+    <div class="modal">
+      <button class="modal__close" id="modalClose" aria-label="Close">✕</button>
+      <div class="modal__form-side">
+        <p class="eyebrow">Get in Touch</p>
+        <h2>Let's Get Started</h2>
+        <p class="modal__subtitle">Contact for a complimentary discovery call or further details regarding my services.</p>
+
+        <form class="modal__form" id="modalContactForm" action="https://formspree.io/f/meerdjgb" method="POST">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="modal-first">First Name</label>
+              <input type="text" id="modal-first" name="first-name" autocomplete="given-name">
+            </div>
+            <div class="form-field">
+              <label for="modal-last">Last Name</label>
+              <input type="text" id="modal-last" name="last-name" autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="modal-email">Email</label>
+            <input type="email" id="modal-email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label for="modal-phone">Phone Number <span>(Optional)</span></label>
+            <input type="tel" id="modal-phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="form-field">
+            <label for="modal-message">How Can I Help You?</label>
+            <textarea id="modal-message" name="message"></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn-submit">Send a Message</button>
+          </div>
+        </form>
+
+        <div class="modal__success" id="modalSuccess">
+          <h3>Thank you!</h3>
+          <p>Your message has been received. I will get back to you as soon as possible.</p>
+        </div>
+      </div>
+
+      <div class="modal__photo-side">
+        <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65f873ee06acb24094347750_IMG_3439.JPG"
+             alt="Chris Young-Ginzburg">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+    if (window.scrollY <= 60) nav.classList.add('scrolled');
+
+    const toggle = document.getElementById('navToggle');
+    const mobile = document.getElementById('navMobile');
+    const closeBtn = document.getElementById('navClose');
+    const openMenu = () => { mobile.classList.add('open'); document.body.style.overflow = 'hidden'; };
+    const closeMenu = () => { mobile.classList.remove('open'); document.body.style.overflow = ''; };
+    toggle.addEventListener('click', () => mobile.classList.contains('open') ? closeMenu() : openMenu());
+    closeBtn.addEventListener('click', closeMenu);
+    mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    mobile.addEventListener('click', e => { if (e.target === mobile) closeMenu(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.animate').forEach(el => io.observe(el));
+
+    const modalOverlay = document.getElementById("contactModal");
+    const modalClose = document.getElementById("modalClose");
+    const modalForm = document.getElementById("modalContactForm");
+    const modalSuccess = document.getElementById("modalSuccess");
+
+    const openModal = () => {
+      modalOverlay.classList.add("open");
+      document.body.style.overflow = "hidden";
+    };
+    const closeModalAction = () => {
+      modalOverlay.classList.remove("open");
+      document.body.style.overflow = "";
+    };
+
+    document.querySelectorAll('a[href="index.html#contact"], a[href="#contact"]').forEach(el => {
+      el.addEventListener("click", e => { e.preventDefault(); openModal(); });
+    });
+    document.querySelectorAll(".nav__cta, .nav__mobile-link").forEach(el => {
+      if (el.textContent.trim() === "Book a Session") {
+        el.addEventListener("click", e => { e.preventDefault(); closeMenu(); openModal(); });
+      }
+    });
+
+    modalClose.addEventListener("click", closeModalAction);
+    modalOverlay.addEventListener("click", e => { if (e.target === modalOverlay) closeModalAction(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closeModalAction(); });
+
+    modalForm && modalForm.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(modalForm.action, {
+        method: 'POST',
+        body: new FormData(modalForm),
+        headers: { 'Accept': 'application/json' }
+      }).then(res => {
+        if (res.ok) {
+          modalForm.style.display = "none";
+          modalSuccess.classList.add("visible");
+          setTimeout(() => {
+            closeModalAction();
+            setTimeout(() => {
+              modalForm.reset();
+              modalForm.style.display = "";
+              modalSuccess.classList.remove("visible");
+            }, 400);
+          }, 2800);
+        }
+      });
+    });
+
+    document.getElementById('printGuide').addEventListener('click', () => {
+      window.print();
+    });
+  </script>
+</body>
+</html>
