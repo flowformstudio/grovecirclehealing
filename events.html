@@ -31,7 +31,48 @@
   <meta name="twitter:description" content="Upcoming sound healing events, retreats, workshops and corporate experiences with Chris Young-Ginzburg.">
   <meta name="twitter:image" content="https://www.grovecirclehealing.com/img/chris-sound-bowl-ceremony.png">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"EventSeries","name":"Grove Circle Healing Events & Workshops","url":"https://www.grovecirclehealing.com/events","organizer":{"@id":"https://www.grovecirclehealing.com/#chris"},"description":"Upcoming sound healing events, retreats, workshops and corporate experiences.","eventAttendanceMode":"https://schema.org/MixedEventAttendanceMode"}
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "EventSeries",
+        "name": "Grove Circle Healing Events & Workshops",
+        "url": "https://www.grovecirclehealing.com/events",
+        "organizer": { "@id": "https://www.grovecirclehealing.com/#chris" },
+        "description": "Upcoming sound healing events, retreats, workshops and corporate experiences.",
+        "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode"
+      },
+      {
+        "@type": "Event",
+        "name": "Finding Your \"Home\" with Sound & Movement",
+        "startDate": "2026-06-19T10:00:00-07:00",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": { "@type": "VirtualLocation", "url": "https://grovecirclehealing.thinkific.com/" },
+        "description": "Explore sound, breath, and intuitive movement to shake loose stagnant energy, return to your body's grounded rhythm, and remember home within yourself.",
+        "organizer": { "@type": "Person", "@id": "https://www.grovecirclehealing.com/#chris", "name": "Chris Young-Ginzburg" },
+        "performer": { "@type": "Person", "name": "Chris Young-Ginzburg" },
+        "image": "https://www.grovecirclehealing.com/img/finding-home-sound-movement.jpg"
+      },
+      {
+        "@type": "Event",
+        "name": "Temple of Expression: Talent Showcase",
+        "startDate": "2026-06-26T18:00:00-07:00",
+        "endDate": "2026-06-26T21:00:00-07:00",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "Miss Daisy's Magical Wonderland",
+          "address": { "@type": "PostalAddress", "addressLocality": "Sebastopol", "addressRegion": "CA", "addressCountry": "US" }
+        },
+        "description": "A family-friendly evening of live performance, creativity, and entertainment featuring dance, music, spoken word, singing, and more.",
+        "organizer": { "@type": "Person", "@id": "https://www.grovecirclehealing.com/#chris", "name": "Chris Young-Ginzburg" },
+        "image": "https://www.grovecirclehealing.com/img/temple-june-2026-flyer.jpg",
+        "offers": { "@type": "Offer", "url": "https://www.eventbrite.com/e/1988107775876", "availability": "https://schema.org/InStock" }
+      }
+    ]
+  }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
