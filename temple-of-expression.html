@@ -519,6 +519,34 @@
       color: var(--teal-dark);
       border-color: rgba(30, 122, 111, 0.5);
     }
+    .temple-section--past-events .temple-section-heading h2,
+    .temple-section--past-events .past-events-panel .temple-copy h2 {
+      color: #fff;
+    }
+    .temple-section--past-events .past-events-panel {
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03)),
+        rgba(13, 17, 19, 0.92);
+      border-color: rgba(224, 184, 95, 0.24);
+      box-shadow: 0 30px 78px rgba(0, 0, 0, 0.3);
+    }
+    .temple-section--past-events .past-events-panel .flyer-placeholder {
+      background: rgba(255,255,255,0.08);
+    }
+    .temple-section--past-events .past-events-panel .temple-copy p {
+      color: rgba(255,255,255,0.82);
+    }
+    .temple-section--past-events .past-events-panel .temple-copy .eyebrow {
+      color: rgba(255,255,255,0.72);
+    }
+    .temple-section--past-events .past-events-panel .temple-copy a {
+      color: var(--temple-gold);
+      border-color: rgba(224, 184, 95, 0.48);
+    }
+    .temple-section--past-events .past-events-panel .temple-copy a:hover {
+      color: #fff;
+      border-color: rgba(255,255,255,0.72);
+    }
     .host-card {
       display: grid;
       grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -768,7 +796,7 @@
     </div>
   </section>
 
-  <section class="temple-section temple-section--cream">
+  <section class="temple-section temple-section--dark temple-section--past-events">
     <div class="container">
       <div class="temple-section-heading">
         <h2>Past Events</h2>
