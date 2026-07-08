@@ -493,6 +493,32 @@
       text-transform: uppercase;
       margin: 0;
     }
+    .past-events-panel {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+      background: var(--cream);
+      border: 1px solid rgba(214, 176, 112, 0.18);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.4rem, 3vw, 2.25rem);
+      box-shadow: var(--shadow-soft);
+    }
+    .past-events-panel .flyer-placeholder {
+      background: rgba(255,255,255,0.78);
+    }
+    .past-events-panel .temple-copy p {
+      color: var(--muted);
+    }
+    .past-events-panel .temple-copy a {
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(42, 157, 143, 0.28);
+    }
+    .past-events-panel .temple-copy a:hover {
+      color: var(--teal-dark);
+      border-color: rgba(30, 122, 111, 0.5);
+    }
     .host-card {
       display: grid;
       grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -633,6 +659,7 @@
       .temple-two-col,
       .cta-panel,
       .host-card,
+      .past-events-panel,
       .theme-band {
         grid-template-columns: 1fr;
       }
@@ -709,7 +736,7 @@
           <p class="temple-hero__subtitle animate animate-delay-2">A Community Talent Showcase &amp; Ceremonial Performance Experience</p>
           <p class="temple-hero__plainline animate animate-delay-3">A family-friendly community performance evening for dance, music, spoken word, theater, and creative expression.</p>
           <div class="temple-hero__actions animate animate-delay-4">
-            <a href="#event-links" class="btn btn-primary">Get Tickets</a>
+            <a href="#event-links" class="btn btn-primary">Upcoming Event</a>
             <a href="#perform" class="btn btn-outline">Apply to Perform</a>
           </div>
         </div>
@@ -727,19 +754,35 @@
       </div>
       <div class="cta-panel">
         <div class="temple-copy">
-          <p class="cta-panel__theme">Next Event: Fri., June 26, 5pm</p>
+          <p class="cta-panel__theme">Coming Soon</p>
           <h2>A space to express, be seen, and belong.</h2>
-          <p>Join us for an unforgettable evening of creativity and connection. Doors open at 5pm (food available for purchase) and the show starts at 6pm.</p>
-          <div class="event-actions" style="max-width:420px; margin-top:2rem;">
-            <a href="https://www.eventbrite.com/e/temple-of-expression-talent-showcase-tickets-1988107775876" class="btn btn-primary" target="_blank" rel="noopener">Get Tickets</a>
-            <a href="https://form.jotform.com/261105176075149" class="btn btn-outline" target="_blank" rel="noopener">Apply to Perform</a>
-          </div>
-          <p class="temple-note">Limited performance spaces available. Questions?: <a href="mailto:templeofexpression888@gmail.com">templeofexpression888@gmail.com</a></p>
+          <p>Our next Temple of Expression gathering is being shaped with care. Details for the upcoming showcase will be shared soon.</p>
+          <p class="temple-note">Questions?: <a href="mailto:templeofexpression888@gmail.com">templeofexpression888@gmail.com</a></p>
         </div>
         <div class="flyer-placeholder">
           <div>
-            <img src="img/temple-june-2026-flyer.jpg" alt="Temple of Expression June 2026 event flyer">
+            <img src="img/temple-coming-soon.png" alt="Temple of Expression coming soon event artwork">
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="temple-section">
+    <div class="container">
+      <div class="temple-section-heading">
+        <h2>Past Events</h2>
+      </div>
+      <div class="past-events-panel">
+        <div class="flyer-placeholder">
+          <div>
+            <img src="img/temple-june-2026-flyer.jpg" alt="Temple of Expression past event flyer">
+          </div>
+        </div>
+        <div class="temple-copy">
+          <p class="eyebrow">June Showcase Recap</p>
+          <h2>Temple of Expression Talent Showcase</h2>
+          <p>For a recap of our June gathering, visit the Temple of Expression post on <a href="https://www.instagram.com/p/DaGYo72GOqr/?img_index=1" target="_blank" rel="noopener">Instagram</a>.</p>
         </div>
       </div>
     </div>
