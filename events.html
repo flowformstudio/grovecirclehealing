@@ -126,7 +126,7 @@
 
     .event-item {
       display: grid;
-      grid-template-columns: 120px minmax(280px, 360px) minmax(0, 1fr) auto;
+      grid-template-columns: 80px minmax(200px, 300px) minmax(0, 1fr);
       gap: 2.25rem;
       align-items: center;
       background: var(--cream);
@@ -146,7 +146,7 @@
     .event-item__date {
       text-align: center;
       border-right: 1px solid var(--border);
-      padding-right: 3rem;
+      padding-right: 1rem;
     }
     .event-item__day {
       font-family: 'Cormorant Garamond', serif;
@@ -203,9 +203,12 @@
       display: none;
     }
 
-    .event-item__action {
-      flex-shrink: 0;
-    }
+    .event-item__action { grid-column: 3; }
+    .event-item > div { min-width: 0; }
+    .event-item__description { color: var(--muted); font-size: 0.9rem; line-height: 1.7; margin-top: 0.8rem; }
+    .event-item__image--square { aspect-ratio: 1; height: auto; object-fit: contain; }
+    .event-item__image--logo { object-fit: contain; background: #fff8f1; padding: 0.75rem; }
+    .event-item:focus-visible { outline: 3px solid var(--teal); outline-offset: 4px; }
 
     /* ── COMMUNITY SECTION ────────────────────────────────────── */
     .community-section {
@@ -359,8 +362,8 @@
     }
 
     @media (max-width: 900px) {
-      .event-item { grid-template-columns: 80px minmax(220px, 300px) 1fr; gap: 1.75rem; }
-      .event-item__action { display: none; }
+      .event-item { grid-template-columns: 60px minmax(160px, 220px) minmax(0, 1fr); gap: 1.25rem; }
+      .event-item__action { grid-column: 3; }
       .event-item__date { padding-right: 2rem; }
       .featured-event__inner { grid-template-columns: 1fr; }
       .corporate__inner { grid-template-columns: 1fr; }
@@ -372,6 +375,7 @@
       .event-item__date { border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 1rem; text-align: left; display: flex; gap: 0.5rem; align-items: baseline; }
       .event-item__day { font-size: 2rem; }
       .event-item__image { max-width: 100%; }
+      .event-item__action { grid-column: 1; }
     }
   </style>
 </head>
@@ -477,6 +481,71 @@
       </div>
 
       <div class="events-list">
+        <a href="https://www.instagram.com/p/DdH29E7mrnQ/?img_index=1" class="event-item animate" target="_blank" rel="noopener">
+          <div class="event-item__date">
+            <div class="event-item__day">28</div>
+            <div class="event-item__month">Sep</div>
+          </div>
+          <img src="img/freestyle-dance-challenge-2026.jpg" alt="Free 5-Day Freestyle Playground Dance Challenge starting September 28" class="event-item__image event-item__image--square" loading="lazy">
+          <div>
+            <span class="event-item__tag">Free · Online Dance Challenge</span>
+            <h3 class="event-item__title">5-Day Freestyle Playground Dance Challenge</h3>
+            <div class="event-item__meta">
+              <span>September 28 – October 2, 2026</span>
+              <span>On Instagram · @free_styleplayground</span>
+            </div>
+            <p class="event-item__description">Move, play, and discover your own movement language with a new dance video and creative prompt each day. Share your daily challenge video, tag and follow @free_styleplayground, and cheer on fellow dancers. A free taste of the October Freestyle Playground series, with chances to win free classes. Winners announced October 5.</p>
+          </div>
+          <div class="event-item__action"><span class="btn btn-outline">Join on Instagram</span></div>
+        </a>
+        <a href="https://www.eventbrite.com/e/1999541960831?aff=oddtdtcreator" class="event-item animate" target="_blank" rel="noopener">
+          <div class="event-item__date">
+            <div class="event-item__day">6</div>
+            <div class="event-item__month">Oct</div>
+          </div>
+          <img src="img/freestyle-playground-2026.jpg" alt="Freestyle Playground online dance series artwork" class="event-item__image" loading="lazy">
+          <div>
+            <span class="event-item__tag">Online Dance Series</span>
+            <h3 class="event-item__title">Freestyle Playground</h3>
+            <div class="event-item__meta">
+              <span>Oct 6, 13 &amp; 20, 2026</span><span>10:00–11:15 AM Pacific · Online via Zoom</span>
+            </div>
+            <p class="event-item__description">Explore freestyle dance, musicality, breath, and creative movement in this three-part series. All levels welcome; join one class or all three. $35 per class or $90 for the series.</p>
+          </div>
+          <div class="event-item__action"><span class="btn btn-outline">Details &amp; Tickets</span></div>
+        </a>
+        <a href="https://grovecirclehealing.thinkific.com/courses/new-course" class="event-item animate" target="_blank" rel="noopener">
+          <div class="event-item__date">
+            <div class="event-item__day">9</div>
+            <div class="event-item__month">Oct</div>
+          </div>
+          <img src="img/intuition-playspace.png" alt="The Intuition Playspace: Developing Your Psychic Senses Through Play" class="event-item__image event-item__image--square" width="1254" height="1254" loading="lazy">
+          <div>
+            <span class="event-item__tag">Membership Class</span>
+            <h3 class="event-item__title">The Intuition Playspace</h3>
+            <div class="event-item__meta">
+              <span>Friday, October 9, 2026</span><span>10:00 AM Pacific</span>
+            </div>
+            <p class="event-item__description">Developing Your Psychic Senses Through Play. Join this month’s membership class for a playful exploration of intuition.</p>
+          </div>
+          <div class="event-item__action"><span class="btn btn-outline">Membership Details</span></div>
+        </a>
+        <a href="https://www.facebook.com/events/1453833229887284/" class="event-item animate" target="_blank" rel="noopener">
+          <div class="event-item__date">
+            <div class="event-item__day">10</div>
+            <div class="event-item__month">Oct</div>
+          </div>
+          <img src="img/deep-house-yoga-2026.jpg" alt="Deep House Yoga gathering with yoga, music, and colorful projected art" class="event-item__image" loading="lazy">
+          <div>
+            <span class="event-item__tag">Yoga · Music · Sound</span>
+            <h3 class="event-item__title">Deep House Yoga</h3>
+            <div class="event-item__meta">
+              <span>Saturday, October 10, 2026</span><span>7:00–10:00 PM Pacific</span><span>Laguna Lab · Sebastopol</span>
+            </div>
+            <p class="event-item__description">Yoga: the Art of Transformation brings together yoga, live music, sound healing, a scent bath, and immersive visual art. Featuring sound healing by SoulFi Sound &amp; Fluid Girl.</p>
+          </div>
+          <div class="event-item__action"><span class="btn btn-outline">Event Details</span></div>
+        </a>
         <a href="https://www.eventbrite.com/e/sound-healing-with-horses-tickets-1993872882465?aff=oddtdtcreator&amp;keep_tld=true" class="event-item animate animate-delay-3" target="_blank" rel="noopener">
           <div class="event-item__date">
             <div class="event-item__day">22</div>
@@ -496,6 +565,22 @@
           <div class="event-item__action">
             <span class="btn btn-outline">More Info &amp; Tickets</span>
           </div>
+        </a>
+        <a href="temple-of-expression.html" class="event-item animate">
+          <div class="event-item__date">
+            <div class="event-item__day">11</div>
+            <div class="event-item__month">Dec</div>
+          </div>
+          <img src="img/temple-logo.jpg" alt="Temple of Expression logo" class="event-item__image event-item__image--logo" loading="lazy">
+          <div>
+            <span class="event-item__tag">Coming in December</span>
+            <h3 class="event-item__title">Temple of Expression</h3>
+            <div class="event-item__meta">
+              <span>Friday, December 11, 2026</span><span>Laguna Labs · Sebastopol</span>
+            </div>
+            <p class="event-item__description">Save the date for an evening of creativity, expression, and community. More details coming soon.</p>
+          </div>
+          <div class="event-item__action"><span class="btn btn-outline">Explore the Temple</span></div>
         </a>
       </div>
     </div>
