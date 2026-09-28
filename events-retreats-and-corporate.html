@@ -84,7 +84,13 @@
   <style>
     .page-hero {
       padding: 8.4rem 0 4.2rem;
+      background-position: center 58%;
     }
+    .page-hero::before {
+      background: linear-gradient(180deg, rgba(12, 8, 22, 0.685), rgba(12, 8, 22, 0.73) 55%, rgba(12, 8, 22, 0.802));
+    }
+    .page-hero h1 { text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35); }
+    .page-hero p { color: rgba(255, 255, 255, 0.88); }
 
     /* ── TWO-COLUMN ───────────────────────────────────────────── */
     .two-col {
@@ -381,7 +387,7 @@
 
 
   <!-- ═══ PAGE HERO ═════════════════════════════════════════════ -->
-  <div class="page-hero" style="background-image: url('img/chris-sound-bowl-ceremony.png'); background-position: 54% 24%;">
+  <div class="page-hero" style="background-image: url('img/corporate-sound-healing-heart.jpeg');">
     <div class="page-hero__tile-bg"></div>
     <span class="page-hero__ring"></span>
     <div class="page-hero__stars" aria-hidden="true"></div>
