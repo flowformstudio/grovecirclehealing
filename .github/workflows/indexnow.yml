@@ -1,0 +1,44 @@
+# Tells Bing (and other IndexNow search engines) which pages changed after each push.
+# Key file: /d70462cd3ff3e807d19c6573b881ad75.txt at the site root. Do not delete or rename it.
+name: IndexNow ping
+
+on:
+  push:
+    branches: [main]
+    paths: ['**.html', 'sitemap.xml', 'llms.txt']
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Wait for the Vercel deploy to go live
+        run: sleep 90
+
+      - name: Submit changed pages
+        env:
+          KEY: d70462cd3ff3e807d19c6573b881ad75
+          HOST: www.grovecirclehealing.com
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || ! git rev-parse -q HEAD~1 >/dev/null; then
+            files=$(ls *.html)
+          else
+            files=$(git diff --name-only HEAD~1 HEAD -- '*.html')
+          fi
+          urls=""
+          for f in $files; do
+            [ -f "$f" ] || continue
+            case "$f" in brevo-frame.html|*/*) continue ;; esac
+            if [ "$f" = "index.html" ]; then p=""; else p="${f%.html}"; fi
+            urls="$urls\"https://$HOST/$p\","
+          done
+          urls="$urls\"https://$HOST/sitemap.xml\""
+          body="{\"host\":\"$HOST\",\"key\":\"$KEY\",\"keyLocation\":\"https://$HOST/$KEY.txt\",\"urlList\":[$urls]}"
+          echo "$body"
+          code=$(curl -s -o /dev/null -w "%{http_code}" -X POST https://api.indexnow.org/indexnow -H "Content-Type: application/json; charset=utf-8" -d "$body")
+          echo "IndexNow response: $code"
+          case "$code" in 200|202) ;; *) exit 1 ;; esac

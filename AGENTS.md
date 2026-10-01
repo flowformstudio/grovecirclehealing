@@ -30,3 +30,7 @@ These files are invisible to visitors but are what Google and AI assistants (Cha
 
 - Resize photos before adding them: max ~2400px on the long edge, JPEG quality ~80, ideally under 500 KB. Phone photos (4000px+, 2–6 MB) slow the site down.
 - Hero video on the home page: `hero.av1.mp4` + `hero.h264.mp4` + `hero-poster.jpg`. Replace all three together if the video changes.
+
+## IndexNow (automatic search-engine ping)
+
+`.github/workflows/indexnow.yml` notifies Bing of changed pages after every push to `main`. It needs the key file `d70462cd3ff3e807d19c6573b881ad75.txt` at the root. Never delete or rename either one.
