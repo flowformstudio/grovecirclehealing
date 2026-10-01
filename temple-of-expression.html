@@ -25,37 +25,77 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.grovecirclehealing.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Temple of Expression", "item": "https://www.grovecirclehealing.com/temple-of-expression" }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.grovecirclehealing.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Temple of Expression",
+          "item": "https://www.grovecirclehealing.com/temple-of-expression"
+        }
+      ]
+    },
+    {
+      "@type": "EventSeries",
+      "@id": "https://www.grovecirclehealing.com/temple-of-expression#series",
+      "name": "Temple of Expression",
+      "url": "https://www.grovecirclehealing.com/temple-of-expression",
+      "description": "A recurring community talent showcase and ceremonial performance experience in Sonoma County featuring dance, music, spoken word, singing, and creative expression in a supportive, family-friendly space.",
+      "organizer": {
+        "@type": "HealthAndBeautyBusiness",
+        "@id": "https://www.grovecirclehealing.com/#business",
+        "name": "Grove Circle Healing",
+        "url": "https://www.grovecirclehealing.com/"
       },
-      {
-        "@type": "EventSeries",
-        "@id": "https://www.grovecirclehealing.com/temple-of-expression#series",
-        "name": "Temple of Expression",
-        "url": "https://www.grovecirclehealing.com/temple-of-expression",
-        "description": "A recurring community talent showcase and ceremonial performance experience in Sonoma County featuring dance, music, spoken word, singing, and creative expression in a supportive, family-friendly space.",
-        "organizer": {
-          "@type": "HealthAndBeautyBusiness",
-          "@id": "https://www.grovecirclehealing.com/#business",
-          "name": "Grove Circle Healing",
-          "url": "https://www.grovecirclehealing.com/"
-        },
-        "location": {
-          "@type": "Place",
-          "name": "Sebastopol, California",
-          "address": { "@type": "PostalAddress", "addressLocality": "Sebastopol", "addressRegion": "CA", "addressCountry": "US" }
-        },
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
-      }
-    ]
-  }
+      "location": {
+        "@type": "Place",
+        "name": "Sebastopol, California",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sebastopol",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "subEvent": [
+        {
+          "@type": "Event",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "organizer": {
+            "@id": "https://www.grovecirclehealing.com/#business"
+          },
+          "name": "Temple of Expression",
+          "startDate": "2026-12-11",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Laguna Lab",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Sebastopol",
+              "addressRegion": "CA",
+              "addressCountry": "US"
+            }
+          },
+          "description": "An evening of creativity, expression, and community: a talent showcase and ceremonial performance experience in Sebastopol.",
+          "image": "https://www.grovecirclehealing.com/img/temple-december-2026.jpg",
+          "url": "https://www.grovecirclehealing.com/temple-of-expression"
+        }
+      ]
+    }
+  ]
+}
   </script>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
@@ -757,6 +797,7 @@
     <a href="index.html#contact" class="btn btn-primary" style="margin-top:1rem;">Book a Session</a>
   </div>
 
+  <main id="main">
   <section class="temple-hero">
     <div class="container">
       <div class="temple-hero__grid">
@@ -791,7 +832,7 @@
         </div>
         <div class="flyer-placeholder">
           <div>
-            <img src="img/temple-december-2026.png" alt="Temple of Expression — Save the date: December 11, 2026, at Laguna Lab in Sebastopol. More details coming soon.">
+            <img src="img/temple-december-2026.jpg" alt="Temple of Expression — Save the date: December 11, 2026, at Laguna Lab in Sebastopol. More details coming soon.">
           </div>
         </div>
       </div>
@@ -806,7 +847,7 @@
       <div class="past-events-panel">
         <div class="flyer-placeholder">
           <div>
-            <img src="img/temple-june-2026-flyer.jpg" alt="Temple of Expression past event flyer">
+            <img src="img/temple-june-2026-flyer.jpg" alt="Temple of Expression past event flyer" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="temple-copy">
@@ -824,7 +865,7 @@
         <div class="what-it-is-body">
           <div class="what-it-is-images animate animate-delay-1">
             <div class="temple-photo-card">
-              <img src="img/temple-chair-stage.jpg" alt="A wooden chair in a spotlight on stage">
+              <img src="img/temple-chair-stage.jpg" alt="A wooden chair in a spotlight on stage" loading="lazy" decoding="async">
             </div>
             <p class="what-it-is-note">Stage images shown on this page are visual references only. They are not the literal stages performers will be on.</p>
           </div>
@@ -855,7 +896,7 @@
           </ul>
         </div>
         <div class="temple-photo-card temple-mic-photo animate animate-delay-1">
-          <img src="img/temple-stage-curtain.jpg" alt="Purple stage curtains and a lit stage floor">
+          <img src="img/temple-stage-curtain.jpg" alt="Purple stage curtains and a lit stage floor" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -878,7 +919,7 @@
         </div>
         <div class="performer-visuals animate animate-delay-1">
           <div class="temple-photo-card">
-            <img src="img/temple-expression-dance.jpg" alt="Expressive movement in a sunlit outdoor setting">
+            <img src="img/temple-expression-dance.jpg" alt="Expressive movement in a sunlit outdoor setting" loading="lazy" decoding="async">
           </div>
           <div class="temple-card">
             <h3>We are looking for (5 min. time slot at most):</h3>
@@ -898,7 +939,7 @@
   <section class="temple-section temple-section--cream">
     <div class="container">
       <div class="host-card">
-        <img src="img/temple-host-dance.jpg" alt="Chris Young-Ginzburg in expressive movement outdoors" class="animate">
+        <img src="img/temple-host-dance.jpg" alt="Chris Young-Ginzburg in expressive movement outdoors" class="animate" loading="lazy" decoding="async">
         <div class="temple-copy animate animate-delay-1">
           <p class="eyebrow">About the Host</p>
           <p>Chris Young-Ginzburg is an intuitive healer, sound healer, and performer with over 20 years of experience in dance, theater, and creative expression.</p>
@@ -910,6 +951,7 @@
     </div>
   </section>
 
+  </main>
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
@@ -922,13 +964,13 @@
           <p class="footer__tagline">Where sound, intuition and voice are remembered.</p>
           <div class="footer__socials">
             <a href="https://www.facebook.com/profile.php?id=61556078138810" class="footer__social" aria-label="Facebook">
-              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/5ee015d213013e43e6b2ec8e_facebook%20(1).svg" alt="">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/5ee015d213013e43e6b2ec8e_facebook%20(1).svg" alt="" loading="lazy" decoding="async">
             </a>
             <a href="https://www.instagram.com/grovecirclehealing/" class="footer__social" aria-label="Instagram">
-              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65e0c065942f44b4a50b7760_instagram.svg" alt="">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65e0c065942f44b4a50b7760_instagram.svg" alt="" loading="lazy" decoding="async">
             </a>
             <a href="https://www.youtube.com/channel/UCwaJB66tytgtwmN_7BAYu6g" class="footer__social" aria-label="YouTube">
-              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65e0c065942f44b4a50b7762_youtube.svg" alt="">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65e0c065942f44b4a50b7762_youtube.svg" alt="" loading="lazy" decoding="async">
             </a>
           </div>
         </div>

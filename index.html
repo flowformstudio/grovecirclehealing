@@ -25,7 +25,7 @@
   <meta property="og:url" content="https://www.grovecirclehealing.com/">
   <meta property="og:title" content="Sound Healer in Sonoma County | Grove Circle Healing">
   <meta property="og:description" content="Private sound healing, voice activation, workshops, and healing events with Chris Young-Ginzburg in Sonoma County, California.">
-  <meta property="og:image" content="https://www.grovecirclehealing.com/img/chris-sound-bowl-ceremony.png">
+  <meta property="og:image" content="https://www.grovecirclehealing.com/img/chris-sound-bowl-ceremony.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="800">
   <meta property="og:locale" content="en_US">
@@ -35,7 +35,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sound Healer in Sonoma County | Grove Circle Healing">
   <meta name="twitter:description" content="Private sound healing, voice activation, workshops, and healing events with Chris Young-Ginzburg in Sonoma County, California.">
-  <meta name="twitter:image" content="https://www.grovecirclehealing.com/img/chris-sound-bowl-ceremony.png">
+  <meta name="twitter:image" content="https://www.grovecirclehealing.com/img/chris-sound-bowl-ceremony.jpg">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -46,6 +46,8 @@
       "name": "Grove Circle Healing",
       "url": "https://www.grovecirclehealing.com/",
       "description": "Sound healing, voice activation, and intuitive coaching with Chris Young-Ginzburg in Sonoma County, California.",
+      "@id": "https://www.grovecirclehealing.com/#website",
+      "publisher": { "@id": "https://www.grovecirclehealing.com/#business" },
       "mainEntity": { "@id": "https://www.grovecirclehealing.com/#business" }
     },
     {
@@ -55,7 +57,7 @@
       "name": "Grove Circle Healing",
       "url": "https://www.grovecirclehealing.com/",
       "description": "Sound healing, voice activation, intuitive coaching, online courses, and healing events with Chris Young-Ginzburg in Sonoma County, California.",
-      "image": "https://www.grovecirclehealing.com/img/chris-sound-bowl-ceremony.png",
+      "image": "https://www.grovecirclehealing.com/img/chris-sound-bowl-ceremony.jpg",
       "logo": "https://www.grovecirclehealing.com/img/grove-circle-logo-black.svg",
       "email": "fluidgirlproductions@gmail.com",
       "founder": { "@id": "https://www.grovecirclehealing.com/#chris" },
@@ -84,7 +86,9 @@
       "jobTitle": "Sound Healer & Voice Activator",
       "description": "Sound healer in Sonoma County, voice activator, and intuitive guide helping people reconnect with their body, voice, and inner wisdom.",
       "url": "https://www.grovecirclehealing.com/about",
-      "image": "https://www.grovecirclehealing.com/img/chris-sound-bowl-ceremony.png",
+      "image": "https://www.grovecirclehealing.com/img/chris-sound-bowl-ceremony.jpg",
+      "worksFor": { "@id": "https://www.grovecirclehealing.com/#business" },
+      "sameAs": ["https://www.instagram.com/grovecirclehealing/", "https://www.youtube.com/channel/UCwaJB66tytgtwmN_7BAYu6g", "https://www.facebook.com/profile.php?id=61556078138810"],
       "knowsAbout": ["Sound Healing", "Voice Activation", "Intuitive Coaching", "Sound Baths", "Corporate Wellness", "Somatic Healing"]
     }
   ]
@@ -302,10 +306,12 @@
 
 
   <!-- ═══ HERO ══════════════════════════════════════════════════ -->
+  <main id="main">
   <section class="hero">
     <div class="hero__bg"></div>
-    <video class="hero__video" autoplay muted loop playsinline>
-      <source src="poster.mp4" type="video/mp4">
+    <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg">
+      <source src="hero.av1.mp4" type='video/mp4; codecs="av01.0.08M.08"'>
+      <source src="hero.h264.mp4" type="video/mp4">
     </video>
     <div class="hero__overlay"></div>
     <div class="hero__grain"></div>
@@ -409,7 +415,7 @@
         <a href="sound-and-voice.html" class="offering-card animate animate-delay-2">
           <div class="offering-card__img-wrap">
             <img src="https://cdn.prod.website-files.com/5e9b9d0b4c5ff95d76c18d0a/65fb07a72817e5b43178a717_voice.png"
-                 alt="Sound & Voice Activation" class="offering-card__img">
+                 alt="Sound & Voice Activation" class="offering-card__img" loading="lazy" decoding="async">
           </div>
           <div class="offering-card__body">
             <h3 class="offering-card__title">Sound & Voice Activation</h3>
@@ -421,7 +427,7 @@
         <a href="events-retreats-and-corporate.html" class="offering-card animate animate-delay-3">
           <div class="offering-card__img-wrap">
             <img src="s heal instruments website.jpg"
-                 alt="Events, Retreats & Corporate" class="offering-card__img" style="object-position: center 30%; filter: brightness(0.82);">
+                 alt="Events, Retreats & Corporate" class="offering-card__img" style="object-position: center 30%; filter: brightness(0.82);" loading="lazy" decoding="async">
           </div>
           <div class="offering-card__body">
             <h3 class="offering-card__title">Retreats & Corporate</h3>
@@ -435,8 +441,8 @@
       <div class="offerings__additional">
         <a href="online-courses.html" class="offering-card offering-card--wide animate animate-delay-1">
           <div class="offering-card__img-wrap">
-            <img src="img/online-courses.png"
-                 alt="Online Courses" class="offering-card__img">
+            <img src="img/online-courses.jpg"
+                 alt="Online Courses" class="offering-card__img" loading="lazy" decoding="async">
           </div>
           <div class="offering-card__body">
             <h3 class="offering-card__title">Online Courses</h3>
@@ -580,8 +586,7 @@
         <img
           src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65f873ee06acb24094347750_IMG_3439.JPG"
           alt="Chris Young-Ginzburg"
-          class="contact__photo animate animate-delay-2"
-        >
+          class="contact__photo animate animate-delay-2" loading="lazy" decoding="async">
 
       </div>
     </div>
@@ -589,6 +594,7 @@
 
 
   <!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+  </main>
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
@@ -602,13 +608,13 @@
           <p class="footer__tagline">Where sound, intuition and voice are remembered.</p>
           <div class="footer__socials">
             <a href="https://www.facebook.com/profile.php?id=61556078138810" class="footer__social" aria-label="Facebook">
-              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/5ee015d213013e43e6b2ec8e_facebook%20(1).svg" alt="">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/5ee015d213013e43e6b2ec8e_facebook%20(1).svg" alt="" loading="lazy" decoding="async">
             </a>
             <a href="https://www.instagram.com/grovecirclehealing/" class="footer__social" aria-label="Instagram">
-              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65e0c065942f44b4a50b7760_instagram.svg" alt="">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65e0c065942f44b4a50b7760_instagram.svg" alt="" loading="lazy" decoding="async">
             </a>
             <a href="https://www.youtube.com/channel/UCwaJB66tytgtwmN_7BAYu6g" class="footer__social" aria-label="YouTube">
-              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65e0c065942f44b4a50b7762_youtube.svg" alt="">
+              <img src="https://cdn.prod.website-files.com/59d2fb2b23d54d000103af41/65e0c065942f44b4a50b7762_youtube.svg" alt="" loading="lazy" decoding="async">
             </a>
           </div>
         </div>
