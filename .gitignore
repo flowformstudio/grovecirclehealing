@@ -1,3 +1,6 @@
 .vercel
 .DS_Store
 blender-logo/
+Blender/
+*.blend
+*.blend1
