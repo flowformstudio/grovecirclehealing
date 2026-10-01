@@ -101,8 +101,8 @@
     /* ── HERO ─────────────────────────────────────────────────── */
     .hero {
       position: relative;
-      height: 100vh;
-      min-height: 680px;
+      min-height: max(680px, 100svh);
+      padding: 8rem 0 6rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -154,7 +154,7 @@
 
     .hero__h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.5rem, 9vw, 9rem);
+      font-size: clamp(2.695rem, 6.93vw, 6.93rem);
       font-weight: 300;
       color: #fff;
       letter-spacing: -0.025em;
@@ -165,7 +165,7 @@
 
     .hero__h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 8vw, 8rem);
+      font-size: clamp(2.31rem, 6.16vw, 6.16rem);
       font-weight: 300;
       font-style: italic;
       color: var(--gold-light);
@@ -177,10 +177,10 @@
 
     .hero__sub {
       font-family: 'Inter', sans-serif;
-      font-size: 0.88rem;
+      font-size: 0.968rem;
       font-weight: 300;
       letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.82);
       margin-bottom: 3.5rem;
       animation: heroFade 1.2s ease 0.95s both;
     }
@@ -317,12 +317,12 @@
     <div class="hero__grain"></div>
 
     <div class="hero__content">
-      <h1 class="hero__h1">Reclaim Your<br>Wisdom.</h1>
-      <h2 class="hero__h2">Embody Your Truth.</h2>
-      <p class="hero__sub">Where sound, intuition and voice are remembered</p>
+      <h1 class="hero__h1">Restore Your Energy.</h1>
+      <h2 class="hero__h2">Elevate Your Presence.</h2>
+      <p class="hero__sub">Immersive sound experiences for inspired teams and exceptional retreats.</p>
       <div class="hero__actions">
-        <a href="#contact"    class="btn btn-primary">Begin Your Journey</a>
-        <a href="offerings.html" class="btn btn-ghost-white">Explore Offerings</a>
+        <a href="#contact"    class="btn btn-primary">Plan Your Experience</a>
+        <a href="events-retreats-and-corporate.html" class="btn btn-ghost-white">Explore Experiences</a>
       </div>
     </div>
 
