@@ -1,0 +1,81 @@
+# Keeps sitemap.xml current automatically after each push to main:
+# - stamps today's date (Pacific) on <lastmod> for every page that changed
+# - adds any new public page that is missing from the sitemap
+# Commits made by this workflow use GITHUB_TOKEN, so they do not re-trigger workflows.
+name: Sitemap dates
+
+on:
+  push:
+    branches: [main]
+    paths: ['**.html']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update sitemap.xml
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          python3 - <<'PY'
+          import os, re, subprocess, datetime, zoneinfo
+
+          HOST = "https://www.grovecirclehealing.com"
+          SKIP = {"brevo-frame.html"}
+          today = datetime.datetime.now(zoneinfo.ZoneInfo("America/Los_Angeles")).date().isoformat()
+
+          before = os.environ.get("BEFORE", "")
+          if before and not set(before) <= {"0"}:
+              out = subprocess.run(["git", "diff", "--name-only", before, "HEAD", "--", "*.html"],
+                                   capture_output=True, text=True).stdout
+          else:
+              out = subprocess.run(["git", "diff", "--name-only", "HEAD~1", "HEAD", "--", "*.html"],
+                                   capture_output=True, text=True).stdout
+          changed = [f for f in out.split() if "/" not in f and f not in SKIP and os.path.exists(f)]
+
+          def url_for(f):
+              return HOST + "/" if f == "index.html" else f"{HOST}/{f[:-5]}"
+
+          s = open("sitemap.xml").read()
+          orig = s
+          for f in changed:
+              loc = re.escape(url_for(f))
+              s = re.sub(rf"(<loc>{loc}</loc>\s*<lastmod>)[^<]*(</lastmod>)", rf"\g<1>{today}\g<2>", s)
+
+          # Add public pages that are missing (skip noindex pages)
+          for f in sorted(os.listdir(".")):
+              if not f.endswith(".html") or f in SKIP:
+                  continue
+              if f"<loc>{url_for(f)}</loc>" in s:
+                  continue
+              if re.search(r'<meta name="robots" content="[^"]*noindex', open(f).read()):
+                  continue
+              entry = (f"  <url>\n    <loc>{url_for(f)}</loc>\n    <lastmod>{today}</lastmod>\n"
+                       f"    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n")
+              s = s.replace("</urlset>", entry + "</urlset>")
+              print("added", f)
+
+          if s != orig:
+              open("sitemap.xml", "w").write(s)
+              print("sitemap.xml updated for:", ", ".join(changed))
+          else:
+              print("sitemap.xml already current")
+          PY
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet sitemap.xml; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git commit -m "Update sitemap dates (automatic)"
+          git pull --rebase origin main
+          git push origin main

@@ -14,17 +14,22 @@ Two people edit this repo (Chris and Igor), so always sync first.
 2. Commit with a clear message, then `git push origin main`.
 3. Never use `git push --force`, `git reset --hard origin/...`, or overwrite files wholesale from an older copy.
 
-## Search / AI-search data that must stay in sync
+## Search / AI-search data: update it automatically, every time
 
 These files are invisible to visitors but are what Google and AI assistants (ChatGPT, Perplexity, Claude, Gemini) read. Keep them; do not delete or regenerate them.
 
+**Rule: after ANY change to the site, check and update all of the search data below in the same commit, without being asked.** Chris should never have to request this. Before you finish, re-read what you changed on the visible page and make sure the hidden data says the same thing (same dates, prices, places, names, questions and answers).
+
 - `<script type="application/ld+json">` blocks in every page's `<head>` (structured data).
-- `events.html` JSON-LD lists every upcoming event. **When you add, change, or remove an event on the page, update the matching `Event` entry** (name, startDate/endDate with `-07:00`/`-08:00` Pacific offset, location, offers URL, image).
+- `events.html` JSON-LD lists every upcoming event. When you add, change, or remove an event on the page, update the matching `Event` entry (name, startDate/endDate with `-07:00`/`-08:00` Pacific offset, location, offers URL, image). Remove past events.
 - `temple-of-expression.html` JSON-LD `subEvent` holds the next Temple date.
-- `llms.txt` has an "Upcoming events" list and facts/prices; update it when events or prices change.
-- `sitemap.xml`: add new public pages; bump `<lastmod>` for pages you change.
+- FAQ sections on `soundhealing.html` and `events-retreats-and-corporate.html` each have a matching `FAQPage` JSON-LD block. If a visible question or answer changes, change it there too.
+- Prices, services, service area (Sonoma County + SF Bay Area), credentials: keep the JSON-LD (`Service`, `areaServed`, `Person`) and `llms.txt` matching the visible pages.
+- `llms.txt` has an "Upcoming events" list (with an "as of" date) plus facts, prices, background and Q&A; update it whenever any of those change.
+- New page: copy the `<head>` pattern from an existing page (title, description, canonical, `og:`/`twitter:` tags, JSON-LD) and link it from `llms.txt`.
+- `sitemap.xml`: updated automatically by `.github/workflows/sitemap-dates.yml` after each push (dates for changed pages, new pages added). You don't need to edit it, and a bot commit "Update sitemap dates (automatic)" may appear; that's why you always pull first.
 - `robots.txt`: leave as is.
-- Keep `<title>`, `<meta name="description">`, `<link rel="canonical">`, and `og:` tags on every page. New pages should copy this head pattern from an existing page.
+- Keep `<title>`, `<meta name="description">`, `<link rel="canonical">`, and `og:` tags on every page.
 
 ## Images and video
 
