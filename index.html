@@ -72,6 +72,9 @@
         { "@type": "City", "name": "Sebastopol, California" },
         { "@type": "City", "name": "Petaluma, California" },
         { "@type": "AdministrativeArea", "name": "San Francisco Bay Area" },
+        { "@type": "AdministrativeArea", "name": "Marin County, California" },
+        { "@type": "City", "name": "San Francisco, California" },
+        { "@type": "AdministrativeArea", "name": "East Bay, California" },
         "Online"
       ],
       "priceRange": "$$",
@@ -181,8 +184,18 @@
       font-weight: 300;
       letter-spacing: 0.1em;
       color: rgba(255,255,255,0.82);
-      margin-bottom: 3.5rem;
+      margin-bottom: 1rem;
       animation: heroFade 1.2s ease 0.95s both;
+    }
+    .hero__where {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 3.5rem;
+      animation: heroFade 1.2s ease 1.05s both;
     }
     .hero__actions {
       display: flex;
@@ -322,6 +335,7 @@
       <h1 class="hero__h1">Restore Your Energy.</h1>
       <h2 class="hero__h2">Elevate Your Presence.</h2>
       <p class="hero__sub">Immersive sound experiences for inspired teams and exceptional retreats.</p>
+      <p class="hero__where">Sound healing with Chris Young-Ginzburg · Sonoma County &amp; the SF Bay Area</p>
       <div class="hero__actions">
         <a href="#contact"    class="btn btn-primary">Plan Your Experience</a>
         <a href="events-retreats-and-corporate.html" class="btn btn-ghost-white">Explore Experiences</a>

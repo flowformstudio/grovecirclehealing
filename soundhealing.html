@@ -54,7 +54,10 @@
           { "@type": "City", "name": "Santa Rosa, California" },
           { "@type": "City", "name": "Sebastopol, California" },
           { "@type": "City", "name": "Petaluma, California" },
-          { "@type": "AdministrativeArea", "name": "San Francisco Bay Area" }
+          { "@type": "AdministrativeArea", "name": "San Francisco Bay Area" },
+          { "@type": "AdministrativeArea", "name": "Marin County, California" },
+          { "@type": "City", "name": "San Francisco, California" },
+          { "@type": "AdministrativeArea", "name": "East Bay, California" }
         ],
         "offers": [
           {
@@ -644,9 +647,115 @@
         height: auto;
       }
     }
+    /* ─── FAQ ─────────────────────────────────────────────────── */
+    .faq-section {
+      padding: 7rem 0;
+      background: var(--cream);
+    }
+    .faq-section .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .faq-section .section-header .eyebrow { margin-bottom: 1rem; }
+    .faq-list {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--teal);
+      border-radius: var(--radius-md);
+      padding: 2.25rem 2.25rem 2rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .faq-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--charcoal);
+      margin: 0 0 0.9rem;
+    }
+    .faq-item p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body-text);
+    }
+    @media (max-width: 768px) {
+      .faq-section { padding: 4.5rem 0; }
+      .faq-section .section-header { margin-bottom: 2.5rem; }
+      .faq-list { grid-template-columns: 1fr; gap: 1rem; }
+      .faq-item { padding: 1.75rem 1.5rem 1.5rem; }
+      .faq-item h3 { font-size: 1.35rem; }
+    }
+    /* ─── Free guide link (under section button) ─────────────── */
+    .guide-link {
+      display: block;
+      width: fit-content;
+      margin-top: 1.4rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--teal-dark);
+      text-decoration: underline;
+      text-decoration-color: rgba(42, 157, 143, 0.35);
+      text-underline-offset: 0.3em;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+    .guide-link:hover,
+    .guide-link:focus-visible {
+      color: var(--teal);
+      text-decoration-color: var(--teal);
+    }
   </style>
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.grovecirclehealing.com/soundhealing#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where can I book a sound healing session in Sonoma County or the Bay Area?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I offer private sessions in your home throughout Sonoma County and the greater San Francisco Bay Area, including Santa Rosa, Sebastopol, Petaluma, Marin, San Francisco, and the East Bay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a private session cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A one-on-one, 90-minute session in your home starts at $700. A private group home visit starts at $800. Both include the full sound experience, breath awareness and vocal toning, and time to integrate and ground."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens during a session?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You lie back and listen. I play crystal singing bowls, gongs and chimes, a medicine drum, rain drum and maracas, and use my voice, along with guided visualization and breath. There's nothing you need to do or figure out."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need any experience?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Sessions are for anyone, whether it's your first time or you've been practicing for years."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -667,6 +776,7 @@
               <li><a href="sound-and-voice.html" class="nav__dropdown-link">Sound &amp; Voice Activation</a></li>
               <li><a href="events-retreats-and-corporate.html" class="nav__dropdown-link">Retreats &amp; Corporate</a></li>
               <li><a href="online-courses.html" class="nav__dropdown-link">Online Courses</a></li>
+              <li><a href="temple-of-expression.html" class="nav__dropdown-link">Temple of Expression</a></li>
             </ul>
           </li>
           <li><a href="events.html"    class="nav__link">Events</a></li>
@@ -690,6 +800,7 @@
       <a href="sound-and-voice.html" class="nav__mobile-sublink">Sound &amp; Voice Activation</a>
       <a href="events-retreats-and-corporate.html" class="nav__mobile-sublink">Retreats &amp; Corporate</a>
       <a href="online-courses.html" class="nav__mobile-sublink">Online Courses</a>
+      <a href="temple-of-expression.html" class="nav__mobile-sublink">Temple of Expression</a>
     </div>
     <a href="events.html"      class="nav__mobile-link">Events</a>
     <a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="nav__mobile-link">Membership</a>
@@ -729,8 +840,9 @@
           <h2 class="animate animate-delay-1">An Invitation to Slow Down</h2>
           <p class="animate animate-delay-2">My sound healing sessions aren’t about doing or performing. They’re about softening, listening and allowing yourself to be met exactly where you are.</p>
           <p class="animate animate-delay-2">In this space, the nervous system begins to settle, the breath naturally deepens and the body remembers how to restore itself. There’s nothing you need to figure out. You simply arrive, receive and let the sound support you.</p>
-          <p class="animate animate-delay-2">I offer sessions throughout Sonoma County, including Santa Rosa, Sebastopol, Petaluma, and surrounding areas as well as select private and group experiences beyond the county.</p>
+          <p class="animate animate-delay-2">I offer sessions throughout Sonoma County and the greater San Francisco Bay Area, including Santa Rosa, Sebastopol, Petaluma, Marin, San Francisco, and the East Bay.</p>
           <a href="index.html#contact" class="btn btn-primary animate animate-delay-3">Book a Session</a>
+          <a href="sound-healing-guide.html" class="guide-link animate animate-delay-3">Read the beginner&#8217;s guide to sound healing <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -900,7 +1012,7 @@
 
         <div class="why-it-works__text">
           <p class="eyebrow animate">The Science</p>
-          <h2 class="animate animate-delay-1">Why It Works</h2>
+          <h2 class="animate animate-delay-1">Why Sound Healing Helps the Nervous System</h2>
           <p class="why-it-works__subtitle animate animate-delay-1">Backed by science. Felt by your body.</p>
           <p class="animate animate-delay-2">Wellbeing isn't a luxury — it's a long-term investment in your health, vitality, and inner life.</p>
           <p class="animate animate-delay-2">These trauma-aware, neuroscience-informed sessions help shift the nervous system out of survival mode and into sustainable, embodied rest.</p>
@@ -1000,6 +1112,35 @@
   </section>
 
 
+  <!-- ═══ FAQ ═══════════════════════════════════════════════════ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow animate">Questions</p>
+        <h2 class="animate animate-delay-1">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item animate">
+          <h3>Where can I book a sound healing session in Sonoma County or the Bay Area?</h3>
+          <p>I offer private sessions in your home throughout Sonoma County and the greater San Francisco Bay Area, including Santa Rosa, Sebastopol, Petaluma, Marin, San Francisco, and the East Bay.</p>
+        </div>
+        <div class="faq-item animate">
+          <h3>How much does a private session cost?</h3>
+          <p>A one-on-one, 90-minute session in your home starts at $700. A private group home visit starts at $800. Both include the full sound experience, breath awareness and vocal toning, and time to integrate and ground.</p>
+        </div>
+        <div class="faq-item animate">
+          <h3>What happens during a session?</h3>
+          <p>You lie back and listen. I play crystal singing bowls, gongs and chimes, a medicine drum, rain drum and maracas, and use my voice, along with guided visualization and breath. There's nothing you need to do or figure out.</p>
+        </div>
+        <div class="faq-item animate">
+          <h3>Do I need any experience?</h3>
+          <p>No. Sessions are for anyone, whether it's your first time or you've been practicing for years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- ═══ CTA BANNER ═════════════════════════════════════════════ -->
   <section class="cta-banner">
     <div class="container--narrow">
@@ -1041,6 +1182,7 @@
             <li><a href="sound-and-voice.html"               class="footer__link">Sound &amp; Voice Activation</a></li>
             <li><a href="events-retreats-and-corporate.html" class="footer__link">Events &amp; Corporate</a></li>
             <li><a href="online-courses.html"                class="footer__link">Online Courses</a></li>
+            <li><a href="temple-of-expression.html" class="footer__link">Temple of Expression</a></li>
             <li><a href="https://grovecirclehealing.thinkific.com/courses/new-course?fbclid=IwZXh0bgNhZW0CMTAAAR0LZlT-P8mj7roln2UqUAlzvnouJVjtsrbDtQ8fFmlFQ2kMLTQ_CmEx018_aem_AV2XDmqXFLrDbYxNpAMW6PMy9ZEnSUFTMuEdmPd2zHttLA0w5Z0kZGlVewXnAEhqujrmDRhf_qgWXlq0B_jo8m0i" class="footer__link">Membership</a></li>
           </ul>
         </div>

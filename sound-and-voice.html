@@ -50,7 +50,10 @@
         },
         "areaServed": [
           { "@type": "AdministrativeArea", "name": "Sonoma County, California" },
-          { "@type": "AdministrativeArea", "name": "San Francisco Bay Area" }
+          { "@type": "AdministrativeArea", "name": "San Francisco Bay Area" },
+          { "@type": "AdministrativeArea", "name": "Marin County, California" },
+          { "@type": "City", "name": "San Francisco, California" },
+          { "@type": "AdministrativeArea", "name": "East Bay, California" }
         ]
       }
     ]
@@ -409,6 +412,25 @@
       .testimonials-grid { grid-template-columns: 1fr; }
       .video-testimonials-grid { grid-template-columns: 1fr; }
     }
+    /* ─── Free guide link (under section button) ─────────────── */
+    .guide-link {
+      display: block;
+      width: fit-content;
+      margin-top: 1.4rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--teal-dark);
+      text-decoration: underline;
+      text-decoration-color: rgba(42, 157, 143, 0.35);
+      text-underline-offset: 0.3em;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+    .guide-link:hover,
+    .guide-link:focus-visible {
+      color: var(--teal);
+      text-decoration-color: var(--teal);
+    }
   </style>
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
@@ -492,6 +514,7 @@
           <p class="animate animate-delay-2">Since offering sound healing in its many forms since 2009, I've discovered something essential: play creates liberation. Drawing from my background in theatre, movement, and clown training, I intentionally hold a space of curiosity, imagination, and playfulness.</p>
           <p class="animate animate-delay-2">Voice Activation is for anyone curious about opening their voice, reclaiming play, and discovering what becomes possible when sound moves without fear.</p>
           <a href="events.html" class="btn btn-primary animate animate-delay-3">Join a Class</a>
+          <a href="voice-activation-basics.html" class="guide-link animate animate-delay-3">Try a simple at-home voice practice <span aria-hidden="true">&rarr;</span></a>
         </div>
         <img
           src="Chris S&amp;V Drum June 2024.jpg"

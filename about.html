@@ -31,7 +31,7 @@
   <meta name="twitter:title" content="About Chris Young-Ginzburg | Grove Circle Healing">
   <meta name="twitter:description" content="Sound healer, voice activator, and intuitive guide helping people reconnect with their body, voice, and inner wisdom.">
   <meta name="twitter:image" content="https://www.grovecirclehealing.com/img/chris-sound-bowl-ceremony.jpg">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://www.grovecirclehealing.com/#chris","name":"Chris Young-Ginzburg","jobTitle":"Sound Healer & Voice Activator","description":"Sound healer, voice activator, and intuitive guide helping people reconnect with their body, voice, and inner wisdom.","url":"https://www.grovecirclehealing.com/about","image":"https://www.grovecirclehealing.com/img/chris-sound-bowl-ceremony.jpg","worksFor":{"@id":"https://www.grovecirclehealing.com/#business"},"knowsAbout":["Sound Healing","Voice Activation","Intuitive Coaching","Sound Baths","Somatic Healing","Corporate Wellness","Crystal Singing Bowls","Nervous System Regulation","Intuition Development","Freestyle Dance"],"sameAs":["https://www.instagram.com/grovecirclehealing/","https://www.youtube.com/channel/UCwaJB66tytgtwmN_7BAYu6g","https://www.facebook.com/profile.php?id=61556078138810"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://www.grovecirclehealing.com/#chris","name":"Chris Young-Ginzburg","jobTitle":"Sound Healer & Voice Activator","description":"Sound healer, voice activator, and intuitive guide helping people reconnect with their body, voice, and inner wisdom.","url":"https://www.grovecirclehealing.com/about","image":"https://www.grovecirclehealing.com/img/chris-sound-bowl-ceremony.jpg","worksFor":{"@id":"https://www.grovecirclehealing.com/#business"},"knowsAbout":["Sound Healing","Voice Activation","Intuitive Coaching","Sound Baths","Somatic Healing","Corporate Wellness","Crystal Singing Bowls","Nervous System Regulation","Intuition Development","Freestyle Dance","Vibrational Healing Massage","Clairvoyance"],"sameAs":["https://www.instagram.com/grovecirclehealing/","https://www.youtube.com/channel/UCwaJB66tytgtwmN_7BAYu6g","https://www.facebook.com/profile.php?id=61556078138810"],"alumniOf":[{"@type":"EducationalOrganization","name":"Berkeley Psychic Institute"},{"@type":"EducationalOrganization","name":"The World School of Massage","address":{"@type":"PostalAddress","addressLocality":"San Francisco","addressRegion":"CA"}}],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Certified Life Coach, Holistic Health Program","recognizedBy":{"@type":"EducationalOrganization","name":"The World School of Massage"}}],"subjectOf":{"@type":"Book","name":"Radical Remission","publisher":{"@type":"Organization","name":"Hay House"}}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -124,6 +124,41 @@
       .about-intro__inner { grid-template-columns: 1fr; }
       .about-intro__media { position: static; }
       .testimonials__grid { grid-template-columns: 1fr; }
+    }
+    /* ── CREDENTIALS ──────────────────────────────────────────── */
+    .credentials {
+      margin-top: 2.5rem;
+      padding: 2rem 2.25rem;
+      background: var(--cream-dark);
+      border-radius: var(--radius-md);
+      border-top: 3px solid var(--teal);
+    }
+    .credentials__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin: 0 0 1.25rem;
+    }
+    .credentials__list { margin: 0; display: grid; gap: 0.9rem; }
+    .credentials__list div {
+      display: grid;
+      grid-template-columns: 5.5rem minmax(0, 1fr);
+      gap: 1rem;
+      align-items: baseline;
+    }
+    .credentials__list dt {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      font-variant-numeric: tabular-nums;
+    }
+    .credentials__list dd { margin: 0; font-size: 0.98rem; line-height: 1.6; color: var(--body-text); }
+    @media (max-width: 520px) {
+      .credentials { padding: 1.5rem 1.25rem; }
+      .credentials__list div { grid-template-columns: 1fr; gap: 0.15rem; }
     }
   </style>
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -246,6 +281,17 @@
             for personal transformation through energy awareness, sound healing, vocal expression and
             embodied presence.
           </p>
+          <aside class="credentials animate animate-delay-3" aria-labelledby="credentials-title">
+            <h3 id="credentials-title" class="credentials__title">Training &amp; Recognition</h3>
+            <dl class="credentials__list">
+              <div><dt>2003</dt><dd>Clairvoyance training, Berkeley Psychic Institute</dd></div>
+              <div><dt>2006&ndash;09</dt><dd>Holistic Health Program and certified life coach, The World School of Massage, San Francisco</dd></div>
+              <div><dt>2008</dt><dd>Voice-based sound healing training as part of Vibrational Healing Massage, The World School of Massage</dd></div>
+              <div><dt>2008&ndash;11</dt><dd>Vibrational Healing Massage practice, including supporting clients with cancer</dd></div>
+              <div><dt>Featured</dt><dd><i>Radical Remission</i> (Hay House) and its documentary series, Episode 3, &ldquo;Joe&rsquo;s Story&rdquo;</dd></div>
+              <div><dt>Clients</dt><dd>Sephora, Deep House Yoga, Waking Hour</dd></div>
+            </dl>
+          </aside>
           <div style="margin-top: 3rem;" class="animate animate-delay-3">
             <a href="index.html#contact" class="btn btn-primary">Work With Chris</a>
           </div>

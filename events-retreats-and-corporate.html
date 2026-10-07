@@ -55,6 +55,9 @@
         "areaServed": [
           { "@type": "AdministrativeArea", "name": "Sonoma County, California" },
           { "@type": "AdministrativeArea", "name": "San Francisco Bay Area" },
+          { "@type": "AdministrativeArea", "name": "Marin County, California" },
+          { "@type": "City", "name": "San Francisco, California" },
+          { "@type": "AdministrativeArea", "name": "East Bay, California" },
           { "@type": "State", "name": "California" }
         ],
         "availableChannel": {
@@ -330,9 +333,111 @@
       .cards-grid { grid-template-columns: 1fr; }
       .settings-layout { grid-template-columns: 1fr; }
     }
+    /* ─── FAQ ─────────────────────────────────────────────────── */
+    .faq-section {
+      padding: 7rem 0;
+      background: var(--cream);
+    }
+    .faq-section .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .faq-section .section-header .eyebrow { margin-bottom: 1rem; }
+    .faq-list {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--teal);
+      border-radius: var(--radius-md);
+      padding: 2.25rem 2.25rem 2rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .faq-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--charcoal);
+      margin: 0 0 0.9rem;
+    }
+    .faq-item p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body-text);
+    }
+    @media (max-width: 768px) {
+      .faq-section { padding: 4.5rem 0; }
+      .faq-section .section-header { margin-bottom: 2.5rem; }
+      .faq-list { grid-template-columns: 1fr; gap: 1rem; }
+      .faq-item { padding: 1.75rem 1.5rem 1.5rem; }
+      .faq-item h3 { font-size: 1.35rem; }
+    }
+    /* ─── Research sources ───────────────────────────────────── */
+    sup.cite { font-size: 0.7em; line-height: 0; margin-left: 0.1em; }
+    sup.cite a { color: var(--teal); text-decoration: none; font-weight: 500; }
+    .sources {
+      margin: 2rem 0 0;
+      padding: 1.25rem 0 0 1.1rem;
+      border-top: 1px solid var(--border);
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+    .sources a { color: var(--teal-dark); text-underline-offset: 0.2em; }
+    .sources li { scroll-margin-top: 7rem; }
   </style>
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.grovecirclehealing.com/events-retreats-and-corporate#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I hire a sound healer for my team or event?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, anywhere in Sonoma County and the San Francisco Bay Area. Experiences range from a 45-minute lunchtime sound bath to a full-day immersive retreat, combining guided meditation, live crystal bowls, and optional voice activation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is pricing set?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pricing is custom, based on group size, travel, location, and duration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What kinds of events do you work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Retreats, corporate events, weddings and birthday parties, music festivals, ceremonies, baby and mother blessings, spiritual events, and yoga events."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who have you worked with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sephora, Deep House Yoga, and Waking Hour, among others."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -414,10 +519,10 @@
           <a href="index.html#contact" class="btn btn-primary animate animate-delay-3">Connect With Me</a>
         </div>
         <img
-          src="img/sephora-2026-corporate-session.jpeg"
-          alt="Corporate sound healing room set with mats for a Sephora session"
+          src="img/corporate-group-sound-bath.jpg"
+          alt="Chris Young-Ginzburg leading a group sound bath with crystal bowls and a gong for a team resting on mats in an office"
           class="two-col__img animate animate-delay-1"
-          style="object-position: center 48%;"
+          style="object-position: center center;"
         >
       </div>
     </div>
@@ -429,7 +534,7 @@
     <div class="container">
       <div class="section-header">
         <p class="eyebrow animate">What's Included</p>
-        <h2 class="animate animate-delay-1">The Experience</h2>
+        <h2 class="animate animate-delay-1">What a Group Sound Healing Session Includes</h2>
       </div>
       <div class="cards-grid">
 
@@ -482,8 +587,8 @@
         <div class="two-col__text">
           <p class="eyebrow animate">The Science</p>
           <h2 class="animate animate-delay-1">Why It Works</h2>
-          <p class="animate animate-delay-2"><strong>Backed by science. Felt by your people.</strong></p>
-          <p class="animate animate-delay-2">Sound therapy activates the parasympathetic nervous system, reducing cortisol and shifting the body out of fight-or-flight. The results are immediate and cumulative.</p>
+          <p class="animate animate-delay-2"><strong>Grounded in research. Felt by your people.</strong></p>
+          <p class="animate animate-delay-2">Sound meditation helps the body shift out of fight-or-flight and into rest. In a study of 62 adults, a single one-hour singing bowl session was followed by significantly less tension, anger, fatigue, and low mood.<sup class="cite"><a href="#source-1">1</a></sup> A 2025 review of 19 clinical studies found that singing bowls may help ease anxiety and improve sleep.<sup class="cite"><a href="#source-2">2</a></sup></p>
           <ul class="why-list animate animate-delay-3">
             <li>Greater capacity to manage stress without overwhelm</li>
             <li>Tools to prevent burnout before it begins</li>
@@ -492,6 +597,10 @@
             <li>Renewed creativity and fresh thinking</li>
           </ul>
           <em class="note animate animate-delay-4">Support your team's wellbeing from the inside out.</em>
+          <ol class="sources animate animate-delay-4">
+            <li id="source-1">Goldsby et al., &ldquo;<a href="https://doi.org/10.1177/2156587216668109" target="_blank" rel="noopener">Effects of Singing Bowl Sound Meditation on Mood, Tension, and Well-being</a>,&rdquo; <i>Journal of Evidence-Based Complementary &amp; Alternative Medicine</i>, 2017.</li>
+            <li id="source-2">Cai et al., &ldquo;<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12063014/" target="_blank" rel="noopener">Therapeutic effects of singing bowls: a systematic review of clinical studies</a>,&rdquo; <i>Integrative Medicine Research</i>, 2025.</li>
+          </ol>
         </div>
       </div>
     </div>
@@ -533,6 +642,35 @@
           <img src="EnWv2026.jpeg" alt="Sound healing circle prepared for an event" class="settings-photo settings-photo--tall animate animate-delay-1" loading="lazy" decoding="async">
           <img src="s heal dark view.jpeg" alt="Group sound healing session in a large indoor venue" class="settings-photo settings-photo--wide animate animate-delay-2" loading="lazy" decoding="async">
           <img src="Sephora 2025.jpeg" alt="Live immersive sound healing experience with participants resting nearby" class="settings-photo settings-photo--wide animate animate-delay-3" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ FAQ ═══════════════════════════════════════════════════ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow animate">Questions</p>
+        <h2 class="animate animate-delay-1">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item animate">
+          <h3>Can I hire a sound healer for my team or event?</h3>
+          <p>Yes, anywhere in Sonoma County and the San Francisco Bay Area. Experiences range from a 45-minute lunchtime sound bath to a full-day immersive retreat, combining guided meditation, live crystal bowls, and optional voice activation.</p>
+        </div>
+        <div class="faq-item animate">
+          <h3>How is pricing set?</h3>
+          <p>Pricing is custom, based on group size, travel, location, and duration.</p>
+        </div>
+        <div class="faq-item animate">
+          <h3>What kinds of events do you work with?</h3>
+          <p>Retreats, corporate events, weddings and birthday parties, music festivals, ceremonies, baby and mother blessings, spiritual events, and yoga events.</p>
+        </div>
+        <div class="faq-item animate">
+          <h3>Who have you worked with?</h3>
+          <p>Sephora, Deep House Yoga, and Waking Hour, among others.</p>
         </div>
       </div>
     </div>
