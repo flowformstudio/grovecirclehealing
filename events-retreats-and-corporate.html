@@ -63,7 +63,7 @@
         "availableChannel": {
           "@type": "ServiceChannel",
           "name": "Event & Corporate Inquiry Form",
-          "serviceUrl": "https://form.jotform.com/260485852564163"
+          "serviceUrl": "https://www.grovecirclehealing.com/events-retreats-and-corporate#inquiry"
         }
       }
     ]
@@ -394,6 +394,114 @@
     }
     .sources a { color: var(--teal-dark); text-underline-offset: 0.2em; }
     .sources li { scroll-margin-top: 7rem; }
+    /* ─── INQUIRY FORM ───────────────────────────────────────── */
+    .inquiry-section {
+      padding: 7rem 0;
+      background: var(--cream-dark);
+      scroll-margin-top: 5rem;
+    }
+    .inquiry-section .section-header { text-align: center; margin-bottom: 3rem; }
+    .inquiry-section .section-header .eyebrow { margin-bottom: 1rem; }
+    .inquiry-section__intro {
+      max-width: 36rem;
+      margin: 1.25rem auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+    .inquiry-form,
+    .inquiry-form__success {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--teal);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-soft);
+      padding: 2.75rem 3rem 2.5rem;
+    }
+    .inquiry-form__group + .inquiry-form__group {
+      margin-top: 1.25rem;
+      padding-top: 2.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .inquiry-form__group-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+    .inquiry-form .form-field { margin-bottom: 1.6rem; }
+    .inquiry-form fieldset.form-field { border: 0; padding: 0; margin-inline: 0; min-width: 0; }
+    .inquiry-form legend {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+      padding: 0;
+    }
+    .inquiry-form .req { color: var(--teal); margin-left: 0.15em; }
+    .inquiry-form input::placeholder, .inquiry-form textarea::placeholder { color: rgba(58, 54, 48, 0.4); }
+    .inquiry-form textarea { height: 130px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .chip { position: relative; cursor: pointer; }
+    .chip input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+    .chip span {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1.1rem;
+      border-radius: var(--radius-pill);
+      border: 1.5px solid var(--cream-deeper);
+      background: var(--cream-dark);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--body-text);
+      line-height: 1.3;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      user-select: none;
+    }
+    .inquiry-form .chip { display: inline-block; margin: 0; font-size: inherit; letter-spacing: 0; text-transform: none; }
+    .chip:hover span { border-color: var(--teal); }
+    .chip input:checked + span { background: var(--teal); border-color: var(--teal); color: #fff; }
+    .chip input:focus-visible + span { outline: 2px solid var(--teal); outline-offset: 2px; }
+    .inquiry-form__footer {
+      margin-top: 1rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border);
+      display: grid;
+      gap: 1.1rem;
+      justify-items: start;
+    }
+    .inquiry-form__note { font-size: 0.85rem; color: var(--muted); margin: 0; }
+    .inquiry-form__msg--error {
+      margin-top: 1.25rem;
+      padding: 0.85rem 1.1rem;
+      border-radius: var(--radius-sm);
+      background: rgba(192, 57, 43, 0.08);
+      color: #a93226;
+      font-size: 0.92rem;
+    }
+    .inquiry-form__success { text-align: center; padding: 3.5rem 2rem; }
+    .inquiry-form__success h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.75rem;
+    }
+    .inquiry-form__success p { color: var(--muted); font-size: 1.05rem; }
+    @media (max-width: 768px) {
+      .inquiry-section { padding: 4.5rem 0; }
+      .inquiry-form, .inquiry-form__success { padding: 2rem 1.35rem 1.75rem; }
+      .inquiry-form .form-row { grid-template-columns: 1fr; gap: 0; }
+    }
   </style>
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
@@ -633,7 +741,11 @@
           <div class="inquiry-form-card animate animate-delay-4">
             <h4 class="inquiry-form-card__title">Submit Your Inquiry</h4>
             <p>If you're interested in hiring me for a retreat, event, ceremony, or corporate experience, use this form to share your details. This is the best place to submit your inquiry and begin the conversation.</p>
-            <a href="https://form.jotform.com/260485852564163" class="inquiry-form-card__button" target="_blank" rel="noopener">Submit Inquiry</a>
+            <a href="#inquiry" class="inquiry-form-card__button">Submit Inquiry</a>
+            <!-- REVERT OPTION (Oct 2026): the inquiry used to open Chris's JotForm in a new tab.
+                 To go back, replace the line above with:
+                 <a href="https://form.jotform.com/260485852564163" class="inquiry-form-card__button" target="_blank" rel="noopener">Submit Inquiry</a>
+                 and remove (or hide) the <section id="inquiry"> below. -->
           </div>
 
         </div>
@@ -646,6 +758,167 @@
       </div>
     </div>
   </section>
+
+
+  <!-- ═══ INQUIRY FORM (on-site, replaces JotForm Oct 2026) ═══ -->
+  <section class="inquiry-section" id="inquiry">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow animate">Event &amp; Corporate Inquiry</p>
+        <h2 class="animate animate-delay-1">Tell Me About Your Event</h2>
+        <p class="inquiry-section__intro animate animate-delay-2">I&rsquo;d love to know more about your vision and how I can help. Share what you can; every field except name, email, and event type is optional.</p>
+      </div>
+
+      <form class="inquiry-form animate animate-delay-2" id="inquiryForm" action="https://formspree.io/f/meerdjgb" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New event inquiry from Grove Circle Healing website">
+        <input type="hidden" name="form" value="Event &amp; Corporate Inquiry">
+
+        <div class="inquiry-form__group">
+          <p class="inquiry-form__group-title">About you</p>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="inq-fname">First Name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="inq-fname" name="first-name" autocomplete="given-name" required>
+            </div>
+            <div class="form-field">
+              <label for="inq-lname">Last Name</label>
+              <input type="text" id="inq-lname" name="last-name" autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="inq-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="inq-email" name="email" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <label for="inq-phone">Phone Number</label>
+              <input type="tel" id="inq-phone" name="phone" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="inq-company">Company Name &amp; Location</label>
+            <input type="text" id="inq-company" name="company" autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="inquiry-form__group">
+          <p class="inquiry-form__group-title">About the event</p>
+          <fieldset class="form-field">
+            <legend>Type of Event <span class="req" aria-hidden="true">*</span></legend>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="event_type[]" value="Corporate Event" id="event_type-0"><span>Corporate Event</span></label>
+              <label class="chip"><input type="checkbox" name="event_type[]" value="Retreat" id="event_type-1"><span>Retreat</span></label>
+              <label class="chip"><input type="checkbox" name="event_type[]" value="Private Celebration" id="event_type-2"><span>Private Celebration</span></label>
+              <label class="chip"><input type="checkbox" name="event_type[]" value="Festival" id="event_type-3"><span>Festival</span></label>
+              <label class="chip"><input type="checkbox" name="event_type[]" value="School/Youth Event" id="event_type-4"><span>School/Youth Event</span></label>
+              <label class="chip"><input type="checkbox" name="event_type[]" value="Other" id="event_type-5"><span>Other</span></label>
+            </div>
+          </fieldset>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="inq-dates">Proposed date(s) or preferred time frame</label>
+              <input type="text" id="inq-dates" name="dates" placeholder="e.g. mid-November, or Friday Jan 16">
+            </div>
+            <div class="form-field">
+              <label for="inq-location">Event Location (venue + city)</label>
+              <input type="text" id="inq-location" name="location">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="inq-attendees">How many attendees?</label>
+              <input type="text" id="inq-attendees" name="attendees" inputmode="numeric" placeholder="e.g. 25">
+            </div>
+            <fieldset class="form-field">
+              <legend>Indoor or outdoor?</legend>
+              <div class="chips">
+              <label class="chip"><input type="radio" name="setting" value="Indoor" id="setting-0"><span>Indoor</span></label>
+              <label class="chip"><input type="radio" name="setting" value="Outdoor" id="setting-1"><span>Outdoor</span></label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="inquiry-form__group">
+          <p class="inquiry-form__group-title">The experience</p>
+          <fieldset class="form-field">
+            <legend>What type of experience are you interested in?</legend>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="experience[]" value="Sound Healing & Guided Meditation" id="experience-0"><span>Sound Healing & Guided Meditation</span></label>
+              <label class="chip"><input type="checkbox" name="experience[]" value="Sound & Voice Activation Workshop" id="experience-1"><span>Sound & Voice Activation Workshop</span></label>
+              <label class="chip"><input type="checkbox" name="experience[]" value="Speaking Engagement / Talk" id="experience-2"><span>Speaking Engagement / Talk</span></label>
+              <label class="chip"><input type="checkbox" name="experience[]" value="Other" id="experience-3"><span>Other</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="form-field">
+            <legend>Preferred length of session</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="session_length" value="30 mins" id="session_length-0"><span>30 mins</span></label>
+              <label class="chip"><input type="radio" name="session_length" value="60 mins" id="session_length-1"><span>60 mins</span></label>
+              <label class="chip"><input type="radio" name="session_length" value="90 mins" id="session_length-2"><span>90 mins</span></label>
+              <label class="chip"><input type="radio" name="session_length" value="Other / not sure" id="session_length-3"><span>Other / not sure</span></label>
+            </div>
+          </fieldset>
+          <div class="form-field">
+            <label for="inq-budget">Do you have a budget in mind?</label>
+            <input type="text" id="inq-budget" name="budget" placeholder="A range is fine">
+          </div>
+          <div class="form-field">
+            <label for="inq-notes">Is there anything else you&rsquo;d like me to know about your event?</label>
+            <textarea id="inq-notes" name="message"></textarea>
+          </div>
+        </div>
+
+        <div class="inquiry-form__footer">
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAEJa7Xln5csPlaYc"></div>
+          <button type="submit" class="btn btn-primary">Send Inquiry</button>
+          <p class="inquiry-form__note">You&rsquo;ll hear back from Chris directly by email.</p>
+        </div>
+        <div class="inquiry-form__msg inquiry-form__msg--error" id="inquiryError" hidden></div>
+      </form>
+
+      <div class="inquiry-form__success" id="inquirySuccess" hidden>
+        <h3>Thank you!</h3>
+        <p>Your inquiry has been sent. Chris will be in touch by email soon.</p>
+      </div>
+    </div>
+  </section>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script>
+    (function () {
+      var form = document.getElementById('inquiryForm');
+      var err = document.getElementById('inquiryError');
+      var ok = document.getElementById('inquirySuccess');
+      function showErr(msg) { err.textContent = msg; err.hidden = false; err.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        err.hidden = true;
+        var missing = [];
+        if (!form['first-name'].value.trim()) missing.push('your first name');
+        if (!form.email.value.trim() || !form.email.checkValidity()) missing.push('a valid email');
+        if (!form.querySelector('input[name="event_type[]"]:checked')) missing.push('the type of event');
+        if (missing.length) { showErr('Please add ' + missing.join(', ') + '.'); return; }
+        var data = new FormData(form);
+        if (!data.get('cf-turnstile-response')) { showErr('Please complete the verification above before sending.'); return; }
+        var btn = form.querySelector('button[type=submit]');
+        btn.disabled = true; btn.textContent = 'Sending…';
+        fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+          .then(function (res) {
+            if (window.turnstile) { turnstile.reset(); }
+            return res.json().then(function (json) {
+              if (res.ok) {
+                form.hidden = true; ok.hidden = false;
+                ok.scrollIntoView({ block: 'center', behavior: 'smooth' });
+              } else {
+                showErr('Something went wrong: ' + ((json && json.error) || 'please try again.'));
+              }
+            });
+          })
+          .catch(function () { showErr('Network error. Please check your connection and try again.'); })
+          .finally(function () { btn.disabled = false; btn.textContent = 'Send Inquiry'; });
+      });
+    })();
+  </script>
 
 
   <!-- ═══ FAQ ═══════════════════════════════════════════════════ -->
