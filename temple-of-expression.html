@@ -75,8 +75,9 @@
           "organizer": {
             "@id": "https://www.grovecirclehealing.com/#business"
           },
-          "name": "Temple of Expression",
-          "startDate": "2026-12-11",
+          "name": "Temple of Expression: Winter Wonderland",
+          "startDate": "2026-12-11T18:00:00-08:00",
+          "endDate": "2026-12-11T21:00:00-08:00",
           "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "location": {
             "@type": "Place",
@@ -85,12 +86,22 @@
               "@type": "PostalAddress",
               "addressLocality": "Sebastopol",
               "addressRegion": "CA",
-              "addressCountry": "US"
+              "addressCountry": "US",
+              "streetAddress": "117 Morris Street",
+              "postalCode": "95472"
             }
           },
-          "description": "An evening of creativity, expression, and community: a talent showcase and ceremonial performance experience in Sebastopol.",
-          "image": "https://www.grovecirclehealing.com/img/temple-december-2026.jpg",
-          "url": "https://www.grovecirclehealing.com/temple-of-expression"
+          "description": "A family-friendly talent showcase celebrating winter through music, dance, song, storytelling, and sacred expression. Hosted by Chris Young-Ginzburg, Heather Starr, and Astra Fox of Seraflame. Audience entry is $20; children 12 and under are free. Performer entry is $20, with eight performance spots advertised; submit an audition before November 15 at https://form.jotform.com/261105176075149. Acts must be family-friendly and five minutes or less.",
+          "image": "https://www.grovecirclehealing.com/img/temple-winter-wonderland-2026.jpg",
+          "url": "https://www.eventbrite.com/e/temple-of-expression-talent-show-tickets-2003161378607?aff=oddtdtcreator&keep_tld=true",
+          "offers": {
+            "@type": "Offer",
+            "name": "Adult audience entry",
+            "price": "20",
+            "priceCurrency": "USD",
+            "url": "https://www.eventbrite.com/e/temple-of-expression-talent-show-tickets-2003161378607?aff=oddtdtcreator&keep_tld=true",
+            "availability": "https://schema.org/InStock"
+          }
         }
       ]
     }
@@ -495,9 +506,17 @@
       color: #fff;
     }
     .event-actions {
+      align-items: flex-start;
       display: flex;
       flex-direction: column;
       gap: 1rem;
+    }
+    .event-actions .btn {
+      width: fit-content;
+      max-width: 100%;
+      border-radius: 999px;
+      text-align: center;
+      justify-content: center;
     }
     .flyer-placeholder {
       aspect-ratio: 1 / 1;
@@ -826,15 +845,18 @@
       </div>
       <div class="cta-panel">
         <div class="temple-copy">
-          <p class="cta-panel__theme">Save the Date · December 11, 2026</p>
-          <h2>Our next gathering is booked!</h2>
-          <p>Mark your calendars! Temple of Expression returns on <strong>Friday, December 11, 2026</strong>, at <strong>Laguna Lab in Sebastopol</strong> for an evening of creativity, expression, and community.</p>
-          <p>Stay tuned for more information here as the date gets closer. Follow <a href="https://www.instagram.com/templeofexpression/" target="_blank" rel="noopener">@templeofexpression on Instagram</a> for updates.</p>
-          <p class="temple-note">Questions?: <a href="mailto:grovecirclehealing@gmail.com">grovecirclehealing@gmail.com</a></p>
+          <p class="cta-panel__theme">December 11, 2026 · 6–9 PM Pacific · Laguna Lab, Sebastopol</p>
+          <h2>Winter Wonderland</h2>
+          <p>Step into an evening of winter magic, imagination, and community. This family-friendly Temple of Expression talent showcase celebrates the season through <strong>music, dance, song, storytelling, and sacred expression</strong>—from playful winter tales to heartfelt reflections on hope, light, and renewal.</p>
+          <p>Hosted by <strong>Chris Young-Ginzburg, Heather Starr, and Astra Fox of Seraflame</strong>, this curated gathering welcomes new and seasoned performers, solo and collaborative acts, and an audience ready to celebrate creativity together.</p>
+          <p><strong>Laguna Lab · 117 Morris Street, Sebastopol</strong><br>$20 audience entry · Children 12 and under free.</p>
+          <p><strong>Want to perform?</strong> Eight performance spots are available, with a $20 performer fee (children 12 and under perform free). <a href="https://form.jotform.com/261105176075149" target="_blank" rel="noopener">Submit your audition through our performance submission form</a> before <strong>November 15</strong>. All acts must be suitable for all ages and <strong>five minutes or less</strong>; selected performers will be contacted.</p>
+          <div class="event-actions"><a href="https://www.eventbrite.com/e/temple-of-expression-talent-show-tickets-2003161378607?aff=oddtdtcreator&amp;keep_tld=true" class="btn btn-primary" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;">Get Tickets on Eventbrite</a></div>
+          <p class="temple-note">Follow <a href="https://www.instagram.com/templeofexpression/" target="_blank" rel="noopener">@templeofexpression</a> for updates.</p>
         </div>
         <div class="flyer-placeholder">
           <div>
-            <img src="img/temple-december-2026.jpg" alt="Temple of Expression — Save the date: December 11, 2026, at Laguna Lab in Sebastopol. More details coming soon.">
+            <img src="img/temple-winter-wonderland-2026.jpg" alt="Temple of Expression Winter Wonderland event flyer" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
