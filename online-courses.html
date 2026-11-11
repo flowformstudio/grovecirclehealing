@@ -113,6 +113,14 @@
       min-height: 260px;
       object-fit: cover;
     }
+    .course-card__img--artwork {
+      height: auto;
+      min-height: 0;
+      object-fit: contain;
+      align-self: center;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
     .course-card__content {
       padding: 3rem;
       display: flex;
@@ -176,6 +184,11 @@
       .course-card__img {
         min-height: 220px;
         height: 220px;
+      }
+      .course-card__img--artwork {
+        height: auto;
+        min-height: 0;
+        max-height: 420px;
       }
       .course-card__content {
         padding: 2rem;
@@ -284,7 +297,7 @@
           <img
             src="img/webflow/bodys-wisdom-banner.jpg"
             alt="The Body's Wisdom course"
-            class="course-card__img" loading="lazy" decoding="async">
+            class="course-card__img course-card__img--artwork" loading="lazy" decoding="async">
           <div class="course-card__content">
             <span class="course-badge">Online Course</span>
             <h3>The Body's Wisdom</h3>
@@ -300,7 +313,7 @@
           <img
             src="img/webflow/head-2.jpg"
             alt="Empowering the Artist course"
-            class="course-card__img" loading="lazy" decoding="async">
+            class="course-card__img course-card__img--artwork" loading="lazy" decoding="async">
           <div class="course-card__content">
             <span class="course-badge">Online Course</span>
             <h3>Empowering the Artist: Psychic Meditation Course</h3>
