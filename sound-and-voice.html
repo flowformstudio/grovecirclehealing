@@ -153,11 +153,29 @@
       border-radius: var(--radius-lg);
       overflow: hidden;
     }
-    .upcoming-box__img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
+    .team-photos {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 8px;
+      align-self: stretch;
+      min-width: 0;
     }
+    .team-photos__frame {
+      position: relative;
+      aspect-ratio: 2 / 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .team-photos img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .team-photos__embrace { object-position: center 40%; }
+    .team-photos__smiles { object-position: center 55%; transform: scale(1.18); transform-origin: 52% 38%; }
     .upcoming-box > :last-child {
       background: #2a2a2a;
       height: 100%;
@@ -557,21 +575,25 @@
 
 
   <!-- ═══ TEAM EXPERIENCES ══════════════════════════════════════ -->
-  <section class="upcoming">
+  <section class="upcoming" id="team-experiences">
     <div class="container">
       <div class="upcoming-header">
         <p class="eyebrow animate">Teams &amp; Corporate Experiences</p>
         <h2 class="animate animate-delay-1">Find Your Voice, Together</h2>
       </div>
       <div class="upcoming-box animate animate-delay-2">
-        <img
-          src="img/sound-voice-team-connection.jpg"
-          alt="Sound and Voice Activation participants gathered with drums and smiles"
-          class="upcoming-box__img" loading="lazy" decoding="async">
+        <div class="team-photos">
+          <div class="team-photos__frame">
+            <img src="img/sound-voice-team-embrace.jpg" alt="Participants sharing a group embrace during a Sound and Voice gathering" class="team-photos__embrace" loading="lazy" decoding="async">
+          </div>
+          <div class="team-photos__frame">
+            <img src="img/sound-voice-team-smiles.jpg" alt="Smiling Sound and Voice participants gathered with their drums" class="team-photos__smiles" loading="lazy" decoding="async">
+          </div>
+        </div>
         <div class="upcoming-box__content">
           <h3>A More Connected Team</h3>
           <p>Invite your team to step out of the everyday and into a shared experience of sound, movement, and playful expression. Chris guides welcoming voice activities that make room for laughter, creativity, and discovering the freedom of being heard.</p>
-          <p>Through listening and making sound together, colleagues can connect beyond their usual roles, build confidence in their voices, and explore a deeper sense of belonging and cohesion. A refreshing addition to a team retreat, corporate gathering, or wellness day—no singing experience needed.</p>
+          <p>Through listening and making sound together, colleagues can connect beyond their usual roles, build confidence in their voices, and explore a deeper sense of belonging and cohesion. A refreshing addition to a team retreat, corporate gathering, or wellness day. No singing experience needed.</p>
           <a href="events-retreats-and-corporate.html#inquiry" class="btn btn-primary">Bring This to Your Team</a>
         </div>
       </div>
