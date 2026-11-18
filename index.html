@@ -263,6 +263,18 @@
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
+<style>
+.sound-portrait{position:relative;isolation:isolate;width:min(100%,480px);aspect-ratio:1;margin:60px auto 100px;}
+.sound-portrait img{position:relative;z-index:1;display:block;width:100%;aspect-ratio:1;border-radius:50%;box-shadow:0 20px 55px #42332926;}
+.sound-wave{position:absolute;z-index:0;left:50%;top:50%;width:100%;aspect-ratio:1;border:2px solid #2a9d8f;border-radius:50%;transform:translate(-50%,-50%);animation:healing-wave 7.5s ease-out infinite;pointer-events:none;}
+.sound-wave:nth-child(2){animation-delay:-2.5s;border-color:#c4994a;}
+.sound-wave:nth-child(3){animation-delay:-5s;}
+@keyframes healing-wave{0%{transform:translate(-50%,-50%) scale(.65);opacity:0;}20%{opacity:.5;}100%{transform:translate(-50%,-50%) scale(1.65);opacity:0;}}
+.wave-toggle{display:block;margin:0;background:var(--cream, #faf8f2);border:1px solid #2a9d8f;border-radius:30px;padding:8px 18px;color:#226e65;font:inherit;font-size:12px;cursor:pointer;position:absolute;top:calc(100% + 28px);left:50%;transform:translateX(-50%);z-index:2;white-space:nowrap;}
+.paused .sound-wave{animation-play-state:paused;}
+.about-teaser{overflow:hidden;}
+@media(prefers-reduced-motion:reduce){.sound-wave{animation:none;opacity:.18;transform:translate(-50%,-50%) scale(1.3);}}
+</style>
 </head>
 <body>
 
@@ -391,14 +403,10 @@
         </div>
 
         <div style="display:flex; justify-content:center;" class="animate animate-delay-2">
-          <div class="circle-motif">
-            <div class="circle-motif__ring"></div>
-            <div class="circle-motif__ring"></div>
-            <div class="circle-motif__ring"></div>
-            <div class="circle-motif__ring"></div>
-            <div class="circle-motif__center">
-              <img src="img/webflow/grove-circle-logo-black.svg" alt="">
-            </div>
+          <div class="sound-portrait">
+            <span class="sound-wave" aria-hidden="true"></span><span class="sound-wave" aria-hidden="true"></span><span class="sound-wave" aria-hidden="true"></span>
+            <img src="img/chris-sound-healing-waves.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Chris in a white lace cover-up playing crystal singing bowls">
+            <button class="wave-toggle" type="button" onclick="const p=this.closest('.sound-portrait');const paused=p.classList.toggle('paused');this.textContent=paused?'Play waves':'Pause waves';">Pause waves</button>
           </div>
         </div>
 
