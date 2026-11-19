@@ -40,6 +40,7 @@
         "@id": "https://www.grovecirclehealing.com/events-retreats-and-corporate#service",
         "name": "Corporate Wellness & Event Sound Healing",
         "serviceType": ["Corporate Wellness", "Sound Healing for Events", "Retreat Sound Healing"],
+        "image": "https://www.grovecirclehealing.com/img/corporate-coyote-retreat-2026.jpg",
         "url": "https://www.grovecirclehealing.com/events-retreats-and-corporate",
         "description": "Corporate sound healing and wellness experiences in Sonoma County and the SF Bay Area for corporate gatherings, leadership retreats, conferences, and special events. Sound healer for hire for corporate wellness sessions, retreats, weddings, birthday parties, music festivals, ceremonies, baby and mother blessings, spiritual talks, and yoga events. Sessions include guided meditation, live crystal-bowl sound healing, and optional group voice activation. Trauma-aware and neuroscience-informed, from 45-minute lunchtime sound baths to full-day immersive retreats. Custom pricing based on group size, travel, location, and duration. Past clients include Sephora and All Day I Dream.",
         "provider": {
@@ -115,6 +116,9 @@
       object-fit: cover;
       border-radius: var(--radius-lg);
     }
+    .two-col__photos { display: grid; gap: 1.5rem; align-self: start; }
+    .two-col__photos .two-col__img { display: block; }
+    .two-col__photos .two-col__img--retreat { aspect-ratio: auto; height: auto; }
     .two-col__text .eyebrow { margin-bottom: 1rem; }
     .two-col__text h2 { margin-bottom: 1.5rem; }
     .two-col__text p {
@@ -690,10 +694,16 @@
   <section class="two-col">
     <div class="container">
       <div class="two-col__inner">
-        <img
-          src="img/corporate-img-8390-optimized.jpg"
-          alt="Participants resting under blankets during a candlelit group sound bath"
-          class="two-col__img animate" loading="lazy" decoding="async">
+        <div class="two-col__photos">
+          <img
+            src="img/corporate-img-8390-optimized.jpg"
+            alt="Participants resting under blankets during a candlelit group sound bath"
+            class="two-col__img animate" loading="lazy" decoding="async">
+          <img
+            src="img/corporate-coyote-retreat-2026.jpg"
+            alt="Chris Young-Ginzburg playing a steel tongue drum beside crystal singing bowls during a retreat sound healing session in a horse arena"
+            class="two-col__img two-col__img--retreat animate" width="1600" height="1067" loading="lazy" decoding="async">
+        </div>
         <div class="two-col__text">
           <p class="eyebrow animate">The Science</p>
           <h2 class="animate animate-delay-1">Why It Works</h2>
