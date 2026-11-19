@@ -25,50 +25,103 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.grovecirclehealing.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Events, Retreats & Corporate", "item": "https://www.grovecirclehealing.com/events-retreats-and-corporate" }
-        ]
-      },
-      {
-        "@type": "Service",
-        "@id": "https://www.grovecirclehealing.com/events-retreats-and-corporate#service",
-        "name": "Corporate Wellness & Event Sound Healing",
-        "serviceType": ["Corporate Wellness", "Sound Healing for Events", "Retreat Sound Healing"],
-        "image": "https://www.grovecirclehealing.com/img/corporate-coyote-retreat-2026.jpg",
-        "url": "https://www.grovecirclehealing.com/events-retreats-and-corporate",
-        "description": "Corporate sound healing and wellness experiences in Sonoma County and the SF Bay Area for corporate gatherings, leadership retreats, conferences, and special events. Sound healer for hire for corporate wellness sessions, retreats, weddings, birthday parties, music festivals, ceremonies, baby and mother blessings, spiritual talks, and yoga events. Sessions include guided meditation, live crystal-bowl sound healing, and optional group voice activation. Trauma-aware and neuroscience-informed, from 45-minute lunchtime sound baths to full-day immersive retreats. Custom pricing based on group size, travel, location, and duration. Past clients include Sephora and All Day I Dream.",
-        "provider": {
-          "@type": "HealthAndBeautyBusiness",
-          "@id": "https://www.grovecirclehealing.com/#business",
-          "name": "Grove Circle Healing",
-          "url": "https://www.grovecirclehealing.com/"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.grovecirclehealing.com/"
         },
-        "audience": [
-          { "@type": "BusinessAudience", "name": "Companies and workplace teams" },
-          { "@type": "Audience", "name": "Retreat leaders, event organizers, and private hosts" }
-        ],
-        "areaServed": [
-          { "@type": "AdministrativeArea", "name": "Sonoma County, California" },
-          { "@type": "AdministrativeArea", "name": "San Francisco Bay Area" },
-          { "@type": "AdministrativeArea", "name": "Marin County, California" },
-          { "@type": "City", "name": "San Francisco, California" },
-          { "@type": "AdministrativeArea", "name": "East Bay, California" },
-          { "@type": "State", "name": "California" }
-        ],
-        "availableChannel": {
-          "@type": "ServiceChannel",
-          "name": "Event & Corporate Inquiry Form",
-          "serviceUrl": "https://www.grovecirclehealing.com/events-retreats-and-corporate#inquiry"
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Events, Retreats & Corporate",
+          "item": "https://www.grovecirclehealing.com/events-retreats-and-corporate"
         }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.grovecirclehealing.com/events-retreats-and-corporate#service",
+      "name": "Corporate Wellness & Event Sound Healing",
+      "serviceType": [
+        "Corporate Wellness",
+        "Sound Healing for Events",
+        "Retreat Sound Healing"
+      ],
+      "image": "https://www.grovecirclehealing.com/img/corporate-coyote-retreat-2026.jpg",
+      "url": "https://www.grovecirclehealing.com/events-retreats-and-corporate",
+      "description": "Corporate sound healing and wellness experiences in Sonoma County and the SF Bay Area for corporate gatherings, leadership retreats, conferences, and special events. Sound healer for hire for corporate wellness sessions, retreats, weddings, birthday parties, music festivals, ceremonies, baby and mother blessings, spiritual talks, and yoga events. Sessions include guided meditation, live crystal-bowl sound healing, and optional group voice activation. Trauma-aware and neuroscience-informed, from 45-minute lunchtime sound baths to full-day immersive retreats. Custom pricing based on group size, travel, location, and duration. Past clients include Sephora and All Day I Dream.",
+      "provider": {
+        "@type": "HealthAndBeautyBusiness",
+        "@id": "https://www.grovecirclehealing.com/#business",
+        "name": "Grove Circle Healing",
+        "url": "https://www.grovecirclehealing.com/"
+      },
+      "audience": [
+        {
+          "@type": "BusinessAudience",
+          "name": "Companies and workplace teams"
+        },
+        {
+          "@type": "Audience",
+          "name": "Retreat leaders, event organizers, and private hosts"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Sonoma County, California"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "San Francisco Bay Area"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Marin County, California"
+        },
+        {
+          "@type": "City",
+          "name": "San Francisco, California"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "East Bay, California"
+        },
+        {
+          "@type": "State",
+          "name": "California"
+        }
+      ],
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "name": "Event & Corporate Inquiry Form",
+        "serviceUrl": "https://www.grovecirclehealing.com/events-retreats-and-corporate#inquiry"
       }
-    ]
-  }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.grovecirclehealing.com/events-retreats-and-corporate#art-of-renewal",
+      "name": "The Art of Renewal",
+      "description": "An example three-part experiential wellness journey for corporate teams and leadership retreats, led by Chris Young-Ginzburg. The Sanctuary Within — Rest & Restore: An immersive sound healing experience that invites deep relaxation, grounding, and a renewed sense of inner balance. The Art of Connection — Reconnect & Belong: A shared journey through sound, mindful presence, and gentle interactive practices that encourage meaningful human connection. The Creative Spark — Express & Renew: An uplifting experience combining sound, optional voice and movement exploration, and guided reflection to awaken creativity, inspiration, and personal expression. Each experience is approximately 60–90 minutes, scheduled weekly, biweekly, or monthly. Organizations can book the complete series or an ongoing monthly or twice-monthly wellness partnership.",
+      "provider": {
+        "@id": "https://www.grovecirclehealing.com/#business"
+      },
+      "areaServed": [
+        "Sonoma County",
+        "Napa Valley",
+        "San Francisco Bay Area"
+      ],
+      "url": "https://www.grovecirclehealing.com/events-retreats-and-corporate#art-of-renewal"
+    }
+  ]
+}
   </script>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
@@ -128,6 +181,24 @@
       line-height: 1.85;
     }
     .two-col__text .btn { margin-top: 1.5rem; }
+
+    /* Example corporate series */
+    .renewal-section { padding: 6rem 0; background: var(--cream-dark); }
+    .renewal-intro { max-width: 820px; margin: 0 auto 3rem; text-align: center; }
+    .renewal-intro h2 { margin-bottom: 1rem; }
+    .renewal-title { font-family: var(--font-heading, Georgia, serif); font-size: 2rem; color: var(--teal); margin-bottom: 1rem; }
+    .renewal-intro p, .renewal-details p { line-height: 1.8; }
+    .renewal-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+    .renewal-card { background: var(--cream); border-radius: var(--radius-lg); overflow: hidden; }
+    .renewal-card img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .renewal-card__body { padding: 1.75rem; }
+    .renewal-card h3 { font-size: 1.6rem; margin-bottom: .5rem; }
+    .renewal-card__theme { color: var(--teal); font-weight: 600; margin-bottom: 1rem; }
+    .renewal-card__body p { line-height: 1.75; }
+    .renewal-details { max-width: 820px; text-align: center; margin: 3rem auto 0; }
+    .renewal-details h3 { margin-bottom: 1rem; }
+    .renewal-details .btn { margin-top: 1.25rem; white-space: normal; }
+    @media (max-width: 900px) { .renewal-grid { grid-template-columns: 1fr; } .renewal-section { padding: 4rem 0; } }
 
     /* ── FEATURE CARDS WITH IMAGES ────────────────────────────── */
     .feature-cards {
@@ -767,6 +838,52 @@
           <img src="s heal dark view.jpeg" alt="Group sound healing session in a large indoor venue" class="settings-photo settings-photo--wide animate animate-delay-2" loading="lazy" decoding="async">
           <img src="img/horse-arena-sound-healing-setup.jpg" alt="Crystal singing bowls and sound healing instruments arranged on a white-covered table in a horse arena" class="settings-photo settings-photo--wide animate animate-delay-3" loading="lazy" decoding="async">
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ EXAMPLE CORPORATE SERIES ═══════════════════════════ -->
+  <section class="renewal-section" id="art-of-renewal" aria-labelledby="renewal-heading">
+    <div class="container">
+      <div class="renewal-intro">
+        <h2 id="renewal-heading">An Example of What We Could Create Together</h2>
+        <p class="renewal-title">The Art of Renewal</p>
+        <p>The Art of Renewal is a three-part experiential wellness journey designed to help teams step away from daily demands, reconnect with themselves and one another, and rediscover the restorative power of creativity.</p>
+        <p>Led by Chris Young-Ginzburg, sound healing artist and experiential wellness facilitator, each gathering weaves together immersive sound healing, guided meditation, voice, and gentle creative exploration.</p>
+      </div>
+      <div class="renewal-grid">
+        <article class="renewal-card">
+          <img src="img/corporate-img-8390-optimized.jpg" alt="Participants resting under blankets during a candlelit group sound bath" loading="lazy" decoding="async">
+          <div class="renewal-card__body">
+            <h3>1. The Sanctuary Within</h3>
+            <p class="renewal-card__theme">Rest &amp; Restore</p>
+            <p>An immersive sound healing experience that invites deep relaxation, grounding, and a renewed sense of inner balance.</p>
+          </div>
+        </article>
+        <article class="renewal-card">
+          <img src="img/sound-voice-team-embrace.jpg" alt="Participants sharing a group embrace during a Sound and Voice gathering" loading="lazy" decoding="async" style="object-position: center 40%;">
+          <div class="renewal-card__body">
+            <h3>2. The Art of Connection</h3>
+            <p class="renewal-card__theme">Reconnect &amp; Belong</p>
+            <p>A shared journey through sound, mindful presence, and gentle interactive practices that encourage meaningful human connection.</p>
+          </div>
+        </article>
+        <article class="renewal-card">
+          <img src="img/corporate-heather-jinn-liz-celebrate-optimized.jpg" alt="Participants exploring movement and vocal expression with a frame drum" loading="lazy" decoding="async">
+          <div class="renewal-card__body">
+            <h3>3. The Creative Spark</h3>
+            <p class="renewal-card__theme">Express &amp; Renew</p>
+            <p>An uplifting experience combining sound, optional voice and movement exploration, and guided reflection to awaken creativity, inspiration, and personal expression.</p>
+          </div>
+        </article>
+      </div>
+      <div class="renewal-details">
+        <h3>Designed for Corporate Teams &amp; Leadership Retreats</h3>
+        <p>Each experience is approximately 60–90 minutes and can be scheduled weekly, biweekly, or monthly.</p>
+        <p>Organizations may book the complete three-part series or explore an ongoing wellness partnership with monthly or twice-monthly experiences.</p>
+        <p>Available throughout Sonoma County, Napa Valley, and the San Francisco Bay Area.</p>
+        <a href="#inquiry" class="btn btn--primary">Inquire About Corporate Experiences</a>
       </div>
     </div>
   </section>
