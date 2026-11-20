@@ -344,7 +344,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="img/grove-circle-membership-logo.jpg">
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -497,7 +497,7 @@
       font-style: italic;
       margin-bottom: 1rem;
     }
-    .mb-next__body p:not(.eyebrow) { color: rgba(255,255,255,0.7); margin-bottom: 2rem; max-width: 520px; }
+    .mb-next__body p:not(.eyebrow) { color: rgba(255,255,255,0.92); margin-bottom: 2rem; max-width: 520px; }
     .mb-clock {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -515,11 +515,14 @@
     }
     .mb-clock__n {
       display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.4vw, 3rem);
-      line-height: 1;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      letter-spacing: -0.01em;
+      line-height: 1.1;
       color: #fff;
-      font-variant-numeric: tabular-nums;
+      font-variant-numeric: tabular-nums lining-nums;
+      font-feature-settings: "tnum" 1, "lnum" 1;
     }
     .mb-clock strong {
       font-size: 0.6rem;
