@@ -138,7 +138,8 @@ img { display: block; max-width: 100%; }
 
 .btn-white {
   background: #fff;
-  color: var(--teal-dark);
+  color: #12594F;
+  font-weight: 700;
 }
 .btn-white:hover {
   background: var(--cream);
