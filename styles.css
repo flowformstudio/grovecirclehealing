@@ -15,9 +15,9 @@
   --cream-deeper: #E5DDD0;
   --charcoal:     #1A1916;
   --charcoal-soft:#2C2A26;
-  --teal:         #1A6E64;
+  --teal:         #208277;
   --teal-light:   #3BBFAF;
-  --teal-dark:    #12594F;
+  --teal-dark:    #1A6E64;
   --teal-pale:    rgba(42, 157, 143, 0.08);
   --gold:         #C4994A;
   --gold-light:   #DFB96A;
@@ -90,7 +90,7 @@ img { display: block; max-width: 100%; }
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--teal-dark);
 }
 
 .eyebrow--light { color: rgba(255,255,255,0.5); }
@@ -289,7 +289,7 @@ img { display: block; max-width: 100%; }
 }
 .nav:not(.scrolled) .nav__link::after { background: rgba(255,255,255,0.5); }
 .nav__link:hover::after { width: 100%; }
-.nav__link:hover { color: var(--teal); }
+.nav__link:hover { color: var(--teal-dark); }
 .nav:not(.scrolled) .nav__link:hover { color: #fff; }
 
 .nav__dropdown {
@@ -332,7 +332,7 @@ img { display: block; max-width: 100%; }
 
 .nav__dropdown-link:hover,
 .nav__dropdown-link:focus-visible {
-  color: var(--teal);
+  color: var(--teal-dark);
   background: rgba(42, 157, 143, 0.08);
   outline: none;
 }
@@ -406,7 +406,7 @@ img { display: block; max-width: 100%; }
   padding-bottom: 1.5rem;
   transition: color 0.2s ease;
 }
-.nav__mobile-link:hover { color: var(--teal); }
+.nav__mobile-link:hover { color: var(--teal-dark); }
 
 .nav__mobile-submenu {
   display: flex;
@@ -424,7 +424,7 @@ img { display: block; max-width: 100%; }
 }
 
 .nav__mobile-sublink:hover {
-  color: var(--teal);
+  color: var(--teal-dark);
 }
 
 .nav__mobile-close {
@@ -776,7 +776,7 @@ img { display: block; max-width: 100%; }
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--teal-dark);
   transition: gap 0.3s ease;
 }
 .offering-card:hover .offering-card__link { gap: 0.8rem; }
@@ -865,7 +865,7 @@ img { display: block; max-width: 100%; }
   position: relative;
 }
 .cta-banner p {
-  color: rgba(255,255,255,0.95);
+  color: #fff;
   font-size: 1rem;
   margin-bottom: 3rem;
   position: relative;
