@@ -23,6 +23,9 @@ These files are invisible to visitors but are what Google and AI assistants (Cha
 - `<script type="application/ld+json">` blocks in every page's `<head>` (structured data).
 - `events.html` JSON-LD lists every upcoming event. When you add, change, or remove an event on the page, update the matching `Event` entry (name, startDate/endDate with `-07:00`/`-08:00` Pacific offset, location, offers URL, image). Remove past events.
 - `temple-of-expression.html` JSON-LD `subEvent` holds the next Temple date.
+- `membership.html` is the on-site Grove Circle Membership page (sign-up, free preview and sign-in buttons go to Thinkific). Its "Next Class" card (title, description, date line, the countdown's `data-deadline`, artwork), the curriculum list, the "When is the next class?" FAQ answer and the matching `FAQPage` JSON-LD all go out of date after each monthly class. **Whenever the next membership class changes on `events.html`, update all of those on `membership.html` in the same commit.**
+- `empowering-the-artist.html` is the on-site course page; enrollment buttons go to Thinkific. Keep its price and lesson count matching Thinkific.
+- Every "Membership" link on the site points to `membership.html`, not to Thinkific. Keep it that way.
 - FAQ sections on `soundhealing.html` and `events-retreats-and-corporate.html` each have a matching `FAQPage` JSON-LD block. If a visible question or answer changes, change it there too.
 - Prices, services, service area (Sonoma County + SF Bay Area), credentials: keep the JSON-LD (`Service`, `areaServed`, `Person`) and `llms.txt` matching the visible pages.
 - `llms.txt` has an "Upcoming events" list (with an "as of" date) plus facts, prices, background and Q&A; update it whenever any of those change.
