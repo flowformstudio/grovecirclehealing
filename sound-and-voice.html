@@ -72,8 +72,8 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20261121u">
   <style>
     /* ── TWO-COLUMN ───────────────────────────────────────────── */
     .two-col {
@@ -215,7 +215,7 @@
       border-left: 3px solid var(--teal);
     }
     .testimonial-card blockquote {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
       font-size: 1.2rem;
       font-style: italic;
       font-weight: 300;
@@ -224,7 +224,7 @@
       margin-bottom: 1.25rem;
     }
     .testimonial-card cite {
-      font-family: 'Inter', sans-serif;
+      font-family: var(--font-body);
       font-size: 0.72rem;
       font-weight: 500;
       letter-spacing: 0.12em;
@@ -434,7 +434,7 @@
       display: block;
       width: fit-content;
       margin-top: 1.4rem;
-      font-family: 'Inter', sans-serif;
+      font-family: var(--font-body);
       font-size: 0.95rem;
       font-weight: 500;
       color: var(--teal-dark);
@@ -964,5 +964,6 @@
     }
   })();
   </script>
+<script src="bowl-glint.js?v=5" defer></script>
 </body>
 </html>

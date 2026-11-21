@@ -344,9 +344,9 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="img/grove-circle-membership-logo.jpg">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261121u">
   <style>
     :root { --indigo: #2B2FA3; --indigo-deep: #14163F; --violet: #8E7BD6; }
 
@@ -389,7 +389,7 @@
       margin-bottom: 2.2rem;
     }
     .mb-price__amount {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
       font-size: 3.2rem;
       line-height: 1;
       color: #fff;
@@ -464,7 +464,7 @@
     .mb-fact + .mb-fact { border-left: 1px solid rgba(42,157,143,0.14); }
     .mb-fact strong {
       display: block;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
       font-weight: 500;
       font-size: 2.1rem;
       line-height: 1.1;
@@ -515,7 +515,7 @@
     }
     .mb-clock__n {
       display: block;
-      font-family: 'Inter', sans-serif;
+      font-family: var(--font-body);
       font-weight: 600;
       font-size: clamp(1.7rem, 2.8vw, 2.4rem);
       letter-spacing: -0.01em;
@@ -593,7 +593,7 @@
       color: var(--gold-light);
       margin-bottom: 0.7rem;
     }
-    .mb-video__title { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 500; line-height: 1.12; letter-spacing: -0.01em; color: #fff; font-size: clamp(1.6rem, 2.6vw, 2.4rem); }
+    .mb-video__title { display: block; font-family: var(--font-display); font-size-adjust: var(--font-display-adjust); font-weight: 500; line-height: 1.12; letter-spacing: -0.01em; color: #fff; font-size: clamp(1.6rem, 2.6vw, 2.4rem); }
 
     .mb-lightbox {
       display: none;
@@ -656,7 +656,7 @@
       transform: rotate(-45deg) translate(1px, -2px);
     }
     .mb-checks p {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
       font-size: 1.45rem;
       line-height: 1.35;
       color: var(--charcoal);
@@ -668,7 +668,7 @@
     .mb-curr__head .eyebrow { margin-bottom: 1rem; }
     .mb-curr__head h2 { margin-bottom: 1rem; }
     .mb-curr__head p {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
       font-style: italic;
       font-size: 1.5rem;
       line-height: 1.4;
@@ -703,7 +703,7 @@
     .mb-chapter summary::-webkit-details-marker { display: none; }
     .mb-chapter summary:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
     .mb-chapter h3 {
-      font-family: 'Inter', sans-serif;
+      font-family: var(--font-body);
       font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.12em;
@@ -772,6 +772,30 @@
     .mb-about ul { list-style: none; margin-bottom: 2rem; border-top: 1px solid rgba(255,255,255,0.12); }
     .mb-about li { padding: 0.9rem 0; border-bottom: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); font-size: 0.92rem; }
     .mb-about .btn { width: 100%; justify-content: center; }
+    /* Offer card */
+    @media (max-height: 1000px) { .mb-about { position: static; } }
+    .mb-about img { width: 120px; height: 120px; margin-bottom: 1.2rem; }
+    .mb-offer__badge { display: inline-block; margin: 0 0 1rem; padding: .35rem .9rem; border-radius: 999px; background: rgba(212,175,55,.16); border: 1px solid rgba(232,205,130,.45); color: var(--gold-light); font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+    .mb-about h3 { font-size: 1.55rem; margin-bottom: .6rem; }
+    .mb-offer__price { display: flex; align-items: baseline; justify-content: center; gap: .4rem; margin: 0 0 .3rem; }
+    .mb-offer__amount { font-family: var(--font-display); font-size-adjust: var(--font-display-adjust); font-size: 3.6rem; font-weight: 600; line-height: 1; color: #fff; letter-spacing: -.02em; }
+    .mb-offer__per { font-size: 1rem; color: rgba(255,255,255,.7); }
+    .mb-offer__trial { color: var(--gold-light); font-size: .92rem; margin-bottom: 1.6rem; }
+    .mb-offer__stats { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin-bottom: 1.5rem; }
+    .mb-offer__stats div { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: .85rem .5rem; }
+    .mb-offer__stats strong { display: block; font-family: var(--font-display); font-size-adjust: var(--font-display-adjust); font-size: 1.5rem; font-weight: 600; color: #fff; line-height: 1.1; }
+    .mb-offer__stats span { font-size: .78rem; color: rgba(255,255,255,.65); }
+    .mb-about ul.mb-offer__list { border-top: none; margin: 0 0 1.8rem; text-align: left; }
+    .mb-about .mb-offer__list li { border-bottom: none; padding: .45rem 0 .45rem 1.9rem; position: relative; color: rgba(255,255,255,.85); font-size: .92rem; }
+    .mb-offer__list li::before { content: ''; position: absolute; left: 0; top: .55rem; width: 1.15rem; height: 1.15rem; border-radius: 50%; background: rgba(212,175,55,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.2l2.6 2.6L12 5.4' fill='none' stroke='%23E8CD82' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/70% no-repeat; }
+    .mb-offer__cta { gap: .5rem; }
+    .mb-offer__cta span { transition: transform .3s ease; }
+    .mb-offer__cta:hover span { transform: translateX(4px); }
+    .mb-offer__fine { margin: .9rem 0 0; font-size: .78rem; color: rgba(255,255,255,.5); }
+    .mb-offer__yearly { display: flex; align-items: center; justify-content: center; gap: .5rem; margin-top: 1.3rem; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,.1); font-size: .88rem; color: rgba(255,255,255,.8); transition: color .2s; }
+    .mb-offer__yearly strong { color: #fff; font-weight: 600; }
+    .mb-offer__yearly:hover { color: #fff; }
+    .mb-offer__save { padding: .2rem .55rem; border-radius: 999px; background: var(--gold-light); color: var(--indigo-deep); font-size: .7rem; font-weight: 700; letter-spacing: .04em; }
 
     /* ── BONUS ────────────────────────────────────────────────── */
     .mb-bonus { padding: 7rem 0; background: var(--charcoal); position: relative; overflow: hidden; }
@@ -797,7 +821,7 @@
       background: rgba(255,255,255,0.035);
     }
     .mb-bonus__card .mb-bonus__num {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
       font-style: italic;
       font-size: 2.4rem;
       line-height: 1;
@@ -813,7 +837,7 @@
     .faq-section .section-header .eyebrow { margin-bottom: 1rem; }
     .faq-list { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
     .faq-item { background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--teal); border-radius: var(--radius-md); padding: 2.25rem 2.25rem 2rem; box-shadow: var(--shadow-soft); }
-    .faq-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 600; line-height: 1.25; color: var(--charcoal); margin: 0 0 0.9rem; }
+    .faq-item h3 { font-family: var(--font-display); font-size-adjust: var(--font-display-adjust); font-size: 1.55rem; font-weight: 600; line-height: 1.25; color: var(--charcoal); margin: 0 0 0.9rem; }
     .faq-item p { margin: 0; font-size: 1rem; line-height: 1.75; color: var(--body-text); }
     .faq-item a { color: var(--teal-dark); border-bottom: 1px solid rgba(42,157,143,0.35); }
     @media (max-width: 768px) {
@@ -1218,13 +1242,23 @@
         </div>
         <aside class="mb-about animate">
           <img src="img/grove-circle-membership-logo.jpg" alt="" width="150" height="150" loading="lazy" decoding="async">
-          <h3>About this course</h3>
-          <p class="mb-about__price">$30.00 / month with 5 day free trial</p>
-          <ul>
-            <li>85 lessons</li>
-            <li>4.5 hours of video content</li>
+          <p class="mb-offer__badge">5 days free</p>
+          <h3>Join the Grove Circle</h3>
+          <p class="mb-offer__price"><span class="mb-offer__amount">$30</span><span class="mb-offer__per">/ month</span></p>
+          <p class="mb-offer__trial">Start with a 5-day free trial</p>
+          <div class="mb-offer__stats">
+            <div><strong>85</strong><span>lessons</span></div>
+            <div><strong>4.5 hrs</strong><span>of video</span></div>
+          </div>
+          <ul class="mb-offer__list">
+            <li>Live classes &amp; prayer circles</li>
+            <li>Sound healing videos &amp; meditations</li>
+            <li>Private Facebook community</li>
+            <li>Bonus intuition class &amp; guest teachers</li>
           </ul>
-          <a href="https://grovecirclehealing.thinkific.com/cart/add_product/3003373?price_id=3861534" class="btn btn-white">Sign Up Here</a>
+          <a href="https://grovecirclehealing.thinkific.com/cart/add_product/3003373?price_id=3861534" class="btn btn-white mb-offer__cta">Start Your Free Trial <span aria-hidden="true">&rarr;</span></a>
+          <p class="mb-offer__fine">Then $30/month after your trial</p>
+          <a class="mb-offer__yearly" href="https://grovecirclehealing.thinkific.com/enroll/3003373?price_id=3893579">Or pay yearly, <strong>$288</strong> <span class="mb-offer__save">Save 20%</span></a>
         </aside>
       </div>
     </div>
@@ -1585,5 +1619,6 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && box.classList.contains('open')) close(); });
   })();
   </script>
+<script src="bowl-glint.js?v=5" defer></script>
 </body>
 </html>

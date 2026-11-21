@@ -10,6 +10,9 @@
 }
 
 :root {
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --font-display-adjust: 0.44;
   --cream:        #FAF8F3;
   --cream-dark:   #F0EAE0;
   --cream-deeper: #E5DDD0;
@@ -43,7 +46,7 @@ body {
   font-feature-settings: "lnum" 1;
   background: var(--cream);
   color: var(--body-text);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -51,7 +54,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, blockquote {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
   font-weight: 500;
   line-height: 1.12;
   color: var(--charcoal);
@@ -85,7 +88,7 @@ img { display: block; max-width: 100%; }
    ---------------------------------------------------------------- */
 .eyebrow {
   display: inline-block;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.2em;
@@ -103,17 +106,18 @@ img { display: block; max-width: 100%; }
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.9rem 2.4rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.78rem;
+  padding: 0.95rem 2rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  border: none;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  border: 1px solid transparent;
   border-radius: var(--radius-pill);
   cursor: pointer;
   transition: all 0.35s ease;
   text-decoration: none;
+  line-height: 1.2;
 }
 
 .btn-primary {
@@ -140,7 +144,7 @@ img { display: block; max-width: 100%; }
 .btn-white {
   background: #fff;
   color: #12594F;
-  font-weight: 700;
+  font-weight: 600;
 }
 .btn-white:hover {
   background: var(--cream);
@@ -149,13 +153,16 @@ img { display: block; max-width: 100%; }
 }
 
 .btn-ghost-white {
-  background: transparent;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
   color: #fff;
-  border: 1px solid rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.45);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 8px 24px rgba(0,0,0,0.18);
 }
 .btn-ghost-white:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: #fff;
+  background: linear-gradient(135deg, rgba(255,255,255,0.26), rgba(255,255,255,0.1));
+  border-color: rgba(255,255,255,0.8);
   transform: translateY(-1px);
 }
 
@@ -230,7 +237,7 @@ img { display: block; max-width: 100%; }
 }
 
 .nav__brand-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--charcoal);
@@ -267,8 +274,8 @@ img { display: block; max-width: 100%; }
 }
 
 .nav__link {
-  font-size: 0.72rem;
-  font-weight: 400;
+  font-size: 0.75rem;
+  font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--body-text);
@@ -338,16 +345,18 @@ img { display: block; max-width: 100%; }
 }
 
 .nav__cta {
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 0.72rem 1.6rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  padding: 0.75rem 1.4rem;
   background: var(--teal);
   color: #fff;
   border-radius: var(--radius-pill);
   transition: all 0.3s ease;
   flex-shrink: 0;
+  line-height: 1.2;
 }
 
 .nav:not(.scrolled) .nav__cta {
@@ -398,7 +407,7 @@ img { display: block; max-width: 100%; }
   display: flex;
 }
 .nav__mobile-link {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
   font-size: 2.5rem;
   font-weight: 300;
   color: var(--charcoal);
@@ -695,7 +704,7 @@ img { display: block; max-width: 100%; }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  grid-auto-rows: 220px;
+  grid-auto-rows: minmax(220px, auto);
 }
 
 .offering-card {
@@ -754,7 +763,7 @@ img { display: block; max-width: 100%; }
 }
 
 .offering-card__title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
   font-size: 1.55rem;
   font-weight: 500;
   color: var(--charcoal);
@@ -811,7 +820,7 @@ img { display: block; max-width: 100%; }
 .quote-section__circles span:nth-child(3) { width: 900px; height: 900px; }
 
 .quote-section blockquote {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
   font-size: clamp(2rem, 4.5vw, 4.5rem);
   font-weight: 300;
   font-style: italic;
@@ -825,7 +834,7 @@ img { display: block; max-width: 100%; }
 }
 
 .quote-section cite {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.7rem;
   font-weight: 400;
   letter-spacing: 0.2em;
@@ -913,7 +922,7 @@ img { display: block; max-width: 100%; }
   border: 1.5px solid var(--cream-deeper);
   border-radius: var(--radius-sm);
   padding: 0.85rem 1.1rem;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 300;
   color: var(--body-text);
@@ -973,7 +982,7 @@ img { display: block; max-width: 100%; }
 }
 
 .footer__brand-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
   font-size: 1.05rem;
   font-weight: 400;
   color: #fff;
@@ -1013,7 +1022,7 @@ img { display: block; max-width: 100%; }
 }
 
 .footer__col-heading {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.2em;
@@ -1076,9 +1085,10 @@ img { display: block; max-width: 100%; }
   .nav__toggle { display: flex; }
 
   .offerings__grid { grid-template-columns: 1fr; }
-  .offerings__additional { grid-template-columns: 1fr; }
+  .offerings__additional { grid-template-columns: 1fr; grid-auto-rows: auto; }
+  .offering-card--wide .offering-card__img-wrap { height: auto; }
   .offering-card--wide { grid-template-columns: 1fr; }
-  .offering-card--wide .offering-card__img { aspect-ratio: 16/7; height: auto; }
+  .offering-card--wide .offering-card__img { aspect-ratio: 16/9; height: auto; }
   .offering-card--wide .offering-card__body { border-left: none; border-top: 2px solid var(--teal); }
 
   .footer__top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
@@ -1157,7 +1167,7 @@ img { display: block; max-width: 100%; }
 }
 .modal__form-side .eyebrow { margin-bottom: 0.75rem; }
 .modal__form-side h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
   font-size: 2.5rem;
   font-weight: 500;
   color: var(--charcoal);
@@ -1204,7 +1214,7 @@ img { display: block; max-width: 100%; }
   background: var(--cream-dark);
   border: 1.5px solid var(--cream-deeper);
   border-radius: var(--radius-sm);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.875rem;
   color: var(--charcoal);
   outline: none;
@@ -1223,18 +1233,19 @@ img { display: block; max-width: 100%; }
   margin-top: 1.75rem;
 }
 .modal__form .btn-submit {
-  padding: 0.9rem 2.25rem;
+  padding: 0.95rem 2rem;
   background: var(--teal);
   border: none;
   border-radius: var(--radius-pill);
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  text-transform: none;
   color: #fff;
   cursor: pointer;
   transition: background 0.2s ease;
+  line-height: 1.2;
 }
 .modal__form .btn-submit:hover { background: var(--teal-dark); }
 
@@ -1249,7 +1260,7 @@ img { display: block; max-width: 100%; }
 }
 .modal__success.visible { display: flex; }
 .modal__success h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
   font-size: 2rem;
   color: var(--charcoal);
 }
@@ -1284,4 +1295,105 @@ img { display: block; max-width: 100%; }
 @media (max-width: 520px) {
   .footer__top { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+}
+
+/* ----------------------------------------------------------------
+   SINGING-BOWL GLINT
+   One soft white light drifts slowly around an edge, like a mallet
+   circling a bowl's rim. Same look and timing everywhere:
+   - buttons: one visible button at random every few seconds + on hover
+   - service tiles (.offering-card): on hover
+   - About portrait: circles on its own, then rests
+   bowl-glint.js adds/removes .is-singing.
+   ---------------------------------------------------------------- */
+@property --glint-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+:root { --glint-time: 6s; }
+.btn, .nav__cta, .btn-submit, .inquiry-form-card__button, .newsletter-strip__btn, .offering-card {
+  position: relative;
+}
+.is-singing::after,
+.sound-portrait::after {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: inherit;
+  padding: 1.5px;
+  /* the gradient must live here (not in a :root variable) so the
+     animated angle is read on this element and the light travels */
+  background: conic-gradient(from var(--glint-angle),
+    transparent 0deg,
+    transparent 220deg,
+    rgba(255, 255, 255, 0.10) 260deg,
+    rgba(255, 255, 255, 0.45) 305deg,
+    rgba(255, 255, 255, 0.85) 335deg,
+    #ffffff 350deg,
+    transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  pointer-events: none;
+  opacity: 0;
+}
+.is-singing::after {
+  animation:
+    bowl-glint-sweep var(--glint-time) cubic-bezier(0.37, 0, 0.63, 1) forwards,
+    bowl-glint-fade var(--glint-time) ease-in-out forwards;
+}
+/* tiles clip their overflow, so the light runs just inside the edge */
+.offering-card.is-singing::after { inset: 0; z-index: 3; }
+
+/* About portrait: same light, circling on its own, then resting */
+.sound-portrait::after {
+  inset: -2px;
+  z-index: 2;
+  border-radius: 50%;
+  animation:
+    portrait-glint-sweep 11s cubic-bezier(0.37, 0, 0.63, 1) 1.5s infinite,
+    portrait-glint-fade 11s ease-in-out 1.5s infinite;
+}
+@keyframes bowl-glint-sweep {
+  from { --glint-angle: -30deg; }
+  to   { --glint-angle: 390deg; }
+}
+@keyframes bowl-glint-fade {
+  0%   { opacity: 0; }
+  28%  { opacity: 1; }
+  68%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+/* 6s of light (same as buttons), then about 5s of rest */
+@keyframes portrait-glint-sweep {
+  0%       { --glint-angle: -30deg; }
+  54.5%    { --glint-angle: 390deg; }
+  100%     { --glint-angle: 390deg; }
+}
+@keyframes portrait-glint-fade {
+  0%    { opacity: 0; }
+  15%   { opacity: 1; }
+  37%   { opacity: 1; }
+  54.5% { opacity: 0; }
+  100%  { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-singing::after, .sound-portrait::after { display: none; }
+}
+
+/* ----------------------------------------------------------------
+   PHOTO GRADE
+   One shared, gentle film look so every photo feels like it came
+   from the same story (warm, softly muted, slightly lifted).
+   Original files are untouched. Logos, icons, flyers and course
+   artwork are excluded; add class="no-grade" to opt any image out.
+   Tune the whole site by editing --photo-grade.
+   ---------------------------------------------------------------- */
+:root {
+  --photo-grade: sepia(0.18) saturate(0.74) contrast(0.94) brightness(1.04);
+}
+img:not([src$=".svg"]):not([src*="logo"]):not([src*="LOGO"]):not([src*="thinkific"]):not([src*="flyer"]):not([src*="-art"]):not([src*="banner"]):not([src*="-card"]):not([src*="coming-soon"]):not([src*="ashes-to-wings"]):not([src*="winter-solstice"]):not([src*="medicine-of-the-horse"]):not([src*="journal-prompts"]):not([src*="renewal-"]):not(.no-grade),
+.hero__video {
+  filter: var(--photo-grade);
 }

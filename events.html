@@ -156,8 +156,8 @@
 </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20261121u">
   <style>
     .page-hero {
       padding: 8.4rem 0 4.2rem;
@@ -182,19 +182,20 @@
       margin-bottom: 4rem;
     }
     .filter-btn {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
       font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.6rem 1.4rem;
+      letter-spacing: 0.01em;
+      text-transform: none;
+      padding: 0.65rem 1.3rem;
       border: 1px solid var(--border);
       border-radius: var(--radius-pill);
       background: transparent;
       color: var(--muted);
       cursor: pointer;
       transition: all 0.25s ease;
-    }
+  line-height: 1.2;
+}
     .filter-btn.active,
     .filter-btn:hover {
       background: var(--teal);
@@ -234,7 +235,7 @@
       padding-right: 1rem;
     }
     .event-item__day {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
       font-size: 3rem;
       font-weight: 300;
       color: var(--teal-dark);
@@ -269,7 +270,7 @@
       margin-bottom: 0.6rem;
     }
     .event-item__title {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
       font-size: 1.6rem;
       font-weight: 500;
       color: var(--charcoal);
@@ -879,5 +880,6 @@
       });
     });
   </script>
+<script src="bowl-glint.js?v=5" defer></script>
 </body>
 </html>

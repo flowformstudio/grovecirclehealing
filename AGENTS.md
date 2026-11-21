@@ -34,6 +34,10 @@ These files are invisible to visitors but are what Google and AI assistants (Cha
 - `robots.txt`: leave as is.
 - Keep `<title>`, `<meta name="description">`, `<link rel="canonical">`, and `og:` tags on every page.
 
+## Stylesheet version
+
+Every page links `styles.css?v=YYYYMMDD`. Whenever you change `styles.css`, change that version (to today's date) on every page in the same commit, or returning visitors keep seeing the old styles.
+
 ## Images and video
 
 - Resize photos before adding them: max ~2400px on the long edge, JPEG quality ~80, ideally under 500 KB. Phone photos (4000px+, 2–6 MB) slow the site down.

@@ -100,8 +100,8 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20261121u">
   <style>
     /* ── HERO ─────────────────────────────────────────────────── */
     .hero {
@@ -158,7 +158,7 @@
     }
 
     .hero__h1 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
       font-size: clamp(2.5rem, 5.5vw, 5rem);
       font-weight: 500;
       color: #fff;
@@ -170,7 +170,7 @@
     }
 
     .hero__h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-display); font-size-adjust: var(--font-display-adjust);
       font-size: clamp(2.31rem, 6.16vw, 6.16rem);
       font-weight: 500;
       font-style: italic;
@@ -182,18 +182,44 @@
     }
 
     .hero__sub {
-      font-family: 'Inter', sans-serif;
-      font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+      font-family: var(--font-body);
+      font-size: clamp(1.15rem, 1.7vw, 1.5rem);
       font-weight: 300;
       letter-spacing: 0.02em;
       color: rgba(255,255,255,0.82);
       line-height: 1.7;
-      max-width: 780px;
+      max-width: 660px;
       margin: 0 auto 2.5rem;
       animation: heroFade 1.2s ease 0.95s both;
     }
+    /* Hero glass button (inline so it never waits on a cached styles.css) */
+    .hero .btn-ghost-white {
+      background: linear-gradient(135deg, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0.12) 55%, rgba(255,255,255,0.18) 100%);
+      border: 0.5px solid rgba(255,255,255,0.55);
+      color: #fff;
+      -webkit-backdrop-filter: blur(22px) saturate(170%) brightness(1.15);
+      backdrop-filter: blur(22px) saturate(170%) brightness(1.15);
+      box-shadow:
+        inset 0 0.5px 0 rgba(255,255,255,0.5),
+        0 10px 30px rgba(0,0,0,0.25);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    }
+    .hero .btn-ghost-white:hover {
+      background: linear-gradient(135deg, rgba(255,255,255,0.42) 0%, rgba(255,255,255,0.18) 55%, rgba(255,255,255,0.24) 100%);
+      border-color: rgba(255,255,255,0.8);
+    }
+    .hero__name {
+      font-family: var(--font-body);
+      font-size: clamp(0.78rem, 0.95vw, 0.9rem);
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 1.5rem;
+      animation: heroFade 1.2s ease 0.25s both;
+    }
     .hero__where {
-      font-family: 'Inter', sans-serif;
+      font-family: var(--font-body);
       font-size: 0.78rem;
       font-weight: 400;
       letter-spacing: 0.16em;
@@ -256,6 +282,7 @@
 
     /* ── OFFERINGS ────────────────────────────────────────────── */
     .offerings { padding: 8rem 0; background: var(--cream-dark); }
+    .offerings .offering-card .offering-card__body { border-top: none; }
 
     /* ── CTA BANNER ───────────────────────────────────────────── */
     /* uses shared .cta-banner styles */
@@ -282,9 +309,9 @@
 .reviews__aside .eyebrow{margin-bottom:1rem;}
 .reviews__aside h2{margin-bottom:2rem;}
 .reviews__score{display:flex;align-items:center;gap:1rem;padding:1.5rem 0;border-top:1px solid var(--cream-deeper);border-bottom:1px solid var(--cream-deeper);}
-.reviews__num{font-family:'Inter',sans-serif;font-weight:600;font-size:3.25rem;line-height:1;letter-spacing:-0.03em;color:var(--charcoal);font-variant-numeric:lining-nums tabular-nums;}
+.reviews__num{font-family:var(--font-body);font-weight:600;font-size:3.25rem;line-height:1;letter-spacing:-0.03em;color:var(--charcoal);font-variant-numeric:lining-nums tabular-nums;}
 .reviews__score-meta{display:flex;flex-direction:column;gap:.4rem;}
-.reviews__count{display:flex;align-items:center;gap:.45rem;font-family:'Inter',sans-serif;font-size:.82rem;font-weight:500;color:var(--muted);font-variant-numeric:lining-nums;}
+.reviews__count{display:flex;align-items:center;gap:.45rem;font-family:var(--font-body);font-size:.82rem;font-weight:500;color:var(--muted);font-variant-numeric:lining-nums;}
 .reviews__actions{margin-top:2rem;}
 .rv-stars{color:var(--gold);font-size:1.05rem;letter-spacing:.14em;line-height:1;}
 .reviews__score .rv-stars{font-size:1.25rem;}
@@ -292,18 +319,22 @@
 .reviews__grid{columns:2;column-gap:1.5rem;}
 .rv-card{break-inside:avoid;margin:0 0 1.5rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:1.75rem 1.75rem 1.5rem;box-shadow:var(--shadow-soft);}
 .rv-card__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
-.rv-card__text{margin:0;font-family:'Inter',sans-serif;font-size:.95rem;line-height:1.7;color:var(--body-text);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:7;overflow:hidden;}
+.rv-card__text{margin:0;font-family:var(--font-body);font-size:.95rem;line-height:1.7;color:var(--body-text);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:7;overflow:hidden;}
 .rv-card__text p{margin:0 0 .85em;font-size:inherit;line-height:inherit;color:inherit;}
 .rv-card__text p:last-child{margin-bottom:0;}
 .rv-card.is-open .rv-card__text{display:block;-webkit-line-clamp:unset;}
-.rv-card__more{margin-top:.6rem;padding:0;background:none;border:0;font:600 .82rem 'Inter',sans-serif;color:var(--teal-dark);cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
+.rv-card__more{margin-top:.6rem;padding:0;background:none;border:0;font:600 .82rem var(--font-body);color:var(--teal-dark);cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
 .rv-card__who{display:flex;align-items:center;gap:.8rem;margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--cream-dark);}
-.rv-card__avatar{width:40px;height:40px;border-radius:50%;background:var(--teal-pale);color:var(--teal-dark);display:grid;place-items:center;font:600 .8rem 'Inter',sans-serif;letter-spacing:.04em;flex:none;}
-.rv-card__name{display:block;font:600 .92rem 'Inter',sans-serif;color:var(--charcoal);}
-.rv-card__src{display:block;font:400 .76rem 'Inter',sans-serif;color:var(--muted);margin-top:.15rem;}
-.hero__rating{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.75rem;font:500 .85rem 'Inter',sans-serif;color:rgba(255,255,255,.9);text-decoration:none;font-variant-numeric:lining-nums;animation:heroFade 1.2s ease 1.3s both;}
-.hero__rating .rv-stars{color:var(--gold-light);}
-.hero__rating:hover span:last-child{text-decoration:underline;text-underline-offset:3px;}
+.rv-card__avatar{width:40px;height:40px;border-radius:50%;background:var(--teal-pale);color:var(--teal-dark);display:grid;place-items:center;font:600 .8rem var(--font-body);letter-spacing:.04em;flex:none;}
+.rv-card__name{display:block;font:600 .92rem var(--font-body);color:var(--charcoal);}
+.rv-card__src{display:block;font:400 .76rem var(--font-body);color:var(--muted);margin-top:.15rem;}
+.hero__rating{display:inline-flex;align-items:center;gap:.8rem;margin-top:3rem;text-decoration:none;color:rgba(255,255,255,.92);font-variant-numeric:lining-nums;animation:heroFade 1.2s ease 1.3s both;}
+.hero__rating:hover .hero__rating-label{text-decoration:underline;text-underline-offset:3px;}
+.hero__rating-g{display:grid;place-items:center;flex:none;}
+.hero__rating-logo{width:26px;height:26px;}
+.hero__rating-text{display:flex;flex-direction:column;align-items:flex-start;gap:.2rem;line-height:1.2;}
+.hero__rating-label{font:500 .85rem var(--font-body);}
+.hero__rating .rv-stars{color:var(--gold-light);font-size:.9rem;letter-spacing:.12em;}
 @media(max-width:960px){
   .reviews{padding:5.5rem 0;}
   .reviews__inner{grid-template-columns:1fr;gap:2.5rem;}
@@ -387,13 +418,14 @@
     <div class="hero__grain"></div>
 
     <div class="hero__content">
+      <p class="hero__name">Chris Young-Ginzburg</p>
       <h1 class="hero__h1">Extraordinary Sound Healing for Groups, Retreats &amp; Organizations</h1>
-      <p class="hero__sub">Chris Young-Ginzburg | Serving Sonoma County and the SF Bay Area, creating immersive sound healing experiences for individuals, groups, and organizations seeking deep rest, connection, and renewal.</p>
+      <p class="hero__sub">Immersive sound healing experiences to promote deep rest, connection, and renewal. Serving Sonoma County and the SF Bay Area.</p>
       <div class="hero__actions">
         <a href="#contact"    class="btn btn-primary">Plan Your Experience</a>
         <a href="events-retreats-and-corporate.html" class="btn btn-ghost-white">Explore Experiences</a>
       </div>
-      <a href="#reviews" class="hero__rating"><span class="rv-stars" aria-hidden="true">★★★★★</span><span>5.0 from 9 Google reviews</span></a>
+      <a href="#reviews" class="hero__rating"><span class="hero__rating-g"><svg class="hero__rating-logo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.2C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.1-.4-4.6H24v9.1h12.7c-.6 3-2.2 5.500-4.700 7.200l7.600 5.900c4.500-4.100 7-10.200 7-17.600z"/><path fill="#FBBC05" d="M10.500 28.600A14.500 14.500 0 0 1 9.700 24c0-1.600.3-3.200.8-4.600l-7.900-6.200A24 24 0 0 0 0 24c0 3.900.9 7.500 2.600 10.800l7.900-6.200z"/><path fill="#34A853" d="M24 48c6.500 0 11.900-2.100 15.900-5.800l-7.600-5.900c-2.100 1.400-4.900 2.300-8.300 2.300-6.300 0-11.600-4.200-13.500-9.900l-7.900 6.200C6.500 42.600 14.600 48 24 48z"/></svg></span><span class="hero__rating-text"><span class="hero__rating-label">5.0 from 9 Google reviews</span><span class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span></span></a>
     </div>
 
   </section>
@@ -507,7 +539,7 @@
         <a href="online-courses.html" class="offering-card offering-card--wide animate animate-delay-1">
           <div class="offering-card__img-wrap">
             <img src="img/home-online-courses-heart-session.jpg"
-                 alt="Chris with her hands over her heart, seated among singing bowls beneath a gong" style="aspect-ratio: 1 / 1; height: auto;" class="offering-card__img" loading="lazy" decoding="async">
+                 alt="Chris with her hands over her heart, seated among singing bowls beneath a gong" style="object-position: center 30%;" class="offering-card__img" loading="lazy" decoding="async">
           </div>
           <div class="offering-card__body">
             <h3 class="offering-card__title">Online Courses</h3>
@@ -519,7 +551,7 @@
         <a href="membership.html" class="offering-card offering-card--wide animate animate-delay-2">
           <div class="offering-card__img-wrap">
             <img src="https://import.cdn.thinkific.com/630713/UbQjkd2qQOudELc5777y_Grove%20Circle%20Mem%20LOGO.jpeg"
-                 alt="Grove Circle Membership" class="offering-card__img">
+                 alt="Grove Circle Membership" class="offering-card__img" style="object-fit: contain; background: #fff;">
           </div>
           <div class="offering-card__body">
             <h3 class="offering-card__title">Grove Circle Membership</h3>
@@ -816,5 +848,6 @@
   window.addEventListener('resize',setup);
 })();
 </script>
+<script src="bowl-glint.js?v=5" defer></script>
 </body>
 </html>
