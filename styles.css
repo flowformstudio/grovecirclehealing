@@ -1159,7 +1159,7 @@ img { display: block; max-width: 100%; }
 .modal__form-side h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.5rem;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--charcoal);
   margin-bottom: 0.6rem;
   line-height: 1.1;
