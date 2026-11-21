@@ -279,6 +279,47 @@
 .about-teaser{overflow:hidden;}
 @media(prefers-reduced-motion:reduce){.sound-wave{animation:none;opacity:.18;transform:translate(-50%,-50%) scale(1.3);}}
 </style>
+<style>
+/* ── GOOGLE REVIEWS ───────────────────────────────────────── */
+.reviews{padding:8rem 0;background:var(--cream);}
+.reviews__inner{display:grid;grid-template-columns:minmax(240px,300px) 1fr;gap:4.5rem;align-items:start;}
+.reviews__aside{position:sticky;top:120px;}
+.reviews__aside .eyebrow{margin-bottom:1rem;}
+.reviews__aside h2{margin-bottom:2rem;}
+.reviews__score{display:flex;align-items:center;gap:1rem;padding:1.5rem 0;border-top:1px solid var(--cream-deeper);border-bottom:1px solid var(--cream-deeper);}
+.reviews__num{font-family:'Inter',sans-serif;font-weight:600;font-size:3.25rem;line-height:1;letter-spacing:-0.03em;color:var(--charcoal);font-variant-numeric:lining-nums tabular-nums;}
+.reviews__score-meta{display:flex;flex-direction:column;gap:.4rem;}
+.reviews__count{display:flex;align-items:center;gap:.45rem;font-family:'Inter',sans-serif;font-size:.82rem;font-weight:500;color:var(--muted);font-variant-numeric:lining-nums;}
+.reviews__actions{margin-top:2rem;}
+.rv-stars{color:var(--gold);font-size:1.05rem;letter-spacing:.14em;line-height:1;}
+.reviews__score .rv-stars{font-size:1.25rem;}
+.rv-g{width:16px;height:16px;flex:none;}
+.reviews__grid{columns:2;column-gap:1.5rem;}
+.rv-card{break-inside:avoid;margin:0 0 1.5rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:1.75rem 1.75rem 1.5rem;box-shadow:var(--shadow-soft);}
+.rv-card__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
+.rv-card__text{margin:0;font-family:'Inter',sans-serif;font-size:.95rem;line-height:1.7;color:var(--body-text);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:7;overflow:hidden;}
+.rv-card__text p{margin:0 0 .85em;font-size:inherit;line-height:inherit;color:inherit;}
+.rv-card__text p:last-child{margin-bottom:0;}
+.rv-card.is-open .rv-card__text{display:block;-webkit-line-clamp:unset;}
+.rv-card__more{margin-top:.6rem;padding:0;background:none;border:0;font:600 .82rem 'Inter',sans-serif;color:var(--teal-dark);cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
+.rv-card__who{display:flex;align-items:center;gap:.8rem;margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--cream-dark);}
+.rv-card__avatar{width:40px;height:40px;border-radius:50%;background:var(--teal-pale);color:var(--teal-dark);display:grid;place-items:center;font:600 .8rem 'Inter',sans-serif;letter-spacing:.04em;flex:none;}
+.rv-card__name{display:block;font:600 .92rem 'Inter',sans-serif;color:var(--charcoal);}
+.rv-card__src{display:block;font:400 .76rem 'Inter',sans-serif;color:var(--muted);margin-top:.15rem;}
+.hero__rating{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.75rem;font:500 .85rem 'Inter',sans-serif;color:rgba(255,255,255,.9);text-decoration:none;font-variant-numeric:lining-nums;animation:heroFade 1.2s ease 1.3s both;}
+.hero__rating .rv-stars{color:var(--gold-light);}
+.hero__rating:hover span:last-child{text-decoration:underline;text-underline-offset:3px;}
+@media(max-width:960px){
+  .reviews{padding:5.5rem 0;}
+  .reviews__inner{grid-template-columns:1fr;gap:2.5rem;}
+  .reviews__aside{position:static;}
+}
+@media(max-width:640px){
+  .reviews__grid{columns:auto;display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -1.5rem;padding:0 1.5rem 1rem;-webkit-overflow-scrolling:touch;scrollbar-width:none;align-items:flex-start;}
+  .reviews__grid::-webkit-scrollbar{display:none;}
+  .rv-card{flex:0 0 84%;scroll-snap-align:center;margin:0;}
+}
+</style>
 </head>
 <body>
 
@@ -357,6 +398,7 @@
         <a href="#contact"    class="btn btn-primary">Plan Your Experience</a>
         <a href="events-retreats-and-corporate.html" class="btn btn-ghost-white">Explore Experiences</a>
       </div>
+      <a href="#reviews" class="hero__rating"><span class="rv-stars" aria-hidden="true">★★★★★</span><span>5.0 from 9 Google reviews</span></a>
     </div>
 
   </section>
@@ -494,6 +536,79 @@
 
       </div>
 
+    </div>
+  </section>
+
+
+  <!-- ═══ GOOGLE REVIEWS ════════════════════════════════════════ -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="reviews__inner">
+
+        <div class="reviews__aside animate">
+          <p class="eyebrow">Google Reviews</p>
+          <h2>What Clients Say</h2>
+          <div class="reviews__score">
+            <span class="reviews__num">5.0</span>
+            <span class="reviews__score-meta"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><span class="reviews__count"><svg class="rv-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.2C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.1-.4-4.6H24v9.1h12.7c-.6 3-2.2 5.500-4.700 7.200l7.600 5.900c4.500-4.100 7-10.200 7-17.600z"/><path fill="#FBBC05" d="M10.500 28.600A14.500 14.500 0 0 1 9.700 24c0-1.600.3-3.200.8-4.600l-7.900-6.200A24 24 0 0 0 0 24c0 3.900.9 7.500 2.600 10.800l7.900-6.200z"/><path fill="#34A853" d="M24 48c6.500 0 11.900-2.100 15.900-5.800l-7.600-5.900c-2.100 1.400-4.900 2.300-8.300 2.300-6.300 0-11.600-4.200-13.500-9.900l-7.900 6.200C6.500 42.600 14.600 48 24 48z"/></svg> Based on 9 Google reviews</span></span>
+          </div>
+          <div class="reviews__actions">
+            <a href="https://share.google/lPdu5QZw9qyA1Cu2s" target="_blank" rel="noopener" class="btn btn-outline">Read All on Google</a>
+          </div>
+        </div>
+
+        <div class="reviews__grid animate animate-delay-1">
+          <figure class="rv-card">
+            <div class="rv-card__top"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><svg class="rv-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.2C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.1-.4-4.6H24v9.1h12.7c-.6 3-2.2 5.500-4.700 7.200l7.600 5.900c4.500-4.100 7-10.200 7-17.600z"/><path fill="#FBBC05" d="M10.500 28.600A14.500 14.500 0 0 1 9.700 24c0-1.600.3-3.200.8-4.600l-7.900-6.200A24 24 0 0 0 0 24c0 3.900.9 7.500 2.600 10.800l7.900-6.200z"/><path fill="#34A853" d="M24 48c6.500 0 11.900-2.100 15.900-5.800l-7.600-5.900c-2.100 1.400-4.900 2.300-8.300 2.300-6.300 0-11.600-4.200-13.500-9.900l-7.900 6.200C6.500 42.600 14.600 48 24 48z"/></svg></div>
+            <blockquote class="rv-card__text"><p>Chris Young Ginzburg brings an open and service-oriented heart and years of helping facilitate healing journeys to create delightful, uplifting, connected events that are unforgettable for all who attend. She has shared her brilliance with our breast cancer community for years, leading us through beautiful sound healing and meditations. You leave her events feeling uplifted and with a new sense of expansive possibility and awareness of the beauty that surrounds you. Thank you, Chris, for all you do to bring healing and delight to us all 🩷</p></blockquote>
+            <button class="rv-card__more" type="button" hidden>Read more</button>
+            <figcaption class="rv-card__who"><span class="rv-card__avatar" aria-hidden="true">AB</span><span><span class="rv-card__name">Amy Bellomo</span><span class="rv-card__src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rv-card">
+            <div class="rv-card__top"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><svg class="rv-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.2C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.1-.4-4.6H24v9.1h12.7c-.6 3-2.2 5.500-4.700 7.200l7.600 5.900c4.500-4.100 7-10.200 7-17.600z"/><path fill="#FBBC05" d="M10.500 28.600A14.500 14.500 0 0 1 9.700 24c0-1.600.3-3.200.8-4.600l-7.900-6.200A24 24 0 0 0 0 24c0 3.900.9 7.500 2.600 10.800l7.900-6.200z"/><path fill="#34A853" d="M24 48c6.500 0 11.900-2.100 15.900-5.800l-7.600-5.900c-2.100 1.400-4.900 2.300-8.300 2.300-6.300 0-11.600-4.200-13.500-9.900l-7.900 6.200C6.500 42.600 14.600 48 24 48z"/></svg></div>
+            <blockquote class="rv-card__text"><p>A Truly a transformative Sound healing experience and highly recommended. Chris is very intuitive and knew just how to support me in what I needed. During the session (which was so beautiful) I felt very uplifted and held. I’ve already booked my next session with Chris.</p><p>Highly highly recommended!</p></blockquote>
+            <button class="rv-card__more" type="button" hidden>Read more</button>
+            <figcaption class="rv-card__who"><span class="rv-card__avatar" aria-hidden="true">HY</span><span><span class="rv-card__name">Heather Annaleice Young</span><span class="rv-card__src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rv-card">
+            <div class="rv-card__top"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><svg class="rv-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.2C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.1-.4-4.6H24v9.1h12.7c-.6 3-2.2 5.500-4.700 7.200l7.600 5.900c4.500-4.100 7-10.200 7-17.600z"/><path fill="#FBBC05" d="M10.500 28.600A14.500 14.500 0 0 1 9.700 24c0-1.600.3-3.200.8-4.600l-7.900-6.200A24 24 0 0 0 0 24c0 3.900.9 7.500 2.600 10.800l7.900-6.200z"/><path fill="#34A853" d="M24 48c6.500 0 11.900-2.100 15.900-5.800l-7.600-5.900c-2.100 1.400-4.900 2.300-8.300 2.300-6.300 0-11.600-4.200-13.500-9.900l-7.900 6.200C6.500 42.600 14.600 48 24 48z"/></svg></div>
+            <blockquote class="rv-card__text"><p>I’ve done many sound healings &amp; voice activations with Chris with deeply healing results. She’s amazing at knowing what’s in the way that you cannot name yet feel intensely. She holds a very safe &amp; authentic space for you to go deep &amp; connect to your inner truth. It’s opened my heart and allowed for more intimacy in my life.</p></blockquote>
+            <button class="rv-card__more" type="button" hidden>Read more</button>
+            <figcaption class="rv-card__who"><span class="rv-card__avatar" aria-hidden="true">RM</span><span><span class="rv-card__name">Regina Martinelli</span><span class="rv-card__src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rv-card">
+            <div class="rv-card__top"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><svg class="rv-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.2C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.1-.4-4.6H24v9.1h12.7c-.6 3-2.2 5.500-4.700 7.200l7.600 5.900c4.500-4.100 7-10.200 7-17.600z"/><path fill="#FBBC05" d="M10.500 28.600A14.500 14.500 0 0 1 9.700 24c0-1.600.3-3.200.8-4.600l-7.900-6.200A24 24 0 0 0 0 24c0 3.900.9 7.500 2.600 10.800l7.900-6.200z"/><path fill="#34A853" d="M24 48c6.500 0 11.900-2.100 15.900-5.800l-7.600-5.900c-2.100 1.400-4.900 2.300-8.300 2.300-6.300 0-11.600-4.200-13.500-9.900l-7.900 6.200C6.500 42.600 14.600 48 24 48z"/></svg></div>
+            <blockquote class="rv-card__text"><p>Love working with Chris. She is very intuitive and trustworthy. It’s hard finding someone to connect with spiritually without feeling strange about it. But working with Chris, I feel free to express my real self and expand from there.</p></blockquote>
+            <button class="rv-card__more" type="button" hidden>Read more</button>
+            <figcaption class="rv-card__who"><span class="rv-card__avatar" aria-hidden="true">SD</span><span><span class="rv-card__name">SD</span><span class="rv-card__src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rv-card">
+            <div class="rv-card__top"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><svg class="rv-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.2C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.1-.4-4.6H24v9.1h12.7c-.6 3-2.2 5.500-4.700 7.200l7.600 5.900c4.500-4.100 7-10.200 7-17.600z"/><path fill="#FBBC05" d="M10.500 28.600A14.500 14.500 0 0 1 9.700 24c0-1.600.3-3.200.8-4.600l-7.900-6.200A24 24 0 0 0 0 24c0 3.900.9 7.500 2.600 10.800l7.900-6.200z"/><path fill="#34A853" d="M24 48c6.500 0 11.900-2.100 15.900-5.800l-7.600-5.900c-2.100 1.400-4.900 2.300-8.300 2.300-6.300 0-11.600-4.200-13.500-9.900l-7.900 6.200C6.500 42.600 14.600 48 24 48z"/></svg></div>
+            <blockquote class="rv-card__text"><p>Where do I even begin?! I've had the honor of experiencing Chris's incredible work in many different ways over the past five years, and I continue to be deeply moved by the gifts she shares with the world.</p><p>Chris is truly one of the most genuine, kind, beautiful souls I've ever met. Despite her elevated consciousness and extraordinary abilities, she is so refreshingly down to earth. She has this innate ability to put you instantly at ease, and even the simplest conversation with her leaves you feeling seen, understood, and held.</p><p>I've experienced many of her sound healings over the years, and they are unlike anything else I've encountered. There is something truly profound about her music. It has this incredible ability to reach deep within you and awaken something that words simply cannot describe. Her Sound and Voice Activation classes are groundbreaking, and the depth and expansiveness of her offerings continue to amaze me.</p><p>I also had the privilege of receiving a psychic reading from Chris during a particularly challenging chapter of my life, and this woman is the real deal! She picked up on things she couldn't possibly have known, and the accuracy of her insights blew my mind. But what made the experience truly extraordinary wasn't just what she knew. It was how profoundly the experience shifted something within me. I walked away feeling stronger, clearer, more confident, and more supported than I could have imagined.</p><p>Chris’s gifts extend far beyond any one modality. Her talents seem limitless, yet everything she offers is rooted in such genuine love, compassion, and authenticity.</p><p>Whether you're drawn to her sound healings, classes, intuitive guidance, or any of her other offerings, I cannot recommend her highly enough.</p></blockquote>
+            <button class="rv-card__more" type="button" hidden>Read more</button>
+            <figcaption class="rv-card__who"><span class="rv-card__avatar" aria-hidden="true">SI</span><span><span class="rv-card__name">Sarah Inclan</span><span class="rv-card__src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rv-card">
+            <div class="rv-card__top"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><svg class="rv-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.2C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.1-.4-4.6H24v9.1h12.7c-.6 3-2.2 5.500-4.700 7.200l7.600 5.900c4.500-4.100 7-10.200 7-17.600z"/><path fill="#FBBC05" d="M10.500 28.600A14.500 14.500 0 0 1 9.700 24c0-1.600.3-3.200.8-4.600l-7.900-6.200A24 24 0 0 0 0 24c0 3.900.9 7.500 2.600 10.800l7.900-6.200z"/><path fill="#34A853" d="M24 48c6.500 0 11.900-2.100 15.900-5.800l-7.600-5.900c-2.100 1.400-4.900 2.300-8.300 2.300-6.300 0-11.600-4.200-13.500-9.900l-7.900 6.200C6.500 42.600 14.600 48 24 48z"/></svg></div>
+            <blockquote class="rv-card__text"><p>Chris has transformed my life in so many beautiful ways! From her Sound and Voice Activation classes, where she helped me discover and embrace my sacred voice, to her psychic readings that have offered profound insights and deeper understanding of my life’s journey, to her sound healing sessions that have brought me genuine healing and transformation.</p><p>Chris has touched my life deeply, and I am so grateful for the wisdom, love, and gifts she shares. She has such a beautiful way of holding space for others to connect more deeply with themselves and their own healing.</p><p>As Chris continues to evolve and expand the ways she serves others, I always look forward to experiencing the magic of her offerings. She is truly a gift, and I wholeheartedly recommend her to anyone seeking healing, clarity, and a deeper connection to their authentic self!</p></blockquote>
+            <button class="rv-card__more" type="button" hidden>Read more</button>
+            <figcaption class="rv-card__who"><span class="rv-card__avatar" aria-hidden="true">HS</span><span><span class="rv-card__name">Heather Star</span><span class="rv-card__src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rv-card">
+            <div class="rv-card__top"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><svg class="rv-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.2C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.1-.4-4.6H24v9.1h12.7c-.6 3-2.2 5.500-4.700 7.200l7.600 5.900c4.500-4.100 7-10.200 7-17.600z"/><path fill="#FBBC05" d="M10.500 28.600A14.500 14.500 0 0 1 9.700 24c0-1.600.3-3.200.8-4.600l-7.900-6.200A24 24 0 0 0 0 24c0 3.900.9 7.500 2.600 10.800l7.900-6.200z"/><path fill="#34A853" d="M24 48c6.500 0 11.900-2.100 15.900-5.800l-7.600-5.900c-2.100 1.400-4.900 2.300-8.300 2.300-6.300 0-11.600-4.200-13.500-9.900l-7.900 6.200C6.500 42.600 14.600 48 24 48z"/></svg></div>
+            <blockquote class="rv-card__text"><p>Grove Circle healing is an incredible company founded by very talented and wise woman named Chris. Having attended several of their events as well as participating in various workshops and courses, I have found a tremendous amount of support from participating in their offerings. I found myself to connect more with my body, to enhance my inner guidance and knowing, to create more space for healing from past trauma, and to trust my process of personal evolution. Grow circle healing has been a remarkable resource for me over the last decade or more. I highly recommend learning more about them and finding an online or in person course to experience it for yourself. Especially in these often trying times, it was amazing to have such a grounded resource to create calm and balance in one’s life.</p></blockquote>
+            <button class="rv-card__more" type="button" hidden>Read more</button>
+            <figcaption class="rv-card__who"><span class="rv-card__avatar" aria-hidden="true">BT</span><span><span class="rv-card__name">Brittany Tilleman</span><span class="rv-card__src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rv-card">
+            <div class="rv-card__top"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><svg class="rv-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.2C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.1-.4-4.6H24v9.1h12.7c-.6 3-2.2 5.500-4.700 7.200l7.600 5.900c4.500-4.100 7-10.200 7-17.600z"/><path fill="#FBBC05" d="M10.500 28.600A14.500 14.500 0 0 1 9.700 24c0-1.600.3-3.200.8-4.600l-7.900-6.200A24 24 0 0 0 0 24c0 3.900.9 7.500 2.600 10.800l7.900-6.200z"/><path fill="#34A853" d="M24 48c6.500 0 11.900-2.100 15.900-5.800l-7.600-5.900c-2.100 1.400-4.900 2.300-8.300 2.300-6.300 0-11.600-4.200-13.500-9.900l-7.900 6.200C6.500 42.600 14.600 48 24 48z"/></svg></div>
+            <blockquote class="rv-card__text"><p>This is great membership that I highly recommend to join. Chris is a fantastic leader that brings in community, healing energy, and love frequencies ❤️.</p></blockquote>
+            <button class="rv-card__more" type="button" hidden>Read more</button>
+            <figcaption class="rv-card__who"><span class="rv-card__avatar" aria-hidden="true">TP</span><span><span class="rv-card__name">Teresa Peter</span><span class="rv-card__src">Google review</span></span></figcaption>
+          </figure>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -706,5 +821,20 @@
     document.querySelectorAll('.animate').forEach(el => io.observe(el));
 
   </script>
+<script>
+/* Reviews: show "Read more" only on cards whose text is clipped */
+(function(){
+  function setup(){
+    document.querySelectorAll('.rv-card').forEach(function(c){
+      var t=c.querySelector('.rv-card__text'),b=c.querySelector('.rv-card__more');
+      if(c.classList.contains('is-open'))return;
+      b.hidden=!(t.scrollHeight>t.clientHeight+4);
+      b.onclick=function(){var o=c.classList.toggle('is-open');b.textContent=o?'Show less':'Read more';b.setAttribute('aria-expanded',o);};
+    });
+  }
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(setup);}else{window.addEventListener('load',setup);}
+  window.addEventListener('resize',setup);
+})();
+</script>
 </body>
 </html>
