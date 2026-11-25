@@ -1,0 +1,694 @@
+/* ==========================================================
+   Grove Circle Healing — brand layer for the Thinkific theme
+   Matches grovecirclehealing.com (Cormorant Garamond + Inter,
+   cream / teal / gold / indigo). Remove this block to revert.
+   ========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --gch-cream: #FAF8F3;
+  --gch-cream-dark: #F0EAE0;
+  --gch-charcoal: #1A1916;
+  --gch-teal: #208277;
+  --gch-teal-dark: #1A6E64;
+  --gch-gold: #C4994A;
+  --gch-gold-light: #DFB96A;
+  --gch-gold-text: #85651F;
+  --gch-body: #3A3630;
+  --gch-muted: #665E54;
+  --gch-line: rgba(42, 157, 143, 0.14);
+  --gch-indigo: #17153F;
+  --gch-indigo-2: #26235C;
+  --gch-shadow: 0 8px 40px rgba(26, 25, 22, 0.07);
+  --gch-serif: 'Cormorant Garamond', Georgia, serif;
+  --gch-sans: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ---------- Base type ---------- */
+body {
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
+  background: var(--gch-cream) !important;
+  color: var(--gch-body) !important;
+  font-family: var(--gch-sans) !important;
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+body p, body li, body label, body input, body select, body textarea, body td, body th {
+  font-family: var(--gch-sans) !important;
+}
+body h1, body h2, body h3, body h4, body h5,
+body .section__heading, body .section__heading--secondary {
+  font-family: var(--gch-serif) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.15 !important;
+}
+body main > section:not(.section-background) .section__heading,
+body main > section:not(.section-background) h2,
+body main > section:not(.section-background) h3 { color: var(--gch-charcoal) !important; }
+
+body main > section.countdown .section__heading,
+body main > section.countdown h2 { color: #fff !important; }
+body main > section .course-curriculum-card h2,
+body main > section .course-curriculum-card h3,
+body main > section .course-curriculum-card .course-curriculum-card__details__title { color: #fff !important; }
+body .section__heading { font-size: 2.6rem !important; }
+body .section__subheading {
+  font-family: var(--gch-sans) !important;
+  font-size: 1rem !important;
+  line-height: 1.75 !important;
+}
+body main > section:not(.section-background) .section__subheading { color: var(--gch-muted) !important; }
+body a { color: var(--gch-teal-dark); }
+body a:hover, body a:focus { color: var(--gch-teal-dark); }
+
+/* ---------- Buttons ---------- */
+body .button, body a.button, body button.button, body input[type="submit"].button,
+body .button-primary, body .button-secondary {
+  font-family: var(--gch-sans) !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  line-height: 1.4 !important;
+  padding: 0.95rem 2.4rem !important;
+  border-radius: 100px !important;
+  border: 1px solid var(--gch-teal) !important;
+  background: var(--gch-teal) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  transition: all 0.35s ease !important;
+}
+body .button:hover, body .button:focus,
+body .button-primary:hover, body .button-primary:focus {
+  background: var(--gch-teal-dark) !important;
+  border-color: var(--gch-teal-dark) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(42, 157, 143, 0.3) !important;
+}
+body .button-secondary, body .button--outline, body .button.button-secondary {
+  background: transparent !important;
+  color: var(--gch-teal-dark) !important;
+}
+body .button-secondary:hover { background: var(--gch-teal) !important; color: #fff !important; }
+body .button--link, body .button.button--link {
+  background: transparent !important;
+  border: 1px solid var(--gch-teal) !important;
+  color: var(--gch-teal-dark) !important;
+  padding: 0.8rem 2rem !important;
+}
+body .button--link:hover { background: var(--gch-teal) !important; color: #fff !important; }
+
+/* ---------- Header ---------- */
+body .header {
+  background: var(--gch-cream-dark) !important;
+  border-bottom: 1px solid rgba(26, 25, 22, 0.06) !important;
+  box-shadow: none !important;
+}
+body .header__container { padding-top: 0.6rem !important; padding-bottom: 0.6rem !important; }
+body .header__logo .logo { max-height: 60px !important; width: auto !important; mix-blend-mode: multiply; }
+body .header__nav-item a {
+  font-family: var(--gch-sans) !important;
+  font-size: 0.7rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: var(--gch-body) !important;
+}
+body .header__nav-item a:hover { color: var(--gch-teal-dark) !important; }
+body .header__nav-item.header__nav-sign-in a {
+  border: 1px solid var(--gch-teal) !important;
+  border-radius: 100px !important;
+  padding: 0.6rem 1.5rem !important;
+  color: var(--gch-teal-dark) !important;
+}
+body .header__nav-item.header__nav-sign-in a:hover { background: var(--gch-teal) !important; color: #fff !important; }
+
+/* ---------- Course banner ---------- */
+body .banner { background-color: var(--gch-indigo) !important; }
+body .banner .section__heading, body .banner h1 { font-size: 3.4rem !important; }
+
+/* ---------- Next class / countdown ---------- */
+body .countdown { background: var(--gch-cream) !important; padding: 5.5rem 0 !important; }
+body .countdown .countdown__wrapper {
+  background: linear-gradient(160deg, var(--gch-indigo-2) 0%, var(--gch-indigo) 55%, #12102F 100%) !important;
+  border-radius: 24px !important;
+  padding: 3.6rem 3.6rem !important;
+  box-shadow: 0 30px 70px rgba(23, 21, 63, 0.28) !important;
+  align-items: center !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+body .countdown .section__heading {
+  color: #fff !important;
+  font-style: italic !important;
+  font-size: 2.3rem !important;
+  line-height: 1.2 !important;
+}
+body .countdown .section__headings::before {
+  content: "Next Class";
+  display: block;
+  font-family: var(--gch-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gch-gold-light);
+  margin-bottom: 1rem;
+}
+body main > section.countdown .section__subheading, body main > section.countdown .section__subheading p { color: rgba(255, 255, 255, 0.92) !important; opacity: 1 !important; }
+body .countdown .button, body .countdown a.button-primary {
+  background: #fff !important;
+  border-color: #fff !important;
+  color: #12594F !important;
+  font-weight: 700 !important;
+}
+body .countdown .button:hover { background: var(--gch-cream) !important; color: var(--gch-teal-dark) !important; box-shadow: 0 8px 28px rgba(0,0,0,0.25) !important; }
+body .countdown .countdown-clock {
+  display: flex !important;
+  gap: 0.7rem !important;
+  justify-content: center !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+body .countdown .countdown-clock .clock-interval {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 14px !important;
+  min-width: 92px !important;
+  padding: 1.1rem 0.6rem 0.9rem !important;
+  text-align: center !important;
+  list-style: none !important;
+}
+body .countdown .countdown__count {
+  font-family: var(--gch-sans) !important;
+  font-weight: 600 !important;
+  font-size: 2rem !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.1 !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+  font-feature-settings: "tnum" 1, "lnum" 1 !important;
+  color: #fff !important;
+  display: block !important;
+}
+body .countdown .clock-interval strong {
+  font-family: var(--gch-sans) !important;
+  font-size: 0.58rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: var(--gch-gold-light) !important;
+  display: block !important;
+  margin-top: 0.55rem !important;
+}
+
+/* ---------- Intro video ---------- */
+body .video { background-color: var(--gch-cream) !important; }
+body .video .section__heading { color: #fff !important; font-size: 2rem !important; max-width: 16em; }
+body .video .video__play-button {
+  background-color: #fff !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 5.2v13.6L19 12z' fill='%232A9D8F'/%3E%3C/svg%3E") !important;
+  background-size: 34px 34px !important;
+  background-position: 54% 50% !important;
+  background-repeat: no-repeat !important;
+  border-radius: 50% !important;
+  width: 84px !important;
+  height: 84px !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.22) !important;
+}
+body .video .section__video--trigger .btn {
+  font-family: var(--gch-sans) !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: var(--gch-gold-light) !important;
+}
+
+/* Empowering the Artist: the welcome-video panel no longer repeats the hero artwork */
+body main > section.video[data-section-uid="w1feKjhsn"] {
+  background:
+    radial-gradient(1.5px 1.5px at 14% 30%, rgba(255,255,255,0.7) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 33% 74%, rgba(255,255,255,0.5) 50%, transparent 51%),
+    radial-gradient(2px 2px at 68% 22%, rgba(255,255,255,0.65) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 88% 62%, rgba(255,255,255,0.55) 50%, transparent 51%),
+    radial-gradient(1px 1px at 48% 14%, rgba(223,185,106,0.9) 50%, transparent 51%),
+    radial-gradient(ellipse at 50% 120%, rgba(42, 157, 143, 0.35) 0%, transparent 60%),
+    linear-gradient(160deg, #26235C 0%, #17153F 55%, #100E2B 100%) !important;
+  min-height: 0 !important;
+  padding: 4.5rem 0 !important;
+}
+body main > section.video[data-section-uid="w1feKjhsn"] .section__heading { color: #fff !important; }
+
+/* ---------- Curriculum ---------- */
+body .course-curriculum { background: var(--gch-cream) !important; }
+body .course-curriculum .section__subheading {
+  font-family: var(--gch-serif) !important;
+  font-style: italic !important;
+  font-size: 1.3rem !important;
+  color: var(--gch-teal-dark) !important;
+}
+body .course-curriculum__chapter {
+  background: #fff !important;
+  border: 1px solid rgba(26, 25, 22, 0.05) !important;
+  border-radius: 16px !important;
+  margin-bottom: 0.7rem !important;
+  box-shadow: 0 2px 14px rgba(26, 25, 22, 0.04) !important;
+  overflow: hidden !important;
+}
+body .course-curriculum__chapter-content-wrapper { border: 0 !important; }
+body .course-curriculum__chapter-header {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 1.2rem 1.4rem !important;
+}
+body .course-curriculum__chapter-title {
+  font-family: var(--gch-sans) !important;
+  font-size: 0.74rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: var(--gch-charcoal) !important;
+}
+body .course-curriculum__chapter-header .toga-icon,
+body .course-curriculum__chapter-collapse { color: var(--gch-teal-dark) !important; }
+body .course-curriculum__chapter-content { border-top: 1px solid rgba(26, 25, 22, 0.06) !important; padding: 0.3rem 1.4rem 0.8rem !important; }
+body .course-curriculum__chapter-content li { border-bottom: 1px solid rgba(26, 25, 22, 0.05) !important; }
+body .course-curriculum__chapter-content li:last-child { border-bottom: 0 !important; }
+body .course-curriculum__chapter-lesson { color: var(--gch-body) !important; font-size: 0.88rem !important; }
+body .course-curriculum__chapter-lesson .toga-icon { color: var(--gch-teal-dark) !important; opacity: 0.75; }
+body .course-curriculum__lesson-title p { font-size: 0.88rem !important; color: var(--gch-body) !important; }
+body .course-curriculum__chapter-lesson--free {
+  font-family: var(--gch-sans) !important;
+  font-size: 0.56rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: var(--gch-teal-dark) !important;
+  background: rgba(42, 157, 143, 0.08) !important;
+  border: 1px solid rgba(42, 157, 143, 0.35) !important;
+  border-radius: 100px !important;
+  padding: 0.3rem 0.8rem !important;
+}
+/* "About this course" card */
+body .course-curriculum-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  background: linear-gradient(170deg, var(--gch-indigo-2) 0%, var(--gch-indigo) 60%) !important;
+  border: 0 !important;
+  border-radius: 24px !important;
+  box-shadow: 0 30px 70px rgba(23, 21, 63, 0.28) !important;
+  overflow: hidden !important;
+  color: #fff !important;
+}
+body .course-curriculum-card__image { background: transparent !important; padding: 1.8rem 1.8rem 0 !important; text-align: center !important; width: 100% !important; box-sizing: border-box !important; }
+body .course-curriculum-card__image img { border-radius: 16px !important; width: 100% !important; height: auto !important; display: block !important; }
+body .course-curriculum-card__details { padding: 1.6rem 2rem 2.2rem !important; background: transparent !important; width: 100% !important; box-sizing: border-box !important; }
+body .course-curriculum-card__details__title,
+body .course-curriculum-card h3, body .course-curriculum-card h4 {
+  color: #fff !important;
+  text-align: center !important;
+  font-size: 1.6rem !important;
+  border: 0 !important;
+}
+body .course-curriculum-card__details__title::after { background: rgba(255,255,255,0.18) !important; }
+body .course-curriculum-card__details-item {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 0.85rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+  padding: 0.8rem 0 !important;
+}
+body .course-curriculum-card__details-item .fa { color: var(--gch-gold-light) !important; }
+
+body .course-curriculum__chapter-toggle .button--link {
+  margin-top: 1.4rem !important;
+  font-family: var(--gch-sans) !important;
+  font-size: 0.7rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  border: 1px solid var(--gch-teal) !important;
+  border-radius: 100px !important;
+  padding: 0.8rem 2rem !important;
+  color: var(--gch-teal-dark) !important;
+  background: transparent !important;
+}
+body .course-curriculum__chapter-toggle .button--link:hover { background: var(--gch-teal) !important; color: #fff !important; }
+@media (min-width: 992px) {
+  body .course-curriculum__content { flex-direction: row !important; align-items: flex-start !important; gap: 0 48px !important; }
+  body .course-curriculum__chapter-container { flex: 1 1 0 !important; min-width: 0 !important; width: auto !important; max-width: none !important; }
+  body .course-curriculum__card { flex: 0 0 340px !important; width: 340px !important; max-width: 340px !important; position: sticky; top: 24px; }
+}
+
+/* ---------- Checklist ("What awaits you") ---------- */
+body .checklist { background: var(--gch-cream-dark) !important; }
+body .checklist__list { border: 0 !important; }
+body .checklist__list-item {
+  background: var(--gch-cream) !important;
+  border: 0 !important;
+  border-radius: 16px !important;
+  padding: 1.4rem 1.6rem !important;
+  margin-bottom: 0.9rem !important;
+  box-shadow: var(--gch-shadow) !important;
+  font-family: var(--gch-serif) !important;
+  font-size: 1.25rem !important;
+  line-height: 1.45 !important;
+  color: var(--gch-charcoal) !important;
+  align-items: flex-start !important;
+}
+body .checklist__list-item p, body .checklist__list-item span:not(.fa) { font-family: var(--gch-serif) !important; font-size: 1.25rem !important; line-height: 1.45 !important; color: var(--gch-charcoal) !important; }
+body .checklist__list-item .fa, body .checklist__list-item i {
+  background: var(--gch-teal) !important;
+  color: #fff !important;
+  border-color: var(--gch-teal) !important;
+}
+
+/* ---------- Bonus material ---------- */
+body .bonus { background: var(--gch-cream) !important; }
+body .bonus__list { border: 0 !important; }
+body .bonus__list-item {
+  background: #fff !important;
+  border: 1px solid rgba(26, 25, 22, 0.05) !important;
+  border-radius: 16px !important;
+  padding: 1.8rem 2rem !important;
+  margin-bottom: 1rem !important;
+  box-shadow: 0 2px 14px rgba(26, 25, 22, 0.04) !important;
+}
+body .bonus__list-item h3, body .bonus__list-item .section__heading--secondary { font-size: 1.6rem !important; margin-bottom: 0.6rem !important; }
+body .bonus__list-item p { font-size: 0.92rem !important; line-height: 1.75 !important; color: var(--gch-muted) !important; }
+body .bonus__list-item__price { color: var(--gch-gold-text) !important; font-family: var(--gch-sans) !important; }
+
+/* ---------- Closing call to action ---------- */
+body .call-to-action.section-background { background-color: var(--gch-charcoal) !important; }
+body .call-to-action .section__heading { font-size: 3rem !important; }
+body .call-to-action.section-background .section__heading { color: #fff !important; }
+body .call-to-action.section-background .section__subheading { color: rgba(255, 255, 255, 0.78) !important; opacity: 1; }
+body .call-to-action .button { background: #fff !important; border-color: #fff !important; color: #12594F !important; font-weight: 700 !important; }
+body .call-to-action.section-background .section__subheading a { color: #fff !important; text-decoration: underline !important; text-underline-offset: 3px; }
+body .call-to-action .button:hover { background: var(--gch-cream) !important; color: var(--gch-teal-dark) !important; }
+
+/* ---------- Generic sections on other pages ---------- */
+body .section-height__medium, body .section-height__small, body .section-height__large { border-color: rgba(26,25,22,0.06) !important; }
+body .card, body .product-card, body .products__list-item .card {
+  border: 1px solid rgba(26, 25, 22, 0.05) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--gch-shadow) !important;
+  overflow: hidden !important;
+  background: #fff !important;
+}
+body .card__name, body .card h3 { font-family: var(--gch-serif) !important; font-size: 1.5rem !important; color: var(--gch-charcoal) !important; }
+body .card__price, body .card .card__price { color: var(--gch-gold-text) !important; font-family: var(--gch-sans) !important; font-weight: 500 !important; }
+body input[type="text"], body input[type="email"], body input[type="password"], body input[type="search"], body select, body textarea {
+  border: 1px solid rgba(26, 25, 22, 0.14) !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  color: var(--gch-body) !important;
+}
+body input:focus, body select:focus, body textarea:focus { border-color: var(--gch-teal) !important; box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.14) !important; outline: 0 !important; }
+
+/* ---------- Section backgrounds (override per-section colours set in the builder) ---------- */
+body main > section:not(.section-background):not(.countdown) { background-color: var(--gch-cream) !important; }
+body main > section.text-icon:not(.section-background),
+body main > section.faq:not(.section-background),
+body main > section.checklist:not(.section-background),
+body main > section.pricing-table:not(.section-background),
+body main > section.testimonials:not(.section-background),
+body main > section.lead-capture:not(.section-background),
+body main > section.course-categories:not(.section-background),
+body main > section.bundle-includes:not(.section-background) { background-color: var(--gch-cream-dark) !important; }
+
+/* ---------- Accents: icons, prices, links ---------- */
+body main .fa-check, body main .fa-check-circle, body main [class*="__icon"] .fa,
+body main [class*="__icon"] i, body .faq i, body .faq .fa, body .faq .toga-icon { color: var(--gch-teal-dark) !important; }
+body .checklist__list-item .fa, body .checklist__list-item i { color: #fff !important; }
+body .card__price-container strong, body .card__price strong,
+body [class*="price"] strong {
+  font-family: var(--gch-serif) !important;
+  font-weight: 600 !important;
+  font-size: 1.5rem !important;
+  color: var(--gch-charcoal) !important;
+  font-variant-numeric: lining-nums !important;
+  font-feature-settings: "lnum" 1 !important;
+  line-height: 1 !important;
+  vertical-align: baseline !important;
+}
+body .card__price, body .card .card__price {
+  display: block !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5rem !important;
+  letter-spacing: 0.01em !important;
+}
+body .card__price strong { font-size: 1.7rem !important; margin-right: 0.3rem !important; }
+body .card__category { font-family: var(--gch-sans) !important; font-size: 0.62rem !important; letter-spacing: 0.16em !important; color: var(--gch-muted) !important; }
+body .card__description, body .card p { font-size: 0.9rem !important; line-height: 1.7 !important; color: var(--gch-muted) !important; }
+body .products__nav a, body .collections__nav a, body [class*="categories"] a { color: var(--gch-body) !important; }
+body .products__nav a.active, body .collections__nav a.active, body [class*="__nav"] .active > a, body [class*="__nav"] a.active { color: var(--gch-teal-dark) !important; border-color: var(--gch-teal) !important; }
+body .faq [class*="question"], body .faq button { font-family: var(--gch-serif) !important; font-size: 1.25rem !important; font-weight: 500 !important; color: var(--gch-charcoal) !important; }
+body .text-icon [class*="item"], body .pricing-table [class*="item"], body .pricing-table [class*="card"] { border-color: rgba(26, 25, 22, 0.07) !important; }
+
+/* Secondary buttons on image banners: white pill reads on light and dark photos */
+body .section-background .button-secondary,
+body .banner .button-secondary {
+  background: #fff !important;
+  border: 1px solid #fff !important;
+  color: var(--gch-teal-dark) !important;
+}
+body .section-background .button-secondary:hover,
+body .banner .button-secondary:hover { background: var(--gch-cream) !important; color: var(--gch-teal-dark) !important; }
+body .banner select.form__control { min-width: 9.5rem !important; height: auto !important; padding: 0.8rem 2.2rem 0.8rem 1rem !important; border-radius: 100px !important; font-size: 0.85rem !important; }
+
+body .banner .section__button-group, body .banner .product-action-buttons__purchase,
+body .banner [class*="product-action-buttons"] { flex-wrap: wrap !important; gap: 0.7rem !important; row-gap: 0.7rem !important; }
+body .banner .section__button-group .button { margin: 0 !important; white-space: nowrap !important; }
+body .banner .button { padding-left: 1.8rem !important; padding-right: 1.8rem !important; }
+
+/* Call to action: dark only when it sits on a photo */
+body .call-to-action:not(.section-background) .section__heading { color: var(--gch-charcoal) !important; }
+body .call-to-action:not(.section-background) .section__subheading { color: var(--gch-muted) !important; }
+body .call-to-action:not(.section-background) .button { background: var(--gch-teal) !important; border-color: var(--gch-teal) !important; color: #fff !important; }
+
+/* Sign in / sign up */
+body .remote-sign-in__divider, body .remote-sign-up__divider,
+body .remote-sign-in__divider *, body .remote-sign-up__divider * {
+  background-color: var(--gch-cream) !important;
+  font-family: var(--gch-sans) !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: var(--gch-muted) !important;
+}
+body .form__label { font-family: var(--gch-sans) !important; font-size: 0.72rem !important; font-weight: 500 !important; letter-spacing: 0.08em !important; color: var(--gch-body) !important; }
+body .form__control { padding: 0.8rem 1rem !important; height: auto !important; font-size: 0.95rem !important; }
+body input:hover, body select:hover, body textarea:hover { border-color: var(--gch-teal) !important; }
+body a:focus-visible, body button:focus-visible, body input:focus-visible, body select:focus-visible { outline-color: var(--gch-teal) !important; }
+
+/* Leftover orange accents -> gold / teal */
+body .bonus__list-item .bonus__list-item__price,
+body .pricing-table [class*="label"], body .pricing-table [class*="description"], body .pricing-table small,
+body .pricing-table .section__content p { color: var(--gch-gold-text) !important; font-family: var(--gch-sans) !important; font-size: 0.8rem !important; font-weight: 500 !important; letter-spacing: 0.04em !important; }
+body .card__badge--presell, body .progress__bar, body .card--dashboard .circle .fill { background-color: var(--gch-teal) !important; }
+body .community-card__details-item i { color: var(--gch-gold) !important; }
+
+/* ---------- Catalog cards: product type as a tag on the image ---------- */
+body .card { position: relative !important; }
+body .card .card__product-info {
+  position: absolute !important;
+  top: 14px !important;
+  left: 14px !important;
+  z-index: 5 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0.38rem 0.85rem !important;
+  border-radius: 100px !important;
+  background: var(--gch-teal) !important;
+  color: #fff !important;
+  font-family: var(--gch-sans) !important;
+  font-size: 0.6rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.16em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22) !important;
+}
+body .card .card__product-info i { display: none !important; }
+body .card.card--bundle .card__product-info { background: var(--gch-gold) !important; }
+body .card .card__name { margin-bottom: 0.6rem !important; }
+
+/* ---------- Sign in / sign up: card on a night-sky panel ---------- */
+body main.sign-in, body main.sign-up, body main.social-sign-up, body main.express-sign-in {
+  background:
+    radial-gradient(1.5px 1.5px at 12% 22%, rgba(255,255,255,0.75) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 28% 68%, rgba(255,255,255,0.55) 50%, transparent 51%),
+    radial-gradient(2px 2px at 71% 18%, rgba(255,255,255,0.7) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 86% 58%, rgba(255,255,255,0.6) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 55% 86%, rgba(255,255,255,0.5) 50%, transparent 51%),
+    radial-gradient(1px 1px at 42% 12%, rgba(223,185,106,0.9) 50%, transparent 51%),
+    radial-gradient(1px 1px at 92% 84%, rgba(223,185,106,0.8) 50%, transparent 51%),
+    radial-gradient(ellipse at 80% 0%, rgba(86, 72, 190, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse at 0% 100%, rgba(42, 157, 143, 0.35) 0%, transparent 50%),
+    linear-gradient(160deg, #26235C 0%, #17153F 55%, #100E2B 100%) !important;
+  padding-top: 4.5rem !important;
+  padding-bottom: 5.5rem !important;
+}
+body main.sign-in .sign-in__wrapper, body main.sign-up .sign-up__wrapper,
+body main.social-sign-up .social-sign-up__wrapper, body main.express-sign-in .express-sign-in__wrapper {
+  display: block !important;
+  max-width: 480px !important;
+  margin: 0 auto !important;
+  background: var(--gch-cream) !important;
+  border-radius: 24px !important;
+  padding: 3rem 2.6rem 2.4rem !important;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.45) !important;
+}
+body main.sign-in .sign-in__wrapper > *, body main.sign-up .sign-up__wrapper > * { width: 100% !important; max-width: 100% !important; flex: none !important; margin-left: 0 !important; margin-right: 0 !important; padding-left: 0 !important; padding-right: 0 !important; }
+body main.sign-in .page__heading, body main.sign-up .page__heading, body main.social-sign-up .page__heading {
+  font-family: var(--gch-serif) !important;
+  font-size: 2.6rem !important;
+  font-weight: 500 !important;
+  color: var(--gch-charcoal) !important;
+  margin-bottom: 1.8rem !important;
+}
+body main.sign-in .page__heading::before, body main.sign-up .page__heading::before {
+  content: "Grove Circle Healing";
+  display: block;
+  font-family: var(--gch-sans);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gch-gold);
+  margin-bottom: 0.9rem;
+}
+body main.sign-in .form__button-group .button, body main.sign-up .form__button-group .button { width: 100% !important; justify-content: center !important; text-align: center !important; padding: 1.1rem 2rem !important; }
+body main.sign-up form [class*="form__"]:not(input):not(label):not(.form__label--checkbox):not(p) { width: 100% !important; max-width: 100% !important; flex: 0 0 100% !important; padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; float: none !important; }
+body main.sign-up form input.form__control { width: 100% !important; max-width: 100% !important; }
+/* Social sign-in: full-width labelled buttons */
+body .remote-sign-in__vendor-logins { margin-top: 1.8rem !important; }
+body .remote-sign-in__vendor-logins .remote-sign-in__vendor-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.65rem !important;
+  margin: 1.2rem 0 0 !important;
+  padding: 0 !important;
+}
+body .remote-sign-in__vendor-logins .remote-sign-in__vendor-list-item { margin: 0 !important; width: 100% !important; list-style: none !important; }
+body .remote-sign-in__vendor-logins .remote-sign-in__vendor-list-item a:is(.facebook, .google, .linkedin, .apple) {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.8rem !important;
+  width: 100% !important;
+  height: 54px !important;
+  padding: 0 1.4rem !important;
+  border-radius: 100px !important;
+  background: #fff !important;
+  border: 1px solid rgba(26, 25, 22, 0.16) !important;
+  font-size: 1.45rem !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  transform: none !important;
+}
+body .remote-sign-in__vendor-logins .remote-sign-in__vendor-list-item a:is(.facebook, .google, .linkedin, .apple):hover { border-color: var(--gch-teal) !important; background: #fff !important; box-shadow: 0 6px 18px rgba(26,25,22,0.08) !important; }
+body .remote-sign-in__vendor-logins .remote-sign-in__vendor-list-item a i { font-size: 1.45rem !important; line-height: 1 !important; position: static !important; transform: none !important; margin: 0 !important; width: auto !important; height: auto !important; flex: 0 0 auto !important; }
+body .remote-sign-in__vendor-logins .remote-sign-in__vendor-list-item a::after {
+  font-family: var(--gch-sans);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--gch-body);
+  -webkit-text-fill-color: var(--gch-body);
+}
+body .remote-sign-in__vendor-list-item a.google::after { content: "Continue with Google"; }
+body .remote-sign-in__vendor-list-item a.facebook::after { content: "Continue with Facebook"; }
+body .remote-sign-in__vendor-list-item a.linkedin::after { content: "Continue with LinkedIn"; }
+body .remote-sign-in__vendor-list-item a.apple::after { content: "Continue with Apple"; }
+body .remote-sign-in__divider, body .remote-sign-up__divider { font-size: 0.72rem !important; }
+body .remote-sign-in__divider span, body .remote-sign-up__divider span { font-size: 0.72rem !important; padding: 0 0.9rem !important; }
+body .sign-in__sign-up, body .sign-up__sign-in { text-align: center !important; margin-top: 1.6rem !important; font-size: 0.9rem !important; }
+body .sign-in__sign-up a, body .sign-up__sign-in a { color: var(--gch-teal-dark) !important; font-weight: 500 !important; }
+@media (max-width: 600px) {
+  body main.sign-in .sign-in__wrapper, body main.sign-up .sign-up__wrapper { padding: 2.2rem 1.4rem 1.8rem !important; border-radius: 18px !important; }
+}
+
+/* ---------- Footer ---------- */
+body .footer {
+  background: var(--gch-charcoal) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  border-top: 0 !important;
+}
+body .footer a, body .footer__nav-item a, body .footer p, body .footer span {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-family: var(--gch-sans) !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.06em !important;
+}
+body .footer a:hover { color: var(--gch-gold-light) !important; }
+body .footer .section__divide { border-color: rgba(255, 255, 255, 0.1) !important; }
+
+@media (max-width: 767px) {
+  body .section__heading { font-size: 2rem !important; }
+  body .banner .section__heading { font-size: 2.4rem !important; }
+  body .countdown { padding: 3rem 0 !important; }
+  body .countdown .countdown__wrapper { padding: 2.2rem 1.4rem !important; border-radius: 18px !important; }
+  body .countdown .section__heading { font-size: 1.7rem !important; }
+  body .countdown .countdown-clock { gap: 0.4rem !important; margin-top: 1.6rem !important; }
+  body .countdown .countdown-clock .clock-interval { min-width: 0 !important; flex: 1 1 0 !important; }
+  body .countdown .countdown__count { font-size: 1.7rem !important; }
+  body .call-to-action .section__heading { font-size: 2.1rem !important; }
+}
+
+/* ---------- Next class artwork (membership page countdown, section yIm1NhOMN) ----------
+   The Thinkific countdown section has no image field, so the class artwork is set here.
+   Change the URL when the next class changes. */
+body .countdown[data-section-uid="yIm1NhOMN"] .countdown__wrapper {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  align-items: stretch !important;
+}
+body .countdown[data-section-uid="yIm1NhOMN"] .countdown__wrapper::before {
+  content: "";
+  display: block;
+  aspect-ratio: 1 / 1;
+  order: -1;
+  grid-row: 1;
+  background: #E8E6EF url("https://www.grovecirclehealing.com/img/from-ashes-to-wings-2026.jpg") center / cover no-repeat;
+}
+body .countdown[data-section-uid="yIm1NhOMN"] .section__headings,
+body .countdown[data-section-uid="yIm1NhOMN"] .section__content {
+  flex: none !important;
+  max-width: 100% !important;
+  width: auto !important;
+  margin: 0 !important;
+}
+body .countdown[data-section-uid="yIm1NhOMN"] .section__headings { padding: 2.2rem 1.6rem 1.4rem !important; }
+body .countdown[data-section-uid="yIm1NhOMN"] .section__content { padding: 0 1.6rem 2.2rem !important; }
+@media (min-width: 992px) {
+  body .countdown[data-section-uid="yIm1NhOMN"] .countdown__wrapper {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr) !important;
+  }
+  body .countdown[data-section-uid="yIm1NhOMN"] .countdown__wrapper::before {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    aspect-ratio: auto;
+    min-height: 100%;
+  }
+  body .countdown[data-section-uid="yIm1NhOMN"] .section__headings { grid-column: 2; align-self: end; padding: 3.4rem 3.4rem 1.8rem 3.2rem !important; }
+  body .countdown[data-section-uid="yIm1NhOMN"] .section__content { grid-column: 2; align-self: start; padding: 0 3.4rem 3.4rem 3.2rem !important; }
+  body .countdown[data-section-uid="yIm1NhOMN"] .countdown-clock { justify-content: flex-start !important; }
+}
+
+/* ---------- Contrast (WCAG AA) ---------- */
+body main a.active { color: var(--gch-teal-dark) !important; border-color: var(--gch-teal) !important; }
+body .footer__copyright, body .footer__copyright * { color: rgba(255, 255, 255, 0.7) !important; opacity: 1 !important; }

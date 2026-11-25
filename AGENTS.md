@@ -46,3 +46,13 @@ Every page links `styles.css?v=YYYYMMDD`. Whenever you change `styles.css`, chan
 ## IndexNow (automatic search-engine ping)
 
 `.github/workflows/indexnow.yml` notifies Bing of changed pages after every push to `main`. It needs the key file `d70462cd3ff3e807d19c6573b881ad75.txt` at the root. Never delete or rename either one.
+
+## Thinkific theme (grovecirclehealing.thinkific.com)
+
+`thinkific/` holds the master copy of the brand styling for the Thinkific school (not part of the website; `.vercelignore` keeps it off Vercel). Git does not update Thinkific by itself.
+
+- `gch-thinkific-theme.css` = the brand CSS. `theme_wide_css-append.liquid` = the same CSS wrapped as the block that sits at the end of **Theme → Snippets → `theme_wide_css`** in the live theme "Vogue (Copy 2)" (id 669653). Rebuild the append file whenever the CSS changes.
+- `upcoming-classes.md` = Chris's wording for the coming membership classes.
+- **Workflow:** edit the CSS here first → rebuild the append file → paste it over the brand block in Thinkific's `theme_wide_css` and save (goes live on save) → commit and push here. If Thinkific and this folder ever disagree, copy what's live in Thinkific back into this folder before editing.
+- **Any styling change to the website (`styles.css`, colours, fonts, buttons) must be mirrored in `gch-thinkific-theme.css` and pasted into Thinkific**, so the school keeps matching the site.
+- Monthly class update on Thinkific: countdown heading/subheading and end time (UTC: 18:00 in winter, 17:00 in summer = 10 AM Pacific) in the site builder, and the artwork URL in the "Next class artwork" block of the CSS.
