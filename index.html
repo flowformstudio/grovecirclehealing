@@ -293,7 +293,8 @@
   <script defer src="/_vercel/speed-insights/script.js"></script>
 <style>
 .sound-portrait{position:relative;isolation:isolate;width:min(100%,480px);aspect-ratio:1;margin:60px auto;}
-.sound-portrait img{position:relative;z-index:1;display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;box-shadow:0 20px 55px #42332926;}
+.sound-portrait img,.sound-portrait video{position:relative;z-index:1;display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;box-shadow:0 20px 55px #42332926;}
+.sound-portrait video{filter:var(--photo-grade);background:#2a2235;}
 .sound-wave{position:absolute;z-index:0;left:50%;top:50%;width:100%;aspect-ratio:1;border:2px solid #2a9d8f;border-radius:50%;transform:translate(-50%,-50%);animation:healing-wave 7.5s ease-out infinite;pointer-events:none;}
 .sound-wave:nth-child(2){animation-delay:-2.5s;border-color:#c4994a;}
 .sound-wave:nth-child(3){animation-delay:-5s;}
@@ -477,7 +478,23 @@
         <div style="display:flex; justify-content:center;" class="animate animate-delay-2">
           <div class="sound-portrait">
             <span class="sound-wave" aria-hidden="true"></span><span class="sound-wave" aria-hidden="true"></span><span class="sound-wave" aria-hidden="true"></span>
-            <img src="img/chris-sound-healing-waves.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Chris in a white lace cover-up playing crystal singing bowls">
+            <video class="sound-portrait__video" width="960" height="960" muted loop playsinline preload="none" poster="video/sound-portrait-poster.jpg" role="img" aria-label="Chris in a white lace cover-up playing crystal singing bowls">
+              <source src="video/sound-portrait.av1.mp4" type='video/mp4; codecs="av01.0.08M.08"'>
+              <source src="video/sound-portrait.h264.mp4" type="video/mp4">
+            </video>
+            <script>
+              /* Play only while the circle is on screen; respect reduced motion (poster stays). */
+              (function () {
+                var v = document.querySelector('.sound-portrait__video');
+                if (!v || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+                if (!('IntersectionObserver' in window)) { v.play().catch(function () {}); return; }
+                new IntersectionObserver(function (entries) {
+                  entries.forEach(function (e) {
+                    if (e.isIntersecting) { v.play().catch(function () {}); } else { v.pause(); }
+                  });
+                }, { rootMargin: '200px' }).observe(v);
+              })();
+            </script>
           </div>
         </div>
 
