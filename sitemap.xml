@@ -56,7 +56,7 @@
   </url>
   <url>
     <loc>https://www.grovecirclehealing.com/resources</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -93,6 +93,12 @@
   <url>
     <loc>https://www.grovecirclehealing.com/the-bodys-wisdom</loc>
     <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.grovecirclehealing.com/guided-meditations</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
