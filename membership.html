@@ -899,6 +899,8 @@
       .mb-emblem__ring, .mb-emblem img { animation: none; }
       .mb-emblem__ring { opacity: 0.5; }
     }
+    /* Client quote band (smaller type for longer quotes) */
+    .quote-section--small blockquote { font-size: clamp(1.5rem, 3vw, 2.4rem); max-width: 760px; }
   </style>
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
@@ -1292,6 +1294,19 @@
     </div>
   </section>
 
+
+  <!-- ═══ CLIENT QUOTE ═════════════════════════════════════════ -->
+  <section class="quote-section quote-section--small">
+    <div class="quote-section__circles">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="container--narrow">
+      <blockquote class="animate">
+        &ldquo;Every time I need to get clear on something she has clarified it for me as well as given me tools to use in my everyday life. &hellip; She has a beautiful gift.&rdquo;
+      </blockquote>
+      <cite class="animate animate-delay-1">&mdash; K. Gerbert</cite>
+    </div>
+  </section>
 
   <!-- ═══ FAQ (NEW COPY: needs Chris's approval before going live) ═══ -->
   <section class="faq-section" id="faq">

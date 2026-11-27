@@ -268,6 +268,8 @@
         box-shadow: none;
       }
     }
+    /* Client quote band (smaller type for longer quotes) */
+    .quote-section--small blockquote { font-size: clamp(1.5rem, 3vw, 2.4rem); max-width: 760px; }
   </style>
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
@@ -527,6 +529,19 @@
           <p>Move through them slowly and return whenever you need a reset.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ═══ CLIENT QUOTE ═════════════════════════════════════════ -->
+  <section class="quote-section quote-section--small">
+    <div class="quote-section__circles">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="container--narrow">
+      <blockquote class="animate">
+        &ldquo;She asks wonderfully engaging questions that allowed me to open up to spaces I wouldn&rsquo;t have known to go to without her guidance.&rdquo;
+      </blockquote>
+      <cite class="animate animate-delay-1">&mdash; Ericka L.</cite>
     </div>
   </section>
 
